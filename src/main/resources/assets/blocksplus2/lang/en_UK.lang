@@ -1,0 +1,111 @@
+##################################
+#             Blocks             #
+##################################
+
+tile.colorCobble_white.name=Coloured Cobblestone - White
+tile.colorCobble_orange.name=Coloured Cobblestone - Orange
+tile.colorCobble_magenta.name=Coloured Cobblestone - Magenta
+tile.colorCobble_lightBlue.name=Coloured Cobblestone - Light Blue
+tile.colorCobble_yellow.name=Coloured Cobblestone - Yellow
+tile.colorCobble_lime.name=Coloured Cobblestone - Lime
+tile.colorCobble_pink.name=Coloured Cobblestone - Pink
+tile.colorCobble_gray.name=Coloured Cobblestone - Grey
+tile.colorCobble_lightGray.name=Coloured Cobblestone - Light Grey
+tile.colorCobble_cyan.name=Coloured Cobblestone - Cyan
+tile.colorCobble_purple.name=Coloured Cobblestone - Purple
+tile.colorCobble_blue.name=Coloured Cobblestone - Blue
+tile.colorCobble_brown.name=Coloured Cobblestone - Brown
+tile.colorCobble_green.name=Coloured Cobblestone - Green
+tile.colorCobble_red.name=Coloured Cobblestone - Red
+tile.colorCobble_black.name=Coloured Cobblestone - Black
+
+tile.colorStone_white.name=Coloured Stone - White
+tile.colorStone_orange.name=Coloured Stone - Orange
+tile.colorStone_magenta.name=Coloured Stone - Magenta
+tile.colorStone_lightBlue.name=Coloured Stone - Light Blue
+tile.colorStone_yellow.name=Coloured Stone - Yellow
+tile.colorStone_lime.name=Coloured Stone - Lime
+tile.colorStone_pink.name=Coloured Stone - Pink
+tile.colorStone_gray.name=Coloured Stone - Grey
+tile.colorStone_lightGray.name=Coloured Stone - Light Grey
+tile.colorStone_cyan.name=Coloured Stone - Cyan
+tile.colorStone_purple.name=Coloured Stone - Purple
+tile.colorStone_blue.name=Coloured Stone - Blue
+tile.colorStone_brown.name=Coloured Stone - Brown
+tile.colorStone_green.name=Coloured Stone - Green
+tile.colorStone_red.name=Coloured Stone - Red
+tile.colorStone_black.name=Coloured Stone - Black
+
+tile.colorStoneBrick_white.name=Coloured Stone Bricks - White
+tile.colorStoneBrick_orange.name=Coloured Stone Bricks - Orange
+tile.colorStoneBrick_magenta.name=Coloured Stone Bricks - Magenta
+tile.colorStoneBrick_lightBlue.name=Coloured Stone Bricks - Light Blue
+tile.colorStoneBrick_yellow.name=Coloured Stone Bricks - Yellow
+tile.colorStoneBrick_lime.name=Coloured Stone Bricks - Lime
+tile.colorStoneBrick_pink.name=Coloured Stone Bricks - Pink
+tile.colorStoneBrick_gray.name=Coloured Stone Bricks - Grey
+tile.colorStoneBrick_lightGray.name=Coloured Stone Bricks - Light Grey
+tile.colorStoneBrick_cyan.name=Coloured Stone Bricks - Cyan
+tile.colorStoneBrick_purple.name=Coloured Stone Bricks - Purple
+tile.colorStoneBrick_blue.name=Coloured Stone Bricks - Blue
+tile.colorStoneBrick_brown.name=Coloured Stone Bricks - Brown
+tile.colorStoneBrick_green.name=Coloured Stone Bricks - Green
+tile.colorStoneBrick_red.name=Coloured Stone Bricks - Red
+tile.colorStoneBrick_black.name=Coloured Stone Bricks - Black
+
+tile.colorStoneBrickChiseled_white.name=Coloured Stone Bricks (Chiseled) - White
+tile.colorStoneBrickChiseled_orange.name=Coloured Stone Bricks (Chiseled) - Orange
+tile.colorStoneBrickChiseled_magenta.name=Coloured Stone Bricks (Chiseled) - Magenta
+tile.colorStoneBrickChiseled_lightBlue.name=Coloured Stone Bricks (Chiseled) - Light Blue
+tile.colorStoneBrickChiseled_yellow.name=Coloured Stone Bricks (Chiseled) - Yellow
+tile.colorStoneBrickChiseled_lime.name=Coloured Stone Bricks (Chiseled) - Lime
+tile.colorStoneBrickChiseled_pink.name=Coloured Stone Bricks (Chiseled) - Pink
+tile.colorStoneBrickChiseled_gray.name=Coloured Stone Bricks (Chiseled) - Grey
+tile.colorStoneBrickChiseled_lightGray.name=Coloured Stone Bricks (Chiseled) - Light Grey
+tile.colorStoneBrickChiseled_cyan.name=Coloured Stone Bricks (Chiseled) - Cyan
+tile.colorStoneBrickChiseled_purple.name=Coloured Stone Bricks (Chiseled) - Purple
+tile.colorStoneBrickChiseled_blue.name=Coloured Stone Bricks (Chiseled) - Blue
+tile.colorStoneBrickChiseled_brown.name=Coloured Stone Bricks (Chiseled) - Brown
+tile.colorStoneBrickChiseled_green.name=Coloured Stone Bricks (Chiseled) - Green
+tile.colorStoneBrickChiseled_red.name=Coloured Stone Bricks (Chiseled) - Red
+tile.colorStoneBrickChiseled_black.name=Coloured Stone Bricks (Chiseled) - Black
+
+tile.colorStoneBrickCracked_white.name=Coloured Stone Bricks (Cracked) - White
+tile.colorStoneBrickCracked_orange.name=Coloured Stone Bricks (Cracked) - Orange
+tile.colorStoneBrickCracked_magenta.name=Coloured Stone Bricks (Cracked) - Magenta
+tile.colorStoneBrickCracked_lightBlue.name=Coloured Stone Bricks (Cracked) - Light Blue
+tile.colorStoneBrickCracked_yellow.name=Coloured Stone Bricks (Cracked) - Yellow
+tile.colorStoneBrickCracked_lime.name=Coloured Stone Bricks (Cracked) - Lime
+tile.colorStoneBrickCracked_pink.name=Coloured Stone Bricks (Cracked) - Pink
+tile.colorStoneBrickCracked_gray.name=Coloured Stone Bricks (Cracked) - Grey
+tile.colorStoneBrickCracked_lightGray.name=Coloured Stone Bricks (Cracked) - Light Grey
+tile.colorStoneBrickCracked_cyan.name=Coloured Stone Bricks (Cracked) - Cyan
+tile.colorStoneBrickCracked_purple.name=Coloured Stone Bricks (Cracked) - Purple
+tile.colorStoneBrickCracked_blue.name=Coloured Stone Bricks (Cracked) - Blue
+tile.colorStoneBrickCracked_brown.name=Coloured Stone Bricks (Cracked) - Brown
+tile.colorStoneBrickCracked_green.name=Coloured Stone Bricks (Cracked) - Green
+tile.colorStoneBrickCracked_red.name=Coloured Stone Bricks (Cracked) - Red
+tile.colorStoneBrickCracked_black.name=Coloured Stone Bricks (Cracked) - Black
+
+tile.colorStoneBrickMoss_white.name=Coloured Stone Bricks (Moss) - White
+tile.colorStoneBrickMoss_orange.name=Coloured Stone Bricks (Moss) - Orange
+tile.colorStoneBrickMoss_magenta.name=Coloured Stone Bricks (Moss) - Magenta
+tile.colorStoneBrickMoss_lightBlue.name=Coloured Stone Bricks (Moss) - Light Blue
+tile.colorStoneBrickMoss_yellow.name=Coloured Stone Bricks (Moss) - Yellow
+tile.colorStoneBrickMoss_lime.name=Coloured Stone Bricks (Moss) - Lime
+tile.colorStoneBrickMoss_pink.name=Coloured Stone Bricks (Moss) - Pink
+tile.colorStoneBrickMoss_gray.name=Coloured Stone Bricks (Moss) - Grey
+tile.colorStoneBrickMoss_lightGray.name=Coloured Stone Bricks (Moss) - Light Grey
+tile.colorStoneBrickMoss_cyan.name=Coloured Stone Bricks (Moss) - Cyan
+tile.colorStoneBrickMoss_purple.name=Coloured Stone Bricks (Moss) - Purple
+tile.colorStoneBrickMoss_blue.name=Coloured Stone Bricks (Moss) - Blue
+tile.colorStoneBrickMoss_brown.name=Coloured Stone Bricks (Moss) - Brown
+tile.colorStoneBrickMoss_green.name=Coloured Stone Bricks (Moss) - Green
+tile.colorStoneBrickMoss_red.name=Coloured Stone Bricks (Moss) - Red
+tile.colorStoneBrickMoss_black.name=Coloured Stone Bricks (Moss) - Black
+
+##################################
+#             Items              #
+##################################
+
+item.wandOfRemoval.name=Wand of Removal
