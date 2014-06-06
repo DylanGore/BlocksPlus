@@ -38,7 +38,7 @@ minecraft {
     replace "@VERSION@", "${project.version}.${System.getenv("BUILD_NUMBER") ?: 0}"
 }
 
-version = "${config.minecraftVersion}-${config.modVersion}.${System.getenv("BUILD_NUMBER") ?: 0}"
+version = "${config.minecraftVersion}-${config.modVersion}-Build ${System.getenv("BUILD_NUMBER") ?: 0}"
 
 processResources
 {
