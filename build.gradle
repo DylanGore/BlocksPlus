@@ -17,17 +17,28 @@ buildscript {
 
 apply plugin: 'forge'
 
-version = "2.0.0-Alpha2"
-group= "info.dylangore.blocksplus" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
-archivesBaseName = "[1.7.2] BlocksPlus-"
+//Load Properties File
+ext.configFile = file "build.properties"
+
+configFile.withReader {
+    def prop = new Properties()
+    prop.load(it)
+    project.ext.config = new ConfigSlurper().parse prop
+}
+
+version = config.modVersion
+group = config.modGroup
+archivesBaseName = config.modArchiveName
 
 minecraft {
-    version = "1.7.2-10.12.1.1060"
-    assetDir = "eclipse/assets"
+    version = config.minecraftVersion + "-" + config.forgeVersion
+    assetDir = "debug/assets"
 	
-	replace "@VERSION@", project.version
     replaceIn "ModInfo.java"
+    replace "@VERSION@", "${project.version}.${System.getenv("BUILD_NUMBER") ?: 0}"
 }
+
+version = "${config.minecraftVersion}-${config.modVersion}.${System.getenv("BUILD_NUMBER") ?: 0}"
 
 processResources
 {
