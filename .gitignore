@@ -1,0 +1,6 @@
+build/
+*.iml
+*.html
+*.bat
+.gradle/
+*.db
