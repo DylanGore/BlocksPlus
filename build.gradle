@@ -31,7 +31,8 @@ group = config.modGroup
 archivesBaseName = config.modArchiveName
 
 minecraft {
-    version = config.minecraftVersion + "-" + config.forgeVersion
+    version = "1.7.10_pre4-10.12.2.1137-prerelease"
+    //version = config.minecraftVersion + "-" + config.forgeVersion
     assetDir = "debug/assets"
 	
     replaceIn "ModInfo.java"
