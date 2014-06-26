@@ -113,4 +113,17 @@ tile.passthrough.name=Secure Passthrough Block
 #             Items              #
 ##################################
 
-item.remover.name=Remover (Temp. Texture)
+//NOITEMS
+
+
+##################################
+#             GUI                #
+##################################
+blocksplus.gui.config.title=Blocks Plus Configuration
+blocksplus.gui.config.general.title=General Settings
+blocksplus.gui.config.worldgen.title=World Generation Settings
+blocksplus.gui.config.integration.title=Mod Integration Settings
+
+blocksplus.gui.config.worldgen=World Generation Settings
+blocksplus.gui.config.integration=Mod Integration Settings
+blocksplus.gui.config.general=General Settings

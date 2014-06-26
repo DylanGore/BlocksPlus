@@ -1,9 +1,11 @@
 package info.dylangore.blocksplus;
 
-import cpw.mods.fml.common.Loader;
-import info.dylangore.blocksplus.compat.ModuleForgeMultipart;
+import cpw.mods.fml.common.FMLCommonHandler;
 import info.dylangore.blocksplus.creativetabs.TabBlocksPlus;
-import info.dylangore.blocksplus.core.*;
+import info.dylangore.blocksplus.handler.*;
+import info.dylangore.blocksplus.handler.BPConfig;
+import info.dylangore.blocksplus.handler.event.ConfigEventHandler;
+import info.dylangore.blocksplus.reference.Reference;
 import info.dylangore.blocksplus.util.LogHelper;
 import net.minecraft.creativetab.CreativeTabs;
 import cpw.mods.fml.common.Mod;
@@ -13,44 +15,25 @@ import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
-import info.dylangore.blocksplus.lib.ModInfo;
 import info.dylangore.blocksplus.proxies.CommonProxy;
-import net.minecraftforge.common.MinecraftForge;
 
-@Mod(modid = ModInfo.ID, name = ModInfo.NAME, version = ModInfo.VERSION)
+@Mod(modid = Reference.ID, name = Reference.NAME, version = Reference.VERSION, guiFactory = Reference.GUIFACTORY)
 
 public class BlocksPlus {
 	
-	@SidedProxy(clientSide = ModInfo.CLIENTPROXY, serverSide = ModInfo.COMMONPROXY)
+	@SidedProxy(clientSide = Reference.CLIENTPROXY, serverSide = Reference.COMMONPROXY)
 	public static CommonProxy proxy;
 
-	@Instance(ModInfo.ID)
+	@Instance(Reference.ID)
 	public static BlocksPlus instance;
 
     public static CreativeTabs tabBlocksPlus = new TabBlocksPlus(CreativeTabs.getNextID(), "info.dylangore.blocksplus.BlocksPlus");
 
-    /* Compatibility Modules */
-    public static boolean isGoreCoreLoaded = false;
-    public static boolean isFMPLoaded = false;
-
 	@EventHandler
-	public static void preInit(FMLPreInitializationEvent evt){
+	public static void preInit(FMLPreInitializationEvent event){
 
-        MinecraftForge.EVENT_BUS.register(proxy);
-
-        /* Check to see if GoreCore is installed */
-        if(Loader.isModLoaded("GoreCore")){
-            isGoreCoreLoaded = true;
-            LogHelper.logInfo("Activating GoreCore integration module...");
-        }else{
-            isGoreCoreLoaded = false;
-            LogHelper.logInfo("GoreCore is not installed! This could cause some serious issues with BlocksPlus!");
-        }
-
-        if(Loader.isModLoaded("ForgeMultipart")){
-            isFMPLoaded = true;
-            LogHelper.logInfo("Activating ForgeMultipart integration module...");
-        }
+        /* Initialize Config Files */
+        BPConfig.init(event.getSuggestedConfigurationFile());
 
         /* Initialize blocks and items added by BlocksPlus */
         BPBlocks.init();
@@ -73,16 +56,15 @@ public class BlocksPlus {
 	}
 	
 	@EventHandler
-	public static void init(FMLInitializationEvent evt){
-        /* Check for FMP */
-        if(isFMPLoaded){
-            ModuleForgeMultipart.init();
-        }
+	public static void init(FMLInitializationEvent event){
+
+        ConfigEventHandler configEventHandler = new ConfigEventHandler();
+        FMLCommonHandler.instance().bus().register(configEventHandler);
 
 	}
 
 	@EventHandler
-	public static void postInit(FMLPostInitializationEvent evt){
+	public static void postInit(FMLPostInitializationEvent event){
 		
 	}
 	
