@@ -1,5 +1,4 @@
 package info.dylangore.blocksplus.compat;
-import info.dylangore.blocksplus.core.BPBlocks;
 
 public class ModuleForgeMultipart {
 

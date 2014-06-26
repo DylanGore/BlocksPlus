@@ -2,7 +2,7 @@ package info.dylangore.blocksplus.fluids.blocks;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import info.dylangore.blocksplus.lib.ModInfo;
+import info.dylangore.blocksplus.reference.Reference;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.entity.Entity;
@@ -50,8 +50,8 @@ public class BlockBlackStuffFluid extends BlockFluidClassic{
     @Override
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister ir) {
-        blackStuffFlowing = ir.registerIcon(ModInfo.ID + ":" + "blackStuff_flow");
-        blackStuffStill = ir.registerIcon(ModInfo.ID + ":" + "blackStuff_still");
+        blackStuffFlowing = ir.registerIcon(Reference.ID + ":" + "blackStuff_flow");
+        blackStuffStill = ir.registerIcon(Reference.ID + ":" + "blackStuff_still");
     }
 
     @Override

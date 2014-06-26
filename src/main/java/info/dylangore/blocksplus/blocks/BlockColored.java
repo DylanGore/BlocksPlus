@@ -3,9 +3,9 @@ package info.dylangore.blocksplus.blocks;
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
 import info.dylangore.blocksplus.BlocksPlus;
-import info.dylangore.blocksplus.core.BPBlocks;
-import info.dylangore.blocksplus.lib.BlockInfo;
-import info.dylangore.blocksplus.lib.ModInfo;
+import info.dylangore.blocksplus.handler.BPBlocks;
+import info.dylangore.blocksplus.reference.BlockReference;
+import info.dylangore.blocksplus.reference.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
@@ -42,7 +42,7 @@ public class BlockColored extends Block {
 
     @SideOnly(Side.CLIENT)
     public void registerBlockIcons(IIconRegister ir) {
-        this.blockIcon = ir.registerIcon(ModInfo.ID + ":" + getBlockType());
+        this.blockIcon = ir.registerIcon(Reference.ID + ":" + getBlockType());
     }
 
     @Override
@@ -62,7 +62,7 @@ public class BlockColored extends Block {
     @Override
     @SideOnly(Side.CLIENT)
     public int getRenderColor(int meta) {
-        return BlockInfo.colors[meta];
+        return BlockReference.colors[meta];
     }
 
     @Override
@@ -112,7 +112,7 @@ public class BlockColored extends Block {
 
     @SideOnly(Side.CLIENT)
     public void getSubBlocks(Item item, CreativeTabs tab, List subItems) {
-        for (int ix = 0; ix < BlockInfo.colors.length; ix++) {
+        for (int ix = 0; ix < BlockReference.colors.length; ix++) {
             subItems.add(new ItemStack(this, 1, ix));
         }
     }

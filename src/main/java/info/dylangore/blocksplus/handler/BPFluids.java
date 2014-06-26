@@ -1,4 +1,4 @@
-package info.dylangore.blocksplus.core;
+package info.dylangore.blocksplus.handler;
 
 import cpw.mods.fml.common.registry.GameRegistry;
 import info.dylangore.blocksplus.fluids.BPFluid;

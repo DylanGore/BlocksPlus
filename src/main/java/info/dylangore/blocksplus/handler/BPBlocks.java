@@ -1,12 +1,12 @@
-package info.dylangore.blocksplus.core;
+package info.dylangore.blocksplus.handler;
 
 import info.dylangore.blocksplus.blocks.BlockColored;
 import info.dylangore.blocksplus.blocks.item.*;
+import info.dylangore.blocksplus.reference.BlockReference;
 import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 import cpw.mods.fml.common.registry.GameRegistry;
-import info.dylangore.blocksplus.lib.BlockInfo;
 
 public class BPBlocks {
 
@@ -37,7 +37,7 @@ public class BPBlocks {
 		GameRegistry.registerBlock(colorStoneBricksChiseled, ItemBlockColorStoneBrickChiseled.class ,"colorStoneBrickChiseled");
 
 		/* Ore Dict */
-		for(int meta = 0; meta < BlockInfo.colorBlockNames.length; meta ++){
+		for(int meta = 0; meta < BlockReference.colorBlockNames.length; meta ++){
 			OreDictionary.registerOre("stone", new ItemStack(colorStone, 1, meta));
 			OreDictionary.registerOre("cobblestone", new ItemStack(colorCobble, 1, meta));
             OreDictionary.registerOre("brickStone", new ItemStack(colorStoneBricks, 1, meta));

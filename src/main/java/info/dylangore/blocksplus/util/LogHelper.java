@@ -1,13 +1,13 @@
 package info.dylangore.blocksplus.util;
 
-import info.dylangore.blocksplus.lib.ModInfo;
+import info.dylangore.blocksplus.reference.Reference;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.apache.logging.log4j.Level;
 
 
 public class LogHelper {
-    private static Logger bpLogger = LogManager.getLogger(ModInfo.ID);
+    private static Logger bpLogger = LogManager.getLogger(Reference.ID);
 
     public static void init() {
     }
