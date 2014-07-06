@@ -1,6 +1,18 @@
-build/
-*.iml
-*.html
-*.bat
+#General
 .gradle/
+build/
+eclipse/
+run/
+*.html
+*.zip
+
+#Windows Stuff
 *.db
+*.bat
+
+# IDEA
+.idea
+out
+*.iml
+*.ipr
+*.iws
