@@ -5,6 +5,7 @@ eclipse/
 run/
 *.html
 *.zip
+*.psd
 
 #Windows Stuff
 *.db
