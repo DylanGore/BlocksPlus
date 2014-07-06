@@ -32,9 +32,9 @@ archivesBaseName = config.modArchiveName
 
 minecraft {
     version = config.minecraftVersion + "-" + config.forgeVersion
-    assetDir = "eclipse/assets"
-	
-    replaceIn "ModInfo.java"
+    assetDir = "run/assets"
+
+    replaceIn "Reference.java"
     replace "@VERSION@", "${project.version}.${System.getenv("BUILD_NUMBER") ?: 0}"
 }
 
@@ -64,6 +64,13 @@ processResources
     }
 }
 
+repositories {
+     maven { // the repo from which to get CB's Mods
+         name 'CB Repo'
+         url "http://chickenbones.net/maven/"
+     }
+}
+
 jar {
     manifest {
     }
@@ -80,3 +87,16 @@ task sourceJar(type: Jar) {
     from sourceSets.main.allSource
     classifier = 'sources'
 }
+
+// Include ChickenBones' Mods in the mods folder (Thanks Abrar!)
+task copyChicken(type: Copy, dependsOn: "extractUserDev") {
+    from { configurations.compile }
+    include "**/*Chicken*.jar", "**/*NotEnoughItems*.jar"
+    exclude "**/CodeChickenLib*" // because CCC downloads it anyways.. -_-
+    into file(minecraft.assetDir + "/../mods") // paralell to the assets dir
+
+    mustRunAfter "deobfBinJar"
+    mustRunAfter "repackMinecraft"
+}
+tasks.setupDevWorkspace.dependsOn copyChicken
+tasks.setupDecompWorkspace.dependsOn copyChicken
