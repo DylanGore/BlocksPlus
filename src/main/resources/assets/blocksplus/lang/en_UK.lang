@@ -119,6 +119,8 @@ tile.passthrough.name=Secure Passthrough Block
 ##################################
 #             GUI                #
 ##################################
+blocksplus.gui.creativetab.title=Blocks Plus
+
 blocksplus.gui.config.title=Blocks Plus Configuration
 blocksplus.gui.config.general.title=General Settings
 blocksplus.gui.config.worldgen.title=World Generation Settings

@@ -1,7 +1,16 @@
+/*
+ * Project: BlocksPlus
+ * File: BPGuiConfig.java
+ * Author: Dylan Gore (http://dylangore.info)
+ * Creation Date: 02/07/14 18:13
+ * Modified: 02/07/14 18:13
+ * License: GNU LGPLv3 (https://www.gnu.org/licenses/lgpl.html)
+ */
+
 package info.dylangore.blocksplus.client.gui.config;
 
 import cpw.mods.fml.client.config.*;
-import info.dylangore.blocksplus.handler.BPConfig;
+import info.dylangore.blocksplus.handler.ConfigurationHandler;
 import info.dylangore.blocksplus.reference.Reference;
 import net.minecraft.client.gui.GuiScreen;
 import net.minecraft.client.resources.I18n;
@@ -41,8 +50,8 @@ public class BPGuiConfig extends GuiConfig {
             // This GuiConfig object specifies the configID of the object and as such will force-save when it is closed. The parent
             // GuiConfig object's entryList will also be refreshed to reflect the changes.
             return new GuiConfig(this.owningScreen,
-                    (new ConfigElement(BPConfig.config.getCategory(BPConfig.CATEGORY_WORLDGEN)).getChildElements()),
-                    Reference.ID, false, false, I18n.format("blocksplus.gui.config.worldgen.title"));
+                    (new ConfigElement(ConfigurationHandler.configuration.getCategory(ConfigurationHandler.CATEGORY_WORLDGEN)).getChildElements()),
+                    Reference.ID, true, false, I18n.format("blocksplus.gui.config.worldgen.title"));
         }
 
     }
@@ -60,7 +69,7 @@ public class BPGuiConfig extends GuiConfig {
             // This GuiConfig object specifies the configID of the object and as such will force-save when it is closed. The parent
             // GuiConfig object's entryList will also be refreshed to reflect the changes.
             return new GuiConfig(this.owningScreen,
-                    (new ConfigElement(BPConfig.config.getCategory(Configuration.CATEGORY_GENERAL)).getChildElements()),
+                    (new ConfigElement(ConfigurationHandler.configuration.getCategory(Configuration.CATEGORY_GENERAL)).getChildElements()),
                     Reference.ID, false, false, I18n.format("blocksplus.gui.config.general.title"));
         }
 
@@ -79,8 +88,8 @@ public class BPGuiConfig extends GuiConfig {
             // This GuiConfig object specifies the configID of the object and as such will force-save when it is closed. The parent
             // GuiConfig object's entryList will also be refreshed to reflect the changes.
             return new GuiConfig(this.owningScreen,
-                    (new ConfigElement(BPConfig.config.getCategory(BPConfig.CATEGORY_INTEGRATION)).getChildElements()),
-                    Reference.ID, false, false, I18n.format("blocksplus.gui.config.integration.title"));
+                    (new ConfigElement(ConfigurationHandler.configuration.getCategory(ConfigurationHandler.CATEGORY_INTEGRATION)).getChildElements()),
+                    Reference.ID, false, true, I18n.format("blocksplus.gui.config.integration.title"));
 
         }
     }
