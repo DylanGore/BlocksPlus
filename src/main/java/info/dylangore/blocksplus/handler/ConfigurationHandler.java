@@ -27,6 +27,7 @@ public class ConfigurationHandler {
     public static void init(File file){
         if(configuration == null){
             configuration = new Configuration(file);
+            loadConfiguration();
         }
 
         loadConfiguration();
