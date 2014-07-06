@@ -104,6 +104,8 @@ tile.colorStoneBrickMoss_green.name=Stone Bricks (Mossy) - Green
 tile.colorStoneBrickMoss_red.name=Stone Bricks (Mossy) - Red
 tile.colorStoneBrickMoss_black.name=Stone Bricks (Mossy) - Black
 
+tile.toggleBlock.name=T-Block
+
 tile.fluidBlackStuff.name=Black Stuff
 
 tile.secure.name=Secure Block

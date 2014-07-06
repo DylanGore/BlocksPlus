@@ -9,7 +9,8 @@
 
 package info.dylangore.blocksplus.init;
 
-import info.dylangore.blocksplus.block.BlockColored;
+import info.dylangore.blocksplus.block.BPBlock;
+import info.dylangore.blocksplus.block.*;
 import info.dylangore.blocksplus.block.item.*;
 import info.dylangore.blocksplus.handler.WorldGenerationHandler;
 import info.dylangore.blocksplus.reference.BlockReference;
@@ -23,12 +24,14 @@ public class BPBlocks {
     public static final String[] colors = {"White", "Orange", "Magenta", "LightBlue", "Yellow", "Lime", "Pink", "Gray", "LightGray", "Cyan", "Purple", "Blue", "Brown", "Green", "Red", "Black"};
 
 	/* Block Declaration */
-	public static Block colorCobble = new BlockColored("cobblestone", "colorCobble");
-	public static Block colorStone = new BlockColored("stone", "colorStone");
-	public static Block colorStoneBricks = new BlockColored("stonebrick", "colorStoneBrick");
-	public static Block colorStoneBricksMoss = new BlockColored("stonebrick_moss", "colorStoneBrickMoss");
-	public static Block colorStoneBricksCracked = new BlockColored("stonebrick_cracked", "colorStoneBrickCracked");
-	public static Block colorStoneBricksChiseled = new BlockColored("stonebrick_carved", "colorStoneBrickChiseled");
+	public static BPBlock colorCobble = new BlockColored("cobblestone", "colorCobble");
+	public static BPBlock colorStone = new BlockColored("stone", "colorStone");
+	public static BPBlock colorStoneBricks = new BlockColored("stonebrick", "colorStoneBrick");
+	public static BPBlock colorStoneBricksMoss = new BlockColored("stonebrick_moss", "colorStoneBrickMoss");
+	public static BPBlock colorStoneBricksCracked = new BlockColored("stonebrick_cracked", "colorStoneBrickCracked");
+	public static BPBlock colorStoneBricksChiseled = new BlockColored("stonebrick_carved", "colorStoneBrickChiseled");
+
+    public static BPBlock toggleBlock = new BlockToggle("toggleBlock");
 	
 	//public static Block secureBlock;
 	//public static Block phantomBlock;
@@ -45,6 +48,8 @@ public class BPBlocks {
 		GameRegistry.registerBlock(colorStoneBricksMoss, ItemBlockColorStoneBrickMoss.class, "colorStoneBrickMoss");
 		GameRegistry.registerBlock(colorStoneBricksCracked, ItemBlockColorStoneBrickCracked.class, "colorStoneBrickCracked");
 		GameRegistry.registerBlock(colorStoneBricksChiseled, ItemBlockColorStoneBrickChiseled.class ,"colorStoneBrickChiseled");
+
+        GameRegistry.registerBlock(toggleBlock, "toggleBlock");
 
 		/* Ore Dict */
 		for(int meta = 0; meta < BlockReference.colorBlockNames.length; meta ++){

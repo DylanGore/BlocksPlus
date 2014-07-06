@@ -11,12 +11,10 @@ package info.dylangore.blocksplus.block;
 
 import cpw.mods.fml.relauncher.Side;
 import cpw.mods.fml.relauncher.SideOnly;
-import info.dylangore.blocksplus.BlocksPlus;
 import info.dylangore.blocksplus.init.BPBlocks;
 import info.dylangore.blocksplus.reference.BlockReference;
 import info.dylangore.blocksplus.reference.Reference;
 import net.minecraft.block.Block;
-import net.minecraft.block.material.Material;
 import net.minecraft.client.renderer.texture.IIconRegister;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;
@@ -26,17 +24,12 @@ import net.minecraft.world.IBlockAccess;
 import java.util.List;
 import java.util.Random;
 
-public class BlockColored extends Block {
+public class BlockColored extends BPBlock {
 
     private String blockType;
 
     public BlockColored(String baseBlock, String blockName) {
-        super(Material.rock);
-        this.setResistance(1.5F);
-        this.setHardness(1.0F);
-        this.stepSound = soundTypeStone;
-        this.setCreativeTab(BlocksPlus.tabBlocksPlus);
-        this.setBlockName(blockName);
+        super(blockName);
         this.setBlockType(baseBlock);
     }
 
