@@ -1,12 +1,9 @@
 /*
- *
- *  * Project: BlocksPlus
- *  * File: BPBlock.java
- *  * Author: Dylan Gore (http://dylangore.info)
- *  * Creation Date: 06/07/14 21:54
- *  * Modified: 06/07/14 21:54
- *  * License: GNU LGPLv3 (https://www.gnu.org/licenses/lgpl.html)
- *
+ * Project: BlocksPlus
+ * File: BPBlock.java
+ * Author: Dylan Gore (http://dylangore.info)
+ * Modified: 10/07/14 21:30
+ * License: GNU LGPLv3 (https://www.gnu.org/licenses/lgpl.html)
  */
 
 package info.dylangore.blocksplus.block;
