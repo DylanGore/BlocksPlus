@@ -2,27 +2,25 @@
  * Project: BlocksPlus
  * File: BlocksPlus.java
  * Author: Dylan Gore (http://dylangore.info)
- * Creation Date: 02/07/14 18:13
- * Modified: 02/07/14 18:13
+ * Modified: 10/07/14 21:29
  * License: GNU LGPLv3 (https://www.gnu.org/licenses/lgpl.html)
  */
 
 package info.dylangore.blocksplus;
 
+import cpw.mods.fml.common.Loader;
 import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.SidedProxy;
 import cpw.mods.fml.common.event.FMLInitializationEvent;
+import cpw.mods.fml.common.event.FMLInterModComms;
 import cpw.mods.fml.common.event.FMLPostInitializationEvent;
 import cpw.mods.fml.common.event.FMLPreInitializationEvent;
 import info.dylangore.blocksplus.creativetab.TabBlocksPlus;
 import info.dylangore.blocksplus.handler.BPEventHandler;
 import info.dylangore.blocksplus.handler.ConfigurationHandler;
-import info.dylangore.blocksplus.init.BPBlocks;
-import info.dylangore.blocksplus.init.BPCrafting;
-import info.dylangore.blocksplus.init.BPFluids;
-import info.dylangore.blocksplus.init.BPItems;
+import info.dylangore.blocksplus.init.*;
 import info.dylangore.blocksplus.proxy.CommonProxy;
 import info.dylangore.blocksplus.reference.Reference;
 import net.minecraft.client.resources.I18n;
@@ -68,7 +66,8 @@ public class BlocksPlus {
 
 	@EventHandler
 	public static void postInit(FMLPostInitializationEvent event){
-		
+        /* Initialize IMC between BlocksPlus and Dynious' VersionChecker (if it is installed) */
+        BPIntegration.versionCheckerIMC();
 	}
 	
 }
