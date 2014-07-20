@@ -15,6 +15,7 @@ buildscript {
     }
 }
 
+apply plugin: "curseforge"
 apply plugin: 'forge'
 
 //Load Properties File
@@ -41,7 +42,21 @@ minecraft {
 version = "${config.minecraftVersion}-${config.modVersion}.${System.getenv("BUILD_NUMBER") ?: 0}"
 
 jenkins {
-    job = 'BlocksPlus'
+    job = '${config.jobName}'
+}
+
+curse {
+    apiKey = project.curseKey // saved in my gradle.properties file.  http://minecraft.curseforge.com/my-api-tokens
+    projectId = "${config.curseId}"
+    releaseType = "alpha"
+	changelog = "${config.curseChangelog}"
+
+    // the default obfuscated jar is uploaded by default
+    // artifact = project.file("some/jar/to/upload.jar")
+
+    // allows you to add extra compatible MC versions. The one specified in the minecraft{} block is used by default.
+    // addGameVersion "1.7.1"
+    // addGameversion "1.7.0", "1.7.4"
 }
 
 processResources
@@ -64,13 +79,6 @@ processResources
     }
 }
 
-repositories {
-     maven { // the repo from which to get CB's Mods
-         name 'CB Repo'
-         url "http://chickenbones.net/maven/"
-     }
-}
-
 jar {
     manifest {
     }
@@ -88,15 +96,26 @@ task sourceJar(type: Jar) {
     classifier = 'sources'
 }
 
-// Include ChickenBones' Mods in the mods folder (Thanks Abrar!)
-//task copyChicken(type: Copy, dependsOn: "extractUserDev") {
-//    from { configurations.compile }
-//    include "**/*Chicken*.jar", "**/*NotEnoughItems*.jar"
-//    exclude "**/CodeChickenLib*" // because CCC downloads it anyways.. -_-
-//    into file(minecraft.assetDir + "/../mods") // paralell to the assets dir
-//
-//    mustRunAfter "deobfBinJar"
-//    mustRunAfter "repackMinecraft"
-//}
-//tasks.setupDevWorkspace.dependsOn copyChicken
-//tasks.setupDecompWorkspace.dependsOn copyChicken
+import net.minecraftforge.gradle.delayed.*
+import net.minecraftforge.gradle.tasks.dev.ChangelogTask
+
+task createChangelog(type: ChangelogTask) {
+
+    if (("${System.getenv().JOB_NAME}" != null) && project.hasProperty("jenkins_server") && project.hasProperty("jenkins_password")) {
+        def jobName = "${System.getenv().JOB_NAME}"
+        def buildNumber = "${System.getenv().BUILD_NUMBER}"
+
+        setServerRoot(new DelayedString(project, project.jenkins_server))
+        setJobName(new DelayedString(project, jobName.toString()))
+        setAuthName(new DelayedString(project, project.jenkins_user))
+        setAuthPassword(new DelayedString(project, project.jenkins_password))
+        setTargetBuild({ buildNumber.toString() });
+        setOutput(new DelayedFile(project, 'build/libs/' + project.getName() + '-' + project.version + '-changelog.txt'));
+    }
+
+    onlyIf {
+        return (("${System.getenv().JOB_NAME}" != null) && project.hasProperty("jenkins_server") && project.hasProperty("jenkins_password"))
+    }
+}
+
+tasks.build.dependsOn('createChangelog')
