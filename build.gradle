@@ -33,10 +33,11 @@ archivesBaseName = config.modArchiveName
 
 minecraft {
     version = config.minecraftVersion + "-" + config.forgeVersion
-    assetDir = "run/assets"
+    runDir = "run/assets"
 
     replaceIn "Reference.java"
     replace "@VERSION@", "${project.version}.${System.getenv("BUILD_NUMBER") ?: 0}"
+    replace "@VERSION_MC@", "${config.minecraftVersion}"
 }
 
 version = "${config.minecraftVersion}-${config.modVersion}.${System.getenv("BUILD_NUMBER") ?: 0}"
