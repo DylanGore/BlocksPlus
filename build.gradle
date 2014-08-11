@@ -47,10 +47,10 @@ jenkins {
 }
 
 curse {
-    apiKey = project.curseKey // saved in my gradle.properties file.  http://minecraft.curseforge.com/my-api-tokens
-    projectId = "${config.curseId}"
-    releaseType = "alpha"
-	changelog = "${config.curseChangelog}"
+    //apiKey = project.curseKey // saved in my gradle.properties file.  http://minecraft.curseforge.com/my-api-tokens
+    //projectId = "${config.curseId}"
+    //releaseType = "alpha"
+    //changelog = "${config.curseChangelog}"
 
     // the default obfuscated jar is uploaded by default
     // artifact = project.file("some/jar/to/upload.jar")
