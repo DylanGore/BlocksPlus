@@ -9,6 +9,7 @@
 package info.dylangore.blocksplus.block;
 
 import info.dylangore.blocksplus.BlocksPlus;
+import info.dylangore.blocksplus.creativetab.TabBlocksPlus;
 import info.dylangore.blocksplus.reference.Reference;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -23,7 +24,7 @@ public class BPBlock extends Block {
         this.setResistance(1.5F);
         this.setHardness(1.0F);
         this.stepSound = soundTypeStone;
-        this.setCreativeTab(BlocksPlus.tabBlocksPlus);
+        this.setCreativeTab(TabBlocksPlus.tabBlocksPlus);
         this.setBlockName(blockName);
         this.name = blockName;
     }

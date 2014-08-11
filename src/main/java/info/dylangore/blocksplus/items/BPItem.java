@@ -9,6 +9,7 @@
 package info.dylangore.blocksplus.items;
 
 import info.dylangore.blocksplus.BlocksPlus;
+import info.dylangore.blocksplus.creativetab.TabBlocksPlus;
 import info.dylangore.blocksplus.reference.Reference;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -22,7 +23,7 @@ public class BPItem extends Item {
     public BPItem(String name, String textureName, int stackSize){
         this.setUnlocalizedName(name);
         this.setTextureName(Reference.ID + ":" + textureName);
-        this.setCreativeTab(BlocksPlus.tabBlocksPlus);
+        this.setCreativeTab(TabBlocksPlus.tabBlocksPlus);
         this.setMaxStackSize(stackSize);
     }
 }
