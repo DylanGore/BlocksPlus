@@ -13,7 +13,6 @@ import info.dylangore.blocksplus.block.*;
 import info.dylangore.blocksplus.block.item.*;
 import info.dylangore.blocksplus.handler.WorldGenerationHandler;
 import info.dylangore.blocksplus.reference.BlockReference;
-import net.minecraft.block.Block;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
 import cpw.mods.fml.common.registry.GameRegistry;
@@ -31,6 +30,9 @@ public class BPBlocks {
 	public static BPBlock colorStoneBricksChiseled = new BlockColored("stonebrick_carved", "colorStoneBrickChiseled");
 
     public static BPBlock toggleBlock = new BlockToggle("toggleBlock");
+
+    public static BPBlock asphaltRoad = new BlockAsphaltRoad("asphaltRoad");
+    public static BPBlock healingStation = new BlockHealingStation("healingStation");
 	
 	//public static Block secureBlock;
 	//public static Block phantomBlock;
@@ -48,7 +50,10 @@ public class BPBlocks {
 		GameRegistry.registerBlock(colorStoneBricksCracked, ItemBlockColorStoneBrickCracked.class, "colorStoneBrickCracked");
 		GameRegistry.registerBlock(colorStoneBricksChiseled, ItemBlockColorStoneBrickChiseled.class ,"colorStoneBrickChiseled");
 
-        GameRegistry.registerBlock(toggleBlock, "toggleBlock");
+        GameRegistry.registerBlock(toggleBlock, ItemBlockToggle.class, "toggleBlock");
+
+        GameRegistry.registerBlock(asphaltRoad, "asphaltRoad");
+        GameRegistry.registerBlock(healingStation, "healingStation");
 
 		/* Ore Dict */
 		for(int meta = 0; meta < BlockReference.colorBlockNames.length; meta ++){

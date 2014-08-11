@@ -9,6 +9,7 @@
 package info.dylangore.blocksplus.init;
 
 import cpw.mods.fml.common.registry.GameRegistry;
+import info.dylangore.blocksplus.block.BPBlock;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
@@ -18,7 +19,24 @@ public class BPCrafting {
     public static void init(){
         colorCraftingBasic();
         colorSmeltingBasic();
-}
+        generalCrafting();
+    }
+
+    public static void generalCrafting(){
+
+        ItemStack stone = new ItemStack(Blocks.stone);
+        ItemStack gravel = new ItemStack(Blocks.gravel);
+        ItemStack golden_apple = new ItemStack(Items.golden_apple, 1, 1);
+        ItemStack nether_star = new ItemStack(Items.nether_star);
+
+        GameRegistry.addShapedRecipe(new ItemStack(BPBlocks.healingStation, 1, 0),
+                "sss", "ana", "sss",
+                's', stone, 'a', golden_apple, 'n', nether_star );
+
+        GameRegistry.addShapedRecipe(new ItemStack(BPBlocks.asphaltRoad, 9, 0),
+            "gsg", "sgs", "gsg",
+                'g', gravel, 's', stone);
+    }
 
     public static void colorCraftingBasic(){
         final String[] colors = {"White", "Orange", "Magenta", "LightBlue", "Yellow", "Lime", "Pink", "Gray", "LightGray", "Cyan", "Purple", "Blue", "Brown", "Green", "Red", "Black"};

@@ -105,11 +105,15 @@ tile.colorStoneBrickMoss_red.name= Stone Bricks (Mossy) - Red
 tile.colorStoneBrickMoss_black.name= Stone Bricks (Mossy) - Black
 
 tile.toggleBlock.name=T-Block
+tile.toggleBlock_off.name=T-Block-On (DO NOT SPAWN)
 
 tile.fluidBlackStuff.name=Black Stuff
 
 tile.secure.name=Secure Block
 tile.passthrough.name=Secure Passthrough Block
+
+tile.asphaltRoad.name=Asphalt Road
+tile.healingStation.name=Healing Station
 
 ##################################
 #             Items              #
