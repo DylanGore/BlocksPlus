@@ -13,10 +13,11 @@ import cpw.mods.fml.common.Mod;
 import cpw.mods.fml.common.Mod.EventHandler;
 import cpw.mods.fml.common.Mod.Instance;
 import cpw.mods.fml.common.SidedProxy;
-import cpw.mods.fml.common.event.FMLInitializationEvent;
-import cpw.mods.fml.common.event.FMLInterModComms;
-import cpw.mods.fml.common.event.FMLPostInitializationEvent;
-import cpw.mods.fml.common.event.FMLPreInitializationEvent;
+import cpw.mods.fml.common.event.*;
+import cpw.mods.fml.relauncher.Side;
+import cpw.mods.fml.relauncher.SideOnly;
+import info.dylangore.blocksplus.command.CommandBlocksPlus;
+import info.dylangore.blocksplus.command.CommandBlocksPlusAdmin;
 import info.dylangore.blocksplus.creativetab.TabBlocksPlus;
 import info.dylangore.blocksplus.handler.BPEventHandler;
 import info.dylangore.blocksplus.handler.ConfigurationHandler;
@@ -25,6 +26,7 @@ import info.dylangore.blocksplus.proxy.CommonProxy;
 import info.dylangore.blocksplus.reference.Reference;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraftforge.common.MinecraftForge;
 
 @Mod(modid = Reference.ID, name = Reference.NAME, version = Reference.VERSION, guiFactory = Reference.GUIFACTORY_CLASS)
 
@@ -35,8 +37,6 @@ public class BlocksPlus {
 
 	@Instance(Reference.ID)
 	public static BlocksPlus instance;
-
-    public static CreativeTabs tabBlocksPlus = new TabBlocksPlus(CreativeTabs.getNextID(), I18n.format("blocksplus.gui.creativetab.title"));
 
 	@EventHandler
 	public static void preInit(FMLPreInitializationEvent event){
@@ -62,12 +62,17 @@ public class BlocksPlus {
 	@EventHandler
 	public static void init(FMLInitializationEvent event){
         BPEventHandler.initConfigEvents();
-	}
+    }
 
 	@EventHandler
 	public static void postInit(FMLPostInitializationEvent event){
-        /* Initialize IMC between BlocksPlus and Dynious' VersionChecker (if it is installed) */
-        BPIntegration.versionCheckerIMC();
+        //BPIntegration.initClient();
 	}
+
+    @EventHandler
+    public static void serverStarting(FMLServerStartingEvent event){
+        event.registerServerCommand(new CommandBlocksPlus());
+        event.registerServerCommand(new CommandBlocksPlusAdmin());
+    }
 	
 }
