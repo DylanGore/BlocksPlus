@@ -13,7 +13,9 @@ public class Reference {
 	public static final String ID = "blocksplus";
 	public static final String NAME = "Blocks Plus 2";
 	public static final String VERSION = "@VERSION@";
-	
+
+    public static final String VERSION_MINECRAFT = "@VERSION_MC@";
+
 	public static final String CHANNEL = ID;
 	
 	public static final String CLIENTPROXY_CLASS = "info.dylangore.blocksplus.proxy.ClientProxy";
