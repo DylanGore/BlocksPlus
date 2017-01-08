@@ -12,7 +12,7 @@ apply plugin: 'net.minecraftforge.gradle.forge'
 
 
 version = "3.0"
-group= "info.dylangore.blocksplus" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+group= "ie.dylangore.blocksplus" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "blocksplus"
 
 sourceCompatibility = targetCompatibility = "1.6" // Need this here so eclipse task generates correctly.

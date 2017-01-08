@@ -1,15 +1,15 @@
 [
 {
-  "modid": "examplemod",
-  "name": "Example Mod",
-  "description": "Example placeholder mod.",
+  "modid": "blocksplus",
+  "name": "BlocksPlus 3",
+  "description": "This mod adds a variety of decorative and functional blocks to the game.",
   "version": "${version}",
   "mcversion": "${mcversion}",
-  "url": "",
-  "updateUrl": "",
-  "authorList": ["ExampleDude"],
-  "credits": "The Forge and FML guys, for making this example",
-  "logoFile": "",
+  "url": "https://dylangore.ie/",
+  "updateUrl": "https://github.com/DylanGore/BlocksPlus",
+  "authorList": ["DylanGore"],
+  "credits": "",
+  "logoFile": "assets/blocksplus/logo.png",
   "screenshots": [],
   "dependencies": []
 }
