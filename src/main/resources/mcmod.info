@@ -1,15 +1,15 @@
 [
 {
-  "modid": "blocksplus",
-  "name": "BlocksPlus",
-  "description": "This mod adds a variety of decorative blocks to the game.",
+  "modid": "examplemod",
+  "name": "Example Mod",
+  "description": "Example placeholder mod.",
   "version": "${version}",
   "mcversion": "${mcversion}",
-  "url": "http://dylangore.info/",
-  "updateUrl": "http://dylangore.info/",
-  "authorList": ["DylanGore"],
-  "credits": "Lead Developer: DylanGore",
-  "logoFile": "assets/blocksplus/logo.png",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["ExampleDude"],
+  "credits": "The Forge and FML guys, for making this example",
+  "logoFile": "",
   "screenshots": [],
   "dependencies": []
 }

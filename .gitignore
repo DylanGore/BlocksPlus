@@ -1,20 +1,22 @@
-#General
-.gradle/
-build/
-eclipse/
-run/
-*.html
-*.zip
-*.psd
+# eclipse
+bin
+*.launch
+.settings
+.metadata
+.classpath
+.project
 
-#Windows Stuff
-*.db
-*.bat
-
-# IDEA
-.idea
+# idea
 out
-*.iml
 *.ipr
 *.iws
-users/
+*.iml
+.idea
+
+# gradle
+build
+.gradle
+
+# other
+eclipse
+run
