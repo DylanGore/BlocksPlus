@@ -5,6 +5,7 @@ import ie.dylangore.blocksplus.Reference;
 import ie.dylangore.blocksplus.blocks.BlockAsphaltRoad;
 import ie.dylangore.blocksplus.blocks.BlockHealingStation;
 import ie.dylangore.blocksplus.blocks.base.BlockBase;
+import ie.dylangore.blocksplus.blocks.base.BlockTileEntity;
 import ie.dylangore.blocksplus.util.LogHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
@@ -39,6 +40,10 @@ public class ModBlocks {
         itemBlock.setRegistryName(registryName);
         GameRegistry.register(itemBlock);
         GameRegistry.register(block);
+
+        if (block instanceof BlockTileEntity) {
+            GameRegistry.registerTileEntity(((BlockTileEntity<?>)block).getTileEntityClass(), block.getRegistryName().toString());
+        }
 
         BlocksPlus.proxy.registerItemRenderer(itemBlock, 0, registryName);
     }
