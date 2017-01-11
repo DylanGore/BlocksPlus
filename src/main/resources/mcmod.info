@@ -1,7 +1,7 @@
 [
 {
   "modid": "blocksplus",
-  "name": "BlocksPlus 3",
+  "name": "Blocks Plus",
   "description": "This mod adds a variety of decorative and functional blocks to the game.",
   "version": "${version}",
   "mcversion": "${mcversion}",
