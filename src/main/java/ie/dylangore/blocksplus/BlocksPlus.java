@@ -38,7 +38,7 @@ public class BlocksPlus {
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event){
-        System.out.println(Reference.NAME + " is loading...");
+
     }
 
     @Mod.EventHandler
