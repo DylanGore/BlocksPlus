@@ -10,7 +10,7 @@ package ie.dylangore.blocksplus;
 public class Reference {
 
     public static final String ID = "blocksplus";
-    public static final String NAME = "BlocksPlus 3";
+    public static final String NAME = "Blocks Plus";
     public static final String VERSION = "3.0.0";
     public static final String UPDATE_JSON_URL = "https://dylangore.ie/mods/blocksplus/updates.json"; //Temporary link
 
@@ -21,22 +21,15 @@ public class Reference {
 
         ASPHALT_ROAD("asphalt_road");
 
-        private String unlocalizedName;
-        private String registryName;
+        private String blockName;
 
         BlocksPlusBlocks(String name){
-            this.unlocalizedName = name;
-            this.registryName = name;
+            this.blockName = name;
         }
 
-        public String getUnlocalizedName(){
-            return unlocalizedName;
+        public String getName(){
+            return blockName;
         }
-
-        public String getRegistryName(){
-            return registryName;
-        }
-
 
     }
 
@@ -61,6 +54,20 @@ public class Reference {
         }
 
 
+    }
+
+    public static enum PotionEffects {
+        SPEED(1), JUMP(8);
+
+        private int potion_id;
+
+        PotionEffects(int id){
+            this.potion_id = id;
+        }
+
+        public int getPotionId(){
+            return potion_id;
+        }
     }
 
 }
