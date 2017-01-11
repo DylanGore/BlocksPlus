@@ -24,8 +24,4 @@ public class BlockBase extends Block {
         setUnlocalizedName(name);
         setRegistryName(name);
     }
-
-    public void registerItemModel(ItemBlock itemBlock) {
-        BlocksPlus.proxy.registerItemRenderer(itemBlock, 0, name);
-    }
 }
