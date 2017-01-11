@@ -28,10 +28,10 @@ public class BlockAsphaltRoad extends BlockBase{
 
         if (entityIn instanceof Entity) {
             if (((EntityLivingBase) entityIn).getActivePotionEffect(Potion.getPotionById(Reference.PotionEffects.SPEED.getPotionId())) == null) {
-                ((EntityLivingBase) entityIn).addPotionEffect(new PotionEffect(Potion.getPotionById(Reference.PotionEffects.SPEED.getPotionId()), 20, 2));
+                ((EntityLivingBase) entityIn).addPotionEffect(new PotionEffect(Potion.getPotionById(Reference.PotionEffects.SPEED.getPotionId()), 20, 2, false, false));
             }
-            if (((EntityLivingBase) entityIn).getActivePotionEffect(Potion.getPotionById(Reference.PotionEffects.JUMP.getPotionId())) == null) {
-                ((EntityLivingBase) entityIn).addPotionEffect(new PotionEffect(Potion.getPotionById(Reference.PotionEffects.JUMP.getPotionId())));
+            if (((EntityLivingBase) entityIn).getActivePotionEffect(Potion.getPotionById(Reference.PotionEffects.JUMP_BOOST.getPotionId())) == null) {
+                ((EntityLivingBase) entityIn).addPotionEffect(new PotionEffect(Potion.getPotionById(Reference.PotionEffects.JUMP_BOOST.getPotionId()), 20, 2, false, false));
             }
         }
         super.onEntityWalk(worldIn, pos, entityIn);
