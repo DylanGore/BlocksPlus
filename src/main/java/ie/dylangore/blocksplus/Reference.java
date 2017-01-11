@@ -19,7 +19,7 @@ public class Reference {
 
     public static enum BlocksPlusBlocks{
 
-        ASPHALT_ROAD("asphalt_road");
+        ASPHALT_ROAD("asphalt_road"), HEALING_STATION("healing_station");
 
         private String blockName;
 
@@ -33,31 +33,26 @@ public class Reference {
 
     }
 
-    public static enum BlocksPlusItems{
-
-        ICE_CREAM("ice_cream");
-
-        private String unlocalizedName;
-        private String registryName;
-
-        BlocksPlusItems(String name){
-            this.unlocalizedName = name;
-            this.registryName = name;
-        }
-
-        public String getUnlocalizedName(){
-            return unlocalizedName;
-        }
-
-        public String getRegistryName(){
-            return registryName;
-        }
-
-
-    }
+//    public static enum BlocksPlusItems{
+//
+//        //INSERT ITEMS HERE
+//
+//        private String itemName;
+//
+//        BlocksPlusItems(String name){
+//            this.itemName = name;
+//        }
+//
+//        public String getName(){
+//            return itemName;
+//        }
+//    }
 
     public static enum PotionEffects {
-        SPEED(1), JUMP(8);
+        SPEED(1), SLOWNESS(2), HASTE(3), MINING_FATIGUE(4), STRENGTH(5), INSTANT_HEALTH(6), INSTANT_DAMAGE(7), JUMP_BOOST(8),
+        NAUSEA(9), REGENERATION(10), RESISTANCE(11), FIRE_RESISTANCE(12), WATER_BREATHING(13), INVISIBILITY(14), BLINDNESS(15),
+        NIGHT_VISION(16), HUNGER(17), WEAKNESS(18), POISON(19), WITHER(20), HEALTH_BOOST(21), ABSORPTION(22), SATURATION(23),
+        GLOWING(24), LEVITATION(25), LUCK(26), BAD_LUCK(27);
 
         private int potion_id;
 
