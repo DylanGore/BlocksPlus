@@ -1,7 +1,7 @@
 package ie.dylangore.blocksplus.blocks;
 
 import ie.dylangore.blocksplus.Reference;
-import ie.dylangore.blocksplus.blocks.base.BlockBase;
+import ie.dylangore.blocksplus.blocks.base.BlockTileEntity;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
@@ -13,6 +13,8 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.text.TextComponentString;
 import net.minecraft.world.World;
 
+import javax.annotation.Nullable;
+
 /**
  * Project: BlocksPlus
  * File: BlockHealingStation
@@ -20,7 +22,7 @@ import net.minecraft.world.World;
  * Date Created: 11 January 2017
  */
 
-public class BlockHealingStation extends BlockBase {
+public class BlockHealingStation extends BlockTileEntity<TileEntityHealingStation> {
     public BlockHealingStation(Material material, String name) {
         super(material, name);
     }
@@ -30,26 +32,48 @@ public class BlockHealingStation extends BlockBase {
         String formatting = "\u00A73 \u00A7o";
 
         if(worldIn.isRemote){
-            playerIn.addChatMessage(new TextComponentString(String.format(formatting + "You harness the regenerative power of the wither but your")));
-            playerIn.addChatMessage(new TextComponentString(String.format(formatting + "body is being overwhelmed by the sudden influx of energy.")));
-        }
 
-        if (playerIn.getActivePotionEffect(Potion.getPotionById(Reference.PotionEffects.REGENERATION.getPotionId())) == null) {
-            playerIn.addPotionEffect(new PotionEffect(Potion.getPotionById(Reference.PotionEffects.REGENERATION.getPotionId()), 60, 100, false, false));
-        }
-        if (playerIn.getActivePotionEffect(Potion.getPotionById(Reference.PotionEffects.BLINDNESS.getPotionId())) == null) {
-            playerIn.addPotionEffect(new PotionEffect(Potion.getPotionById(Reference.PotionEffects.BLINDNESS.getPotionId()), 80, 100, false, false));
-        }
-        if (playerIn.getActivePotionEffect(Potion.getPotionById(Reference.PotionEffects.NAUSEA.getPotionId())) == null) {
-            playerIn.addPotionEffect(new PotionEffect(Potion.getPotionById(Reference.PotionEffects.NAUSEA.getPotionId()), 60, 100, false, false));
-        }
-        if (playerIn.getActivePotionEffect(Potion.getPotionById(Reference.PotionEffects.SLOWNESS.getPotionId())) == null) {
-            playerIn.addPotionEffect(new PotionEffect(Potion.getPotionById(Reference.PotionEffects.SLOWNESS.getPotionId()), 60, 100, false, false));
-        }
-        if (playerIn.getActivePotionEffect(Potion.getPotionById(Reference.PotionEffects.INSTANT_HEALTH.getPotionId())) == null) {
-            playerIn.addPotionEffect(new PotionEffect(Potion.getPotionById(Reference.PotionEffects.INSTANT_HEALTH.getPotionId()), 20, 40, false, false));
+           if(playerIn.isSneaking()){
+               playerIn.removePotionEffect(Potion.getPotionById(Reference.PotionEffects.REGENERATION.getPotionId()));
+               playerIn.removePotionEffect(Potion.getPotionById(Reference.PotionEffects.BLINDNESS.getPotionId()));
+               playerIn.removePotionEffect(Potion.getPotionById(Reference.PotionEffects.NAUSEA.getPotionId()));
+               playerIn.removePotionEffect(Potion.getPotionById(Reference.PotionEffects.SLOWNESS.getPotionId()));
+               playerIn.removePotionEffect(Potion.getPotionById(Reference.PotionEffects.INSTANT_HEALTH.getPotionId()));
+           }else{
+               TileEntityHealingStation tile = getTileEntity(worldIn, pos);
+               if(tile.isBlockDisabled()){
+                   playerIn.addChatMessage(new TextComponentString(String.format(formatting + "Disabled!")));
+               }else{
+                   playerIn.addChatMessage(new TextComponentString(String.format(formatting + "You harness the regenerative power of the wither but your")));
+                   playerIn.addChatMessage(new TextComponentString(String.format(formatting + "body is being overwhelmed by the sudden influx of energy.")));
+
+                   playerIn.addPotionEffect(new PotionEffect(Potion.getPotionById(Reference.PotionEffects.REGENERATION.getPotionId()), 1, 1000, false, false));
+                   playerIn.addPotionEffect(new PotionEffect(Potion.getPotionById(Reference.PotionEffects.BLINDNESS.getPotionId()), 1, 1000, false, false));
+                   playerIn.addPotionEffect(new PotionEffect(Potion.getPotionById(Reference.PotionEffects.NAUSEA.getPotionId()), 1, 1000, false, false));
+                   playerIn.addPotionEffect(new PotionEffect(Potion.getPotionById(Reference.PotionEffects.SLOWNESS.getPotionId()), 1, 1000, false, false));
+                   playerIn.addPotionEffect(new PotionEffect(Potion.getPotionById(Reference.PotionEffects.INSTANT_HEALTH.getPotionId()), 1, 40, false, false));
+
+                   tile.disableBlock();
+               }
+
+               if(worldIn.isBlockPowered(pos)){
+                   tile.enableBlock();
+               }
+           }
+
         }
 
         return true;
+    }
+
+    @Override
+    public Class<TileEntityHealingStation> getTileEntityClass() {
+        return TileEntityHealingStation.class;
+    }
+
+    @Nullable
+    @Override
+    public TileEntityHealingStation createTileEntity(World world, IBlockState state) {
+        return new TileEntityHealingStation();
     }
 }
