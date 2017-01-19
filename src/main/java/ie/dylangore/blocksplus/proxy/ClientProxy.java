@@ -17,4 +17,10 @@ public class ClientProxy extends CommonProxy {
     public void registerItemRenderer(Item item, int meta, String id) {
         ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(Reference.ID + ":" + id, "inventory"));
     }
+
+    @Override
+    public void registerColorItemRenderer(Item item, int meta, String id) {
+        String colorName = Reference.EnumColors.byMetadata(meta).getName();
+        ModelLoader.setCustomModelResourceLocation(item, meta, new ModelResourceLocation(Reference.ID + ":" + id, "inventory" + "_" + colorName));
+    }
 }

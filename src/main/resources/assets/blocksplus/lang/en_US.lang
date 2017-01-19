@@ -1,6 +1,25 @@
-#Blocks
+#Blocks - General
 tile.asphalt_road.name=Asphalt Road
 tile.healing_station.name=Healing Station
+
+#Blocks - Colored Cobblestone
+tile.colored_cobblestone.white.name=White Cobblestone
+tile.colored_cobblestone.orange.name=Orange Cobblestone
+tile.colored_cobblestone.magenta.name=Magenta Cobblestone
+tile.colored_cobblestone.lightBlue.name=Light Blue Cobblestone
+tile.colored_cobblestone.yellow.name=Yellow Cobblestone
+tile.colored_cobblestone.lime.name=Lime Cobblestone
+tile.colored_cobblestone.pink.name=Pink Cobblestone
+tile.colored_cobblestone.gray.name=Gray Cobblestone
+tile.colored_cobblestone.silver.name=Light Gray Cobblestone
+tile.colored_cobblestone.cyan.name=Cyan Cobblestone
+tile.colored_cobblestone.purple.name=Purple Cobblestone
+tile.colored_cobblestone.blue.name=Blue Cobblestone
+tile.colored_cobblestone.brown.name=Brown Cobblestone
+tile.colored_cobblestone.green.name=Green Cobblestone
+tile.colored_cobblestone.red.name=Red Cobblestone
+tile.colored_cobblestone.black.name=Black Cobblestone
+
 
 #Items
 #No Items yet :(
