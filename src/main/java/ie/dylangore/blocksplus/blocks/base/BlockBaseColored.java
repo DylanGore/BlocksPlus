@@ -3,6 +3,8 @@ package ie.dylangore.blocksplus.blocks.base;
 import ie.dylangore.blocksplus.BlocksPlus;
 import ie.dylangore.blocksplus.Reference;
 import ie.dylangore.blocksplus.Reference.EnumColors;
+import ie.dylangore.blocksplus.init.ModBlocks;
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockColored;
 import net.minecraft.block.SoundType;
 import net.minecraft.block.material.MapColor;
@@ -18,6 +20,8 @@ import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import java.util.Random;
 
 /**
  * Project: BlocksPlus
@@ -36,6 +40,17 @@ public class BlockBaseColored extends BlockBase {
         this.setHardness(hardness);
         this.setResistance(resistance);
         this.setSoundType(SoundType.STONE);
+    }
+
+    @Override
+    public Item getItemDropped(IBlockState state, Random rand, int fortune) {
+        Block block = state.getBlock();
+        int metadata = state.getBlock().getMetaFromState(state);
+        if(block == ModBlocks.blockColoredStone){
+            return (new ItemStack(ModBlocks.blockColoredCobblestone, 1, metadata).getItem());
+        }else{
+            return super.getItemDropped(state, rand, fortune);
+        }
     }
 
     @Override

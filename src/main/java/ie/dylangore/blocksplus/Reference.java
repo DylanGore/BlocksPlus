@@ -23,7 +23,7 @@ public class Reference {
 
     public static enum BlocksPlusBlocks{
 
-        COLOURED_COBBLESTONE("colored_cobblestone"),
+        COLOURED_COBBLESTONE("colored_cobblestone"), COLORED_STONE("colored_stone"),
         ASPHALT_ROAD("asphalt_road"), HEALING_STATION("healing_station");
 
         private String blockName;

@@ -1,0 +1,126 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "transform": "forge:default-block",
+    "model": "cube_all",
+    "textures": {
+      "all": "blocksplus:blocks/colored_stone/white"
+    }
+  },
+  "variants": {
+    "block_color": {
+      "white": {
+        "textures": { "all": "blocksplus:blocks/colored_stone/white" }
+      },
+      "orange": {
+        "textures": { "all": "blocksplus:blocks/colored_stone/orange" }
+      },
+      "magenta": {
+        "textures": { "all": "blocksplus:blocks/colored_stone/magenta" }
+      },
+      "light_blue": {
+        "textures": { "all": "blocksplus:blocks/colored_stone/light_blue" }
+      },
+      "yellow": {
+        "textures": { "all": "blocksplus:blocks/colored_stone/yellow" }
+      },
+      "lime": {
+        "textures": { "all": "blocksplus:blocks/colored_stone/lime" }
+      },
+      "pink": {
+        "textures": { "all": "blocksplus:blocks/colored_stone/pink" }
+      },
+      "gray": {
+        "textures": { "all": "blocksplus:blocks/colored_stone/gray" }
+      },
+      "silver": {
+        "textures": { "all": "blocksplus:blocks/colored_stone/silver" }
+      },
+      "cyan": {
+        "textures": { "all": "blocksplus:blocks/colored_stone/cyan" }
+      },
+      "purple": {
+        "textures": { "all": "blocksplus:blocks/colored_stone/purple" }
+      },
+      "blue": {
+        "textures": { "all": "blocksplus:blocks/colored_stone/blue" }
+      },
+      "brown": {
+        "textures": { "all": "blocksplus:blocks/colored_stone/brown" }
+      },
+      "green": {
+        "textures": { "all": "blocksplus:blocks/colored_stone/green" }
+      },
+      "red": {
+        "textures": { "all": "blocksplus:blocks/colored_stone/red" }
+      },
+      "black": {
+        "textures": { "all": "blocksplus:blocks/colored_stone/black" }
+      }
+    },
+    "inventory_white": {
+      "model": "cube_all",
+      "textures": { "all": "blocksplus:blocks/colored_stone/white" }
+    },
+    "inventory_orange": {
+      "model": "cube_all",
+      "textures": { "all": "blocksplus:blocks/colored_stone/orange" }
+    },
+    "inventory_magenta": {
+      "model": "cube_all",
+      "textures": { "all": "blocksplus:blocks/colored_stone/magenta" }
+    },
+    "inventory_light_blue": {
+      "model": "cube_all",
+      "textures": { "all": "blocksplus:blocks/colored_stone/light_blue" }
+    },
+    "inventory_yellow": {
+      "model": "cube_all",
+      "textures": { "all": "blocksplus:blocks/colored_stone/yellow" }
+    },
+    "inventory_lime": {
+      "model": "cube_all",
+      "textures": { "all": "blocksplus:blocks/colored_stone/lime" }
+    },
+    "inventory_pink": {
+      "model": "cube_all",
+      "textures": { "all": "blocksplus:blocks/colored_stone/pink" }
+    },
+    "inventory_gray": {
+      "model": "cube_all",
+      "textures": { "all": "blocksplus:blocks/colored_stone/gray" }
+    },
+    "inventory_silver": {
+      "model": "cube_all",
+      "textures": { "all": "blocksplus:blocks/colored_stone/silver" }
+    },
+    "inventory_cyan": {
+      "model": "cube_all",
+      "textures": { "all": "blocksplus:blocks/colored_stone/cyan" }
+    },
+    "inventory_purple": {
+      "model": "cube_all",
+      "textures": { "all": "blocksplus:blocks/colored_stone/purple" }
+    },
+    "inventory_blue": {
+      "model": "cube_all",
+      "textures": { "all": "blocksplus:blocks/colored_stone/blue" }
+    },
+    "inventory_brown": {
+      "model": "cube_all",
+      "textures": { "all": "blocksplus:blocks/colored_stone/brown" }
+    },
+    "inventory_green": {
+      "model": "cube_all",
+      "textures": { "all": "blocksplus:blocks/colored_stone/green" }
+    },
+    "inventory_red": {
+      "model": "cube_all",
+      "textures": { "all": "blocksplus:blocks/colored_stone/red" }
+    },
+    "inventory_black": {
+      "model": "cube_all",
+      "textures": { "all": "blocksplus:blocks/colored_stone/black" }
+    }
+  }
+}
