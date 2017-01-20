@@ -2,12 +2,15 @@ buildscript {
     repositories {
         jcenter()
         maven { url = "http://files.minecraftforge.net/maven" }
+        mavenCentral()
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:2.2-SNAPSHOT'
+        classpath "se.bjurr.gitchangelog:git-changelog-gradle-plugin:1.32"
     }
 }
 apply plugin: 'net.minecraftforge.gradle.forge'
+apply plugin: 'se.bjurr.gitchangelog.git-changelog-gradle-plugin'
 //Only edit below this line, the above code adds and enables the nessasary things for Forge to be setup.
 
 
@@ -15,9 +18,9 @@ version = "1.11-3.0.0"
 group= "ie.dylangore.blocksplus" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "BlocksPlus"
 
-sourceCompatibility = targetCompatibility = "1.6" // Need this here so eclipse task generates correctly.
+sourceCompatibility = targetCompatibility = "1.8" // Need this here so eclipse task generates correctly.
 compileJava {
-    sourceCompatibility = targetCompatibility = "1.6"
+    sourceCompatibility = targetCompatibility = "1.8"
 }
 
 minecraft {
@@ -79,3 +82,24 @@ processResources
         exclude 'mcmod.info'
     }
 }
+
+task makeChangelog(type: se.bjurr.gitchangelog.plugin.gradle.GitChangelogTask) {
+    filePath = "changelog.html"
+    untaggedName = "Current release ${version}"
+    templateContent = """
+<h1>Changelog for Blocks Plus</h1>
+<h2>Version ${version} for Minecraft ${project.minecraft.version}</h2>
+<ul>
+{{#tags}}
+<li><h3>{{name}}</h3>
+<hr/>
+<ul>
+{{#commits}}
+<li>{{{message}}}</li>
+{{/commits}}
+</ul>
+{{/tags}}
+</ul>
+    """
+}
+
