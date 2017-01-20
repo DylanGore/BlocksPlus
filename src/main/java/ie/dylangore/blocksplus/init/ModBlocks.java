@@ -11,9 +11,11 @@ import ie.dylangore.blocksplus.blocks.itemblocks.ItemBlockColored;
 import ie.dylangore.blocksplus.util.LogHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemBlock;
+import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-import net.minecraftforge.oredict.OreDictionary;
 
 /**
  * Project: BlocksPlus
@@ -41,6 +43,18 @@ public class ModBlocks {
 
         registerColorItemBlock(blockColoredCobblestone, Reference.BlocksPlusBlocks.COLOURED_COBBLESTONE.getName());
         registerColorItemBlock(blockColoredStone, Reference.BlocksPlusBlocks.COLORED_STONE.getName());
+
+        addColorRecipes(blockColoredCobblestone, Blocks.COBBLESTONE);
+        addColorRecipes(blockColoredStone, Blocks.STONE);
+        addColorSmeltingRecipes(blockColoredCobblestone, blockColoredStone, 0.1F);
+
+        GameRegistry.addShapedRecipe(new ItemStack(blockHealingStation, 1),
+                "sss", "ana", "sss",
+                's', Blocks.STONE, 'a', new ItemStack(Items.GOLDEN_APPLE, 1, 1), 'n', Items.NETHER_STAR );
+
+        GameRegistry.addShapedRecipe(new ItemStack(blockAsphaltRoad, 9),
+                "gsg", "sgs", "gsg",
+                'g', Blocks.GRAVEL, 's', Blocks.STONE);
 
         LogHelper.info("Blocks registered!");
     }
@@ -72,5 +86,23 @@ public class ModBlocks {
             BlocksPlus.proxy.registerColorItemRenderer(itemBlock, meta, registryName);
         }
 
+    }
+
+    private static void addColorRecipes(Block colorBlock, Block baseBlock){
+        for(int meta = 0; meta < EnumColors.values().length; meta++) {
+            GameRegistry.addShapelessRecipe(new ItemStack(baseBlock, 1), new ItemStack(colorBlock, 1, meta));
+
+            GameRegistry.addShapelessRecipe(new ItemStack(colorBlock, 8, meta),
+                    baseBlock, baseBlock, baseBlock,
+                    baseBlock, new ItemStack(Items.DYE, 1, 15 - meta), baseBlock,
+                    baseBlock, baseBlock, baseBlock
+            );
+        }
+    }
+
+    private static void addColorSmeltingRecipes(Block input, Block output, float xp){
+        for(int meta = 0; meta < EnumColors.values().length; meta++) {
+            GameRegistry.addSmelting(new ItemStack(input, 1, meta), new ItemStack(output,1,meta) ,xp);
+        }
     }
 }
