@@ -4,6 +4,7 @@ import ie.dylangore.blocksplus.Reference;
 import ie.dylangore.blocksplus.init.ModBlocks;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.init.Blocks;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 
 /**
@@ -20,8 +21,8 @@ public class TabBlocksPlus extends CreativeTabs {
     }
 
     @Override
-    public ItemStack getTabIconItem() {
-        return new ItemStack(ModBlocks.blockAsphaltRoad, 1, 0);
+    public Item getTabIconItem() {
+        return new ItemStack(ModBlocks.blockAsphaltRoad, 1, 0).getItem();
     }
 
     @Override

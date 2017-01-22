@@ -5,6 +5,7 @@ import ie.dylangore.blocksplus.blocks.base.BlockTileEntity;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.ItemStack;
 import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.EnumFacing;
@@ -28,7 +29,7 @@ public class BlockHealingStation extends BlockTileEntity<TileEntityHealingStatio
     }
 
     @Override
-    public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing heldItem, float side, float hitX, float hitY) {
+    public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, @Nullable ItemStack stack, EnumFacing heldItem, float hitX, float hitY, float hitZ) {
         String formatting = "\u00A73 \u00A7o";
 
         if(worldIn.isRemote){
