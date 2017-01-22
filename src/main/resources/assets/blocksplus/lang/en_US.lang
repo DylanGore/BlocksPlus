@@ -1,6 +1,6 @@
 #Blocks - General
 tile.asphalt_road.name=Asphalt Road
-tile.healing_station.name=Healing Station
+tile.healing_station.name=Healing Station (WIP)
 
 #Blocks - Colored Cobblestone
 tile.colored_cobblestone.white.name=White Cobblestone
@@ -37,6 +37,78 @@ tile.colored_stone.brown.name=Brown Stone
 tile.colored_stone.green.name=Green Stone
 tile.colored_stone.red.name=Red Stone
 tile.colored_stone.black.name=Black Stone
+
+#Blocks - Colored Stone Bricks
+tile.colored_stone_bricks.white.name=White Stone Bricks
+tile.colored_stone_bricks.orange.name=Orange Stone Bricks
+tile.colored_stone_bricks.magenta.name=Magenta Stone Bricks
+tile.colored_stone_bricks.light_blue.name=Light Blue Stone Bricks
+tile.colored_stone_bricks.yellow.name=Yellow Stone Bricks
+tile.colored_stone_bricks.lime.name=Lime Stone Bricks
+tile.colored_stone_bricks.pink.name=Pink Stone Bricks
+tile.colored_stone_bricks.gray.name=Gray Stone Bricks
+tile.colored_stone_bricks.silver.name=Light Gray Stone Bricks
+tile.colored_stone_bricks.cyan.name=Cyan Stone Bricks
+tile.colored_stone_bricks.purple.name=Purple Stone Bricks
+tile.colored_stone_bricks.blue.name=Blue Stone Bricks
+tile.colored_stone_bricks.brown.name=Brown Stone Bricks
+tile.colored_stone_bricks.green.name=Green Stone Bricks
+tile.colored_stone_bricks.red.name=Red Stone Bricks
+tile.colored_stone_bricks.black.name=Black Stone Bricks
+
+#Blocks - Colored Chiseled Stone Bricks
+tile.colored_stone_bricks_chiseled.white.name=Chiseled White Stone Bricks
+tile.colored_stone_bricks_chiseled.orange.name=Chiseled Orange Stone Bricks
+tile.colored_stone_bricks_chiseled.magenta.name=Chiseled Magenta Stone Bricks
+tile.colored_stone_bricks_chiseled.light_blue.name=Chiseled Light Blue Stone Bricks
+tile.colored_stone_bricks_chiseled.yellow.name=Chiseled Yellow Stone Bricks
+tile.colored_stone_bricks_chiseled.lime.name=Chiseled Lime Stone Bricks
+tile.colored_stone_bricks_chiseled.pink.name=Chiseled Pink Stone Bricks
+tile.colored_stone_bricks_chiseled.gray.name=Chiseled Gray Stone Bricks
+tile.colored_stone_bricks_chiseled.silver.name=Chiseled Light Gray Stone Bricks
+tile.colored_stone_bricks_chiseled.cyan.name=Chiseled Cyan Stone Bricks
+tile.colored_stone_bricks_chiseled.purple.name=Chiseled Purple Stone Bricks
+tile.colored_stone_bricks_chiseled.blue.name=Chiseled Blue Stone Bricks
+tile.colored_stone_bricks_chiseled.brown.name=Chiseled Brown Stone Bricks
+tile.colored_stone_bricks_chiseled.green.name=Chiseled Green Stone Bricks
+tile.colored_stone_bricks_chiseled.red.name=Chiseled Red Stone Bricks
+tile.colored_stone_bricks_chiseled.black.name=Chiseled Black Stone Bricks
+
+#Blocks - Colored Cracked Stone Bricks
+tile.colored_stone_bricks_cracked.white.name=Cracked White Stone Bricks
+tile.colored_stone_bricks_cracked.orange.name=Cracked Orange Stone Bricks
+tile.colored_stone_bricks_cracked.magenta.name=Cracked Magenta Stone Bricks
+tile.colored_stone_bricks_cracked.light_blue.name=Cracked Light Blue Stone Bricks
+tile.colored_stone_bricks_cracked.yellow.name=Cracked Yellow Stone Bricks
+tile.colored_stone_bricks_cracked.lime.name=Cracked Lime Stone Bricks
+tile.colored_stone_bricks_cracked.pink.name=Cracked Pink Stone Bricks
+tile.colored_stone_bricks_cracked.gray.name=Cracked Gray Stone Bricks
+tile.colored_stone_bricks_cracked.silver.name=Cracked Light Gray Stone Bricks
+tile.colored_stone_bricks_cracked.cyan.name=Cracked Cyan Stone Bricks
+tile.colored_stone_bricks_cracked.purple.name=Cracked Purple Stone Bricks
+tile.colored_stone_bricks_cracked.blue.name=Cracked Blue Stone Bricks
+tile.colored_stone_bricks_cracked.brown.name=Cracked Brown Stone Bricks
+tile.colored_stone_bricks_cracked.green.name=Cracked Green Stone Bricks
+tile.colored_stone_bricks_cracked.red.name=Cracked Red Stone Bricks
+tile.colored_stone_bricks_cracked.black.name=Cracked Black Stone Bricks
+
+#Blocks - Colored Mossy Stone Bricks
+tile.colored_stone_bricks_moss.white.name=Mossy White Stone Bricks
+tile.colored_stone_bricks_moss.orange.name=Mossy Orange Stone Bricks
+tile.colored_stone_bricks_moss.magenta.name=Mossy Magenta Stone Bricks
+tile.colored_stone_bricks_moss.light_blue.name=Mossy Light Blue Stone Bricks
+tile.colored_stone_bricks_moss.yellow.name=Mossy Yellow Stone Bricks
+tile.colored_stone_bricks_moss.lime.name=Mossy Lime Stone Bricks
+tile.colored_stone_bricks_moss.pink.name=Mossy Pink Stone Bricks
+tile.colored_stone_bricks_moss.gray.name=Mossy Gray Stone Bricks
+tile.colored_stone_bricks_moss.silver.name=Mossy Light Gray Stone Bricks
+tile.colored_stone_bricks_moss.cyan.name=Mossy Cyan Stone Bricks
+tile.colored_stone_bricks_moss.purple.name=Mossy Purple Stone Bricks
+tile.colored_stone_bricks_moss.blue.name=Mossy Blue Stone Bricks
+tile.colored_stone_bricks_moss.brown.name=Mossy Brown Stone Bricks
+tile.colored_stone_bricks_moss.green.name=Mossy Green Stone Bricks
+tile.colored_stone_bricks_moss.red.name=Mossy Red Stone Bricks
+tile.colored_stone_bricks_moss.black.name=Mossy Black Stone Bricks
 
 #Items
 #No Items yet :(

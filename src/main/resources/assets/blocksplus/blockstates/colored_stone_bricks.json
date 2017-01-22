@@ -1,0 +1,126 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "transform": "forge:default-block",
+    "model": "cube_all",
+    "textures": {
+      "all": "blocksplus:blocks/colored_stone_bricks/white"
+    }
+  },
+  "variants": {
+    "block_color": {
+      "white": {
+        "textures": { "all": "blocksplus:blocks/colored_stone_bricks/white" }
+      },
+      "orange": {
+        "textures": { "all": "blocksplus:blocks/colored_stone_bricks/orange" }
+      },
+      "magenta": {
+        "textures": { "all": "blocksplus:blocks/colored_stone_bricks/magenta" }
+      },
+      "light_blue": {
+        "textures": { "all": "blocksplus:blocks/colored_stone_bricks/light_blue" }
+      },
+      "yellow": {
+        "textures": { "all": "blocksplus:blocks/colored_stone_bricks/yellow" }
+      },
+      "lime": {
+        "textures": { "all": "blocksplus:blocks/colored_stone_bricks/lime" }
+      },
+      "pink": {
+        "textures": { "all": "blocksplus:blocks/colored_stone_bricks/pink" }
+      },
+      "gray": {
+        "textures": { "all": "blocksplus:blocks/colored_stone_bricks/gray" }
+      },
+      "silver": {
+        "textures": { "all": "blocksplus:blocks/colored_stone_bricks/silver" }
+      },
+      "cyan": {
+        "textures": { "all": "blocksplus:blocks/colored_stone_bricks/cyan" }
+      },
+      "purple": {
+        "textures": { "all": "blocksplus:blocks/colored_stone_bricks/purple" }
+      },
+      "blue": {
+        "textures": { "all": "blocksplus:blocks/colored_stone_bricks/blue" }
+      },
+      "brown": {
+        "textures": { "all": "blocksplus:blocks/colored_stone_bricks/brown" }
+      },
+      "green": {
+        "textures": { "all": "blocksplus:blocks/colored_stone_bricks/green" }
+      },
+      "red": {
+        "textures": { "all": "blocksplus:blocks/colored_stone_bricks/red" }
+      },
+      "black": {
+        "textures": { "all": "blocksplus:blocks/colored_stone_bricks/black" }
+      }
+    },
+    "inventory_white": {
+      "model": "cube_all",
+      "textures": { "all": "blocksplus:blocks/colored_stone_bricks/white" }
+    },
+    "inventory_orange": {
+      "model": "cube_all",
+      "textures": { "all": "blocksplus:blocks/colored_stone_bricks/orange" }
+    },
+    "inventory_magenta": {
+      "model": "cube_all",
+      "textures": { "all": "blocksplus:blocks/colored_stone_bricks/magenta" }
+    },
+    "inventory_light_blue": {
+      "model": "cube_all",
+      "textures": { "all": "blocksplus:blocks/colored_stone_bricks/light_blue" }
+    },
+    "inventory_yellow": {
+      "model": "cube_all",
+      "textures": { "all": "blocksplus:blocks/colored_stone_bricks/yellow" }
+    },
+    "inventory_lime": {
+      "model": "cube_all",
+      "textures": { "all": "blocksplus:blocks/colored_stone_bricks/lime" }
+    },
+    "inventory_pink": {
+      "model": "cube_all",
+      "textures": { "all": "blocksplus:blocks/colored_stone_bricks/pink" }
+    },
+    "inventory_gray": {
+      "model": "cube_all",
+      "textures": { "all": "blocksplus:blocks/colored_stone_bricks/gray" }
+    },
+    "inventory_silver": {
+      "model": "cube_all",
+      "textures": { "all": "blocksplus:blocks/colored_stone_bricks/silver" }
+    },
+    "inventory_cyan": {
+      "model": "cube_all",
+      "textures": { "all": "blocksplus:blocks/colored_stone_bricks/cyan" }
+    },
+    "inventory_purple": {
+      "model": "cube_all",
+      "textures": { "all": "blocksplus:blocks/colored_stone_bricks/purple" }
+    },
+    "inventory_blue": {
+      "model": "cube_all",
+      "textures": { "all": "blocksplus:blocks/colored_stone_bricks/blue" }
+    },
+    "inventory_brown": {
+      "model": "cube_all",
+      "textures": { "all": "blocksplus:blocks/colored_stone_bricks/brown" }
+    },
+    "inventory_green": {
+      "model": "cube_all",
+      "textures": { "all": "blocksplus:blocks/colored_stone_bricks/green" }
+    },
+    "inventory_red": {
+      "model": "cube_all",
+      "textures": { "all": "blocksplus:blocks/colored_stone_bricks/red" }
+    },
+    "inventory_black": {
+      "model": "cube_all",
+      "textures": { "all": "blocksplus:blocks/colored_stone_bricks/black" }
+    }
+  }
+}

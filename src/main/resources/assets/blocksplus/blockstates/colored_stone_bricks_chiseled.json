@@ -1,0 +1,126 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "transform": "forge:default-block",
+    "model": "cube_all",
+    "textures": {
+      "all": "blocksplus:blocks/colored_stone_bricks_chiseled/white"
+    }
+  },
+  "variants": {
+    "block_color": {
+      "white": {
+        "textures": { "all": "blocksplus:blocks/colored_stone_bricks_chiseled/white" }
+      },
+      "orange": {
+        "textures": { "all": "blocksplus:blocks/colored_stone_bricks_chiseled/orange" }
+      },
+      "magenta": {
+        "textures": { "all": "blocksplus:blocks/colored_stone_bricks_chiseled/magenta" }
+      },
+      "light_blue": {
+        "textures": { "all": "blocksplus:blocks/colored_stone_bricks_chiseled/light_blue" }
+      },
+      "yellow": {
+        "textures": { "all": "blocksplus:blocks/colored_stone_bricks_chiseled/yellow" }
+      },
+      "lime": {
+        "textures": { "all": "blocksplus:blocks/colored_stone_bricks_chiseled/lime" }
+      },
+      "pink": {
+        "textures": { "all": "blocksplus:blocks/colored_stone_bricks_chiseled/pink" }
+      },
+      "gray": {
+        "textures": { "all": "blocksplus:blocks/colored_stone_bricks_chiseled/gray" }
+      },
+      "silver": {
+        "textures": { "all": "blocksplus:blocks/colored_stone_bricks_chiseled/silver" }
+      },
+      "cyan": {
+        "textures": { "all": "blocksplus:blocks/colored_stone_bricks_chiseled/cyan" }
+      },
+      "purple": {
+        "textures": { "all": "blocksplus:blocks/colored_stone_bricks_chiseled/purple" }
+      },
+      "blue": {
+        "textures": { "all": "blocksplus:blocks/colored_stone_bricks_chiseled/blue" }
+      },
+      "brown": {
+        "textures": { "all": "blocksplus:blocks/colored_stone_bricks_chiseled/brown" }
+      },
+      "green": {
+        "textures": { "all": "blocksplus:blocks/colored_stone_bricks_chiseled/green" }
+      },
+      "red": {
+        "textures": { "all": "blocksplus:blocks/colored_stone_bricks_chiseled/red" }
+      },
+      "black": {
+        "textures": { "all": "blocksplus:blocks/colored_stone_bricks_chiseled/black" }
+      }
+    },
+    "inventory_white": {
+      "model": "cube_all",
+      "textures": { "all": "blocksplus:blocks/colored_stone_bricks_chiseled/white" }
+    },
+    "inventory_orange": {
+      "model": "cube_all",
+      "textures": { "all": "blocksplus:blocks/colored_stone_bricks_chiseled/orange" }
+    },
+    "inventory_magenta": {
+      "model": "cube_all",
+      "textures": { "all": "blocksplus:blocks/colored_stone_bricks_chiseled/magenta" }
+    },
+    "inventory_light_blue": {
+      "model": "cube_all",
+      "textures": { "all": "blocksplus:blocks/colored_stone_bricks_chiseled/light_blue" }
+    },
+    "inventory_yellow": {
+      "model": "cube_all",
+      "textures": { "all": "blocksplus:blocks/colored_stone_bricks_chiseled/yellow" }
+    },
+    "inventory_lime": {
+      "model": "cube_all",
+      "textures": { "all": "blocksplus:blocks/colored_stone_bricks_chiseled/lime" }
+    },
+    "inventory_pink": {
+      "model": "cube_all",
+      "textures": { "all": "blocksplus:blocks/colored_stone_bricks_chiseled/pink" }
+    },
+    "inventory_gray": {
+      "model": "cube_all",
+      "textures": { "all": "blocksplus:blocks/colored_stone_bricks_chiseled/gray" }
+    },
+    "inventory_silver": {
+      "model": "cube_all",
+      "textures": { "all": "blocksplus:blocks/colored_stone_bricks_chiseled/silver" }
+    },
+    "inventory_cyan": {
+      "model": "cube_all",
+      "textures": { "all": "blocksplus:blocks/colored_stone_bricks_chiseled/cyan" }
+    },
+    "inventory_purple": {
+      "model": "cube_all",
+      "textures": { "all": "blocksplus:blocks/colored_stone_bricks_chiseled/purple" }
+    },
+    "inventory_blue": {
+      "model": "cube_all",
+      "textures": { "all": "blocksplus:blocks/colored_stone_bricks_chiseled/blue" }
+    },
+    "inventory_brown": {
+      "model": "cube_all",
+      "textures": { "all": "blocksplus:blocks/colored_stone_bricks_chiseled/brown" }
+    },
+    "inventory_green": {
+      "model": "cube_all",
+      "textures": { "all": "blocksplus:blocks/colored_stone_bricks_chiseled/green" }
+    },
+    "inventory_red": {
+      "model": "cube_all",
+      "textures": { "all": "blocksplus:blocks/colored_stone_bricks_chiseled/red" }
+    },
+    "inventory_black": {
+      "model": "cube_all",
+      "textures": { "all": "blocksplus:blocks/colored_stone_bricks_chiseled/black" }
+    }
+  }
+}

@@ -30,6 +30,9 @@ public class ModBlocks {
     public static BlockHealingStation blockHealingStation;
     public static BlockBaseColored blockColoredCobblestone;
     public static BlockBaseColored blockColoredStone;
+    public static BlockBaseColored blockColoredStoneBricks;
+    public static BlockBaseColored blockColoredStoneBricksChiseled;
+    public static BlockBaseColored blockColoredStoneBricksCracked;
 
     public static void init(){
 
@@ -37,15 +40,23 @@ public class ModBlocks {
         blockHealingStation = new BlockHealingStation(Material.IRON, Reference.BlocksPlusBlocks.HEALING_STATION.getName());
         blockColoredCobblestone = new BlockBaseColored(Material.ROCK, Reference.BlocksPlusBlocks.COLOURED_COBBLESTONE.getName(), 2.0F, 1.0F);
         blockColoredStone = new BlockBaseColored(Material.ROCK, Reference.BlocksPlusBlocks.COLORED_STONE.getName(), 1.5F, 1.0F);
+        blockColoredStoneBricks = new BlockBaseColored(Material.ROCK, Reference.BlocksPlusBlocks.COLORED_STONE_BRICKS.getName(), 1.5F, 1.0F);
+        blockColoredStoneBricksChiseled = new BlockBaseColored(Material.ROCK, Reference.BlocksPlusBlocks.COLORED_STONE_BRICKS_CHISELED.getName(), 1.5F, 1.0F);
+        blockColoredStoneBricksCracked = new BlockBaseColored(Material.ROCK, Reference.BlocksPlusBlocks.COLORED_STONE_BRICKS_CRACKED.getName(), 1.5F, 1.0F);
 
         registerSimpleItemBlock(blockAsphaltRoad, Reference.BlocksPlusBlocks.ASPHALT_ROAD.getName());
         registerSimpleItemBlock(blockHealingStation, Reference.BlocksPlusBlocks.HEALING_STATION.getName());
 
         registerColorItemBlock(blockColoredCobblestone, Reference.BlocksPlusBlocks.COLOURED_COBBLESTONE.getName());
         registerColorItemBlock(blockColoredStone, Reference.BlocksPlusBlocks.COLORED_STONE.getName());
+        registerColorItemBlock(blockColoredStoneBricks, Reference.BlocksPlusBlocks.COLORED_STONE_BRICKS.getName());
+        registerColorItemBlock(blockColoredStoneBricksChiseled, Reference.BlocksPlusBlocks.COLORED_STONE_BRICKS_CHISELED.getName());
+        registerColorItemBlock(blockColoredStoneBricksCracked, Reference.BlocksPlusBlocks.COLORED_STONE_BRICKS_CRACKED.getName());
 
         addColorRecipes(blockColoredCobblestone, Blocks.COBBLESTONE);
         addColorRecipes(blockColoredStone, Blocks.STONE);
+        addColorRecipes(blockColoredStoneBricks, Blocks.STONEBRICK);
+
         addColorSmeltingRecipes(blockColoredCobblestone, blockColoredStone, 0.1F);
 
         GameRegistry.addShapedRecipe(new ItemStack(blockHealingStation, 1),
