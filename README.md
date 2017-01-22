@@ -6,11 +6,11 @@ A Minecraft mod developed and maintained by [Dylan Gore](https://dylangore.ie)
 # Downloads
 ***
 
-**[Recommended Downloads _(via CurseForge)_](minecraft.curseforge.com/mc-mods/blocks-plus/files)** 
+**[Recommended Downloads _(via CurseForge)_](https://minecraft.curseforge.com/mc-mods/blocks-plus)** 
 
 _**Diisclaimer:** Beta & Alpha builds have not been fully tested and features included in beta/alpha versions may not make it to final release. There is also a chance that alpha/beta versions may corrupt or cause issues with your world so make sure you have created a full backup._
 
-_I will not be held liable for any damage caused to your worlds, game, computer, etc._
+_I will not be held liable for any damage caused to your worlds, game, computer, etc. as a result of this mod._
 
 ***
 # License
