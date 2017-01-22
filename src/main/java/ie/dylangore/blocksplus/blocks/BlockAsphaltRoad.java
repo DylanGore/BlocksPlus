@@ -9,7 +9,6 @@ import net.minecraft.potion.Potion;
 import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import scala.tools.nsc.backend.icode.TypeKinds;
 
 /**
  * Project: BlocksPlus
@@ -28,11 +27,11 @@ public class BlockAsphaltRoad extends BlockBase{
 
         if (entityIn instanceof Entity) {
             if (((EntityLivingBase) entityIn).getActivePotionEffect(Potion.getPotionById(Reference.PotionEffects.SPEED.getPotionId())) == null) {
-                ((EntityLivingBase) entityIn).addPotionEffect(new PotionEffect(Potion.getPotionById(Reference.PotionEffects.SPEED.getPotionId()), 20, 2, false, false));
+                ((EntityLivingBase) entityIn).addPotionEffect(new PotionEffect(Potion.getPotionById(Reference.PotionEffects.SPEED.getPotionId()), 10, 2, false, false));
             }
-            if (((EntityLivingBase) entityIn).getActivePotionEffect(Potion.getPotionById(Reference.PotionEffects.JUMP_BOOST.getPotionId())) == null) {
-                ((EntityLivingBase) entityIn).addPotionEffect(new PotionEffect(Potion.getPotionById(Reference.PotionEffects.JUMP_BOOST.getPotionId()), 20, 2, false, false));
-            }
+//            if (((EntityLivingBase) entityIn).getActivePotionEffect(Potion.getPotionById(Reference.PotionEffects.JUMP_BOOST.getPotionId())) == null) {
+//                ((EntityLivingBase) entityIn).addPotionEffect(new PotionEffect(Potion.getPotionById(Reference.PotionEffects.JUMP_BOOST.getPotionId()), 10, 1, false, false));
+//            }
         }
         super.onEntityWalk(worldIn, pos, entityIn);
     }
