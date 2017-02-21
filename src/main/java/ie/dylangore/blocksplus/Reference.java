@@ -123,6 +123,13 @@ public class Reference {
             return this.unlocalizedName;
         }
 
+        public String getCapitalName() {
+            String capName;
+            String unlocName = this.unlocalizedName;
+            capName = unlocName.substring(0, 1).toUpperCase() + unlocName.substring(1);
+            return capName;
+        }
+
         public MapColor getMapColor()
         {
             return this.mapColor;
