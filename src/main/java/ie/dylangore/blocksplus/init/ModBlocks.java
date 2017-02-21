@@ -16,6 +16,7 @@ import net.minecraft.init.Items;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
+import net.minecraftforge.oredict.OreDictionary;
 
 /**
  * Project: BlocksPlus
@@ -57,6 +58,10 @@ public class ModBlocks {
         addColorRecipes(blockColoredStone, Blocks.STONE);
         addColorRecipes(blockColoredStoneBricks, Blocks.STONEBRICK);
 
+        addColorBrickRecipes(blockColoredStoneBricks, blockColoredStone);
+        addColorBrickChiseledRecipes(blockColoredStoneBricksChiseled, blockColoredStoneBricks);
+        addColorStoneBrickCrackedRecipes(blockColoredStoneBricks, blockColoredStoneBricksCracked, 0.1F);
+
         addColorSmeltingRecipes(blockColoredCobblestone, blockColoredStone, 0.1F);
 
         GameRegistry.addShapedRecipe(new ItemStack(blockHealingStation, 1),
@@ -66,6 +71,9 @@ public class ModBlocks {
         GameRegistry.addShapedRecipe(new ItemStack(blockAsphaltRoad, 9),
                 "gsg", "sgs", "gsg",
                 'g', Blocks.GRAVEL, 's', Blocks.STONE);
+
+        registerOreDict(blockColoredCobblestone, "cobblestone", true);
+        registerOreDict(blockColoredStone, "stone", true);
 
         LogHelper.info("Blocks registered!");
     }
@@ -111,9 +119,45 @@ public class ModBlocks {
         }
     }
 
+    private static void addColorBrickRecipes(Block colorBlockOutput, Block colorBlockInput){
+        for(int meta = 0; meta < EnumColors.values().length; meta++) {
+
+            ItemStack colorBaseStack = new ItemStack(colorBlockInput, 1, meta);
+
+            GameRegistry.addRecipe(new ItemStack(colorBlockOutput, 4, meta),
+                    "ss", "ss", 's', colorBaseStack
+            );
+        }
+    }
+
+    private static void addColorBrickChiseledRecipes(Block colorBlockOutput, Block colorBlockInput){
+        for(int meta = 0; meta < EnumColors.values().length; meta++) {
+
+            ItemStack colorBaseStack = new ItemStack(colorBlockInput, 1, meta);
+
+            GameRegistry.addRecipe(new ItemStack(colorBlockOutput, 2, meta),
+                    "s", "s", 's', colorBaseStack
+            );
+        }
+    }
+
+    private static void addColorStoneBrickCrackedRecipes(Block colorBlockInput, Block colorBlockOutput, float xp){
+        for(int meta = 0; meta < EnumColors.values().length; meta++) {
+            GameRegistry.addSmelting(new ItemStack(colorBlockInput, 1, meta), new ItemStack(colorBlockOutput,1,meta) ,xp);
+        }
+    }
+
     private static void addColorSmeltingRecipes(Block input, Block output, float xp){
         for(int meta = 0; meta < EnumColors.values().length; meta++) {
             GameRegistry.addSmelting(new ItemStack(input, 1, meta), new ItemStack(output,1,meta) ,xp);
+        }
+    }
+
+    private static void registerOreDict(Block block, String oreDictName, boolean isWildcard){
+        if(isWildcard){
+            OreDictionary.registerOre(oreDictName, new ItemStack(block, 1, OreDictionary.WILDCARD_VALUE));
+        }else{
+            OreDictionary.registerOre(oreDictName, block);
         }
     }
 }
