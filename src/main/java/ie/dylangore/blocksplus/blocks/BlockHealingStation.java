@@ -29,38 +29,31 @@ public class BlockHealingStation extends BlockTileEntity<TileEntityHealingStatio
 
     @Override
     public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing heldItem, float side, float hitX, float hitY) {
-        String formatting = "\u00A73 \u00A7o";
+        String italicCyan = "\u00A73 \u00A7o";
 
-        if(worldIn.isRemote){
+        TileEntityHealingStation tile = getTileEntity(worldIn, pos);
+        if(tile.isBlockDisabled()){
+            playerIn.sendStatusMessage(new TextComponentString(String.format("Block Disabled!")), true);
+        }else{
+            if(worldIn.isRemote){
+                playerIn.sendStatusMessage(new TextComponentString(String.format(italicCyan + "You harness the regenerative power of the wither but your")), false);
+                playerIn.sendStatusMessage(new TextComponentString(String.format(italicCyan + "body is being overwhelmed by the sudden influx of energy.")), false);
 
-           if(playerIn.isSneaking()){
-               playerIn.removePotionEffect(Potion.getPotionById(Reference.PotionEffects.REGENERATION.getPotionId()));
-               playerIn.removePotionEffect(Potion.getPotionById(Reference.PotionEffects.BLINDNESS.getPotionId()));
-               playerIn.removePotionEffect(Potion.getPotionById(Reference.PotionEffects.NAUSEA.getPotionId()));
-               playerIn.removePotionEffect(Potion.getPotionById(Reference.PotionEffects.SLOWNESS.getPotionId()));
-               playerIn.removePotionEffect(Potion.getPotionById(Reference.PotionEffects.INSTANT_HEALTH.getPotionId()));
-           }else{
-               TileEntityHealingStation tile = getTileEntity(worldIn, pos);
-               if(tile.isBlockDisabled()){
-                   playerIn.addChatMessage(new TextComponentString(String.format(formatting + "Disabled!")));
-               }else{
-                   playerIn.addChatMessage(new TextComponentString(String.format(formatting + "You harness the regenerative power of the wither but your")));
-                   playerIn.addChatMessage(new TextComponentString(String.format(formatting + "body is being overwhelmed by the sudden influx of energy.")));
+                playerIn.addPotionEffect(new PotionEffect(Potion.getPotionById(Reference.PotionEffects.REGENERATION.getPotionId()), 40, 1000, true, false));
+                playerIn.addPotionEffect(new PotionEffect(Potion.getPotionById(Reference.PotionEffects.BLINDNESS.getPotionId()), 40, 1000, true, false));
+                playerIn.addPotionEffect(new PotionEffect(Potion.getPotionById(Reference.PotionEffects.NAUSEA.getPotionId()), 40, 1000, true, false));
+                playerIn.addPotionEffect(new PotionEffect(Potion.getPotionById(Reference.PotionEffects.SLOWNESS.getPotionId()), 40, 1000, true, false));
+                playerIn.addPotionEffect(new PotionEffect(Potion.getPotionById(Reference.PotionEffects.INSTANT_HEALTH.getPotionId()), 40, 40, true, false));
 
-                   playerIn.addPotionEffect(new PotionEffect(Potion.getPotionById(Reference.PotionEffects.REGENERATION.getPotionId()), 1, 1000, false, false));
-                   playerIn.addPotionEffect(new PotionEffect(Potion.getPotionById(Reference.PotionEffects.BLINDNESS.getPotionId()), 1, 1000, false, false));
-                   playerIn.addPotionEffect(new PotionEffect(Potion.getPotionById(Reference.PotionEffects.NAUSEA.getPotionId()), 1, 1000, false, false));
-                   playerIn.addPotionEffect(new PotionEffect(Potion.getPotionById(Reference.PotionEffects.SLOWNESS.getPotionId()), 1, 1000, false, false));
-                   playerIn.addPotionEffect(new PotionEffect(Potion.getPotionById(Reference.PotionEffects.INSTANT_HEALTH.getPotionId()), 1, 40, false, false));
+                playerIn.clearActivePotions();
+            }
 
-                   tile.disableBlock();
-               }
+            tile.disableBlock();
+            playerIn.clearActivePotions();
+        }
 
-               if(worldIn.isBlockPowered(pos)){
-                   tile.enableBlock();
-               }
-           }
-
+        if(worldIn.isBlockPowered(pos)){
+            tile.enableBlock();
         }
 
         return true;
