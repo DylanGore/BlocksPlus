@@ -13,10 +13,13 @@ import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
+import net.minecraftforge.oredict.ShapedOreRecipe;
+import net.minecraftforge.oredict.ShapelessOreRecipe;
 
 /**
  * Project: BlocksPlus
@@ -46,7 +49,7 @@ public class ModBlocks {
         blockColoredStoneBricksCracked = new BlockBaseColored(Material.ROCK, Reference.BlocksPlusBlocks.COLORED_STONE_BRICKS_CRACKED.getName(), 1.5F, 1.0F);
 
         registerSimpleItemBlock(blockAsphaltRoad, Reference.BlocksPlusBlocks.ASPHALT_ROAD.getName());
-        registerSimpleItemBlock(blockHealingStation, Reference.BlocksPlusBlocks.HEALING_STATION.getName());
+        //registerSimpleItemBlock(blockHealingStation, Reference.BlocksPlusBlocks.HEALING_STATION.getName());
 
         registerColorItemBlock(blockColoredCobblestone, Reference.BlocksPlusBlocks.COLOURED_COBBLESTONE.getName());
         registerColorItemBlock(blockColoredStone, Reference.BlocksPlusBlocks.COLORED_STONE.getName());
@@ -54,9 +57,9 @@ public class ModBlocks {
         registerColorItemBlock(blockColoredStoneBricksChiseled, Reference.BlocksPlusBlocks.COLORED_STONE_BRICKS_CHISELED.getName());
         registerColorItemBlock(blockColoredStoneBricksCracked, Reference.BlocksPlusBlocks.COLORED_STONE_BRICKS_CRACKED.getName());
 
-        addColorRecipes(blockColoredCobblestone, Blocks.COBBLESTONE);
-        addColorRecipes(blockColoredStone, Blocks.STONE);
-        addColorRecipes(blockColoredStoneBricks, Blocks.STONEBRICK);
+        addColorRecipes(blockColoredCobblestone, Blocks.COBBLESTONE, "cobblestone");
+        addColorRecipes(blockColoredStone, Blocks.STONE, "stone");
+        addColorRecipes(blockColoredStoneBricks, Blocks.STONEBRICK, "stonebrick");
 
         addColorBrickRecipes(blockColoredStoneBricks, blockColoredStone);
         addColorBrickChiseledRecipes(blockColoredStoneBricksChiseled, blockColoredStoneBricks);
@@ -64,13 +67,13 @@ public class ModBlocks {
 
         addColorSmeltingRecipes(blockColoredCobblestone, blockColoredStone, 0.1F);
 
-        GameRegistry.addShapedRecipe(new ItemStack(blockHealingStation, 1),
+        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(blockHealingStation, 1),
                 "sss", "ana", "sss",
-                's', Blocks.STONE, 'a', new ItemStack(Items.GOLDEN_APPLE, 1, 1), 'n', Items.NETHER_STAR );
+                's', "stone", 'a', new ItemStack(Items.GOLDEN_APPLE, 1, 1), 'n', "netherStar" ));
 
-        GameRegistry.addShapedRecipe(new ItemStack(blockAsphaltRoad, 9),
+        GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(blockAsphaltRoad, 9),
                 "gsg", "sgs", "gsg",
-                'g', Blocks.GRAVEL, 's', Blocks.STONE);
+                'g', "gravel", 's', "stone"));
 
         registerOreDict(blockColoredCobblestone, "cobblestone", true);
         registerOreDict(blockColoredStone, "stone", true);
@@ -107,15 +110,37 @@ public class ModBlocks {
 
     }
 
-    private static void addColorRecipes(Block colorBlock, Block baseBlock){
+    private static void addColorRecipes(Block colorBlock, Block baseBlock, String baseBlockOreDict){
         for(int meta = 0; meta < EnumColors.values().length; meta++) {
-            GameRegistry.addShapelessRecipe(new ItemStack(baseBlock, 1), new ItemStack(colorBlock, 1, meta));
 
-            GameRegistry.addShapelessRecipe(new ItemStack(colorBlock, 8, meta),
-                    baseBlock, baseBlock, baseBlock,
-                    baseBlock, new ItemStack(Items.DYE, 1, 15 - meta), baseBlock,
-                    baseBlock, baseBlock, baseBlock
-            );
+            String currColor;
+            if(meta == 8){
+                currColor = "LightGray";
+            }else{
+                currColor = EnumColors.byMetadata(meta).getCapitalName();
+            }
+            String currDye = "dye" + currColor;
+            LogHelper.debug("Current Dye:" + currDye);
+            LogHelper.debug("Current Meta:" + meta);
+
+            if(OreDictionary.doesOreNameExist(baseBlockOreDict)){
+                GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(baseBlock, 1), new ItemStack(colorBlock, 1, meta)));
+
+                GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(colorBlock, 8, meta),
+                        baseBlockOreDict, baseBlockOreDict, baseBlockOreDict,
+                        baseBlockOreDict, currDye, baseBlockOreDict,
+                        baseBlockOreDict, baseBlockOreDict, baseBlockOreDict
+                ));
+            }else{
+                GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(baseBlock, 1), new ItemStack(colorBlock, 1, meta)));
+
+                GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(colorBlock, 8, meta),
+                        baseBlock, baseBlock, baseBlock,
+                        baseBlock, currDye, baseBlock,
+                        baseBlock, baseBlock, baseBlock
+                ));
+            }
+
         }
     }
 
