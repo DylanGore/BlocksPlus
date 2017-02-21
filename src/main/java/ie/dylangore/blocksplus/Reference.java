@@ -21,6 +21,8 @@ public class Reference {
     public static final String CLIENT_PROXY_LOC = "ie.dylangore.blocksplus.proxy.ClientProxy";
     public static final String COMMON_PROXY_LOC = "ie.dylangore.blocksplus.proxy.CommonProxy";
 
+    public static final String GUI_FACTORY_LOC = "ie.dylangore.blocksplus.client.gui.GuiFactory";
+
     public static enum BlocksPlusBlocks{
 
         COLOURED_COBBLESTONE("colored_cobblestone"), COLORED_STONE("colored_stone"), COLORED_STONE_BRICKS("colored_stone_bricks"),

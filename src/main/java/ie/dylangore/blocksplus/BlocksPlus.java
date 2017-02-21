@@ -19,7 +19,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
  * Date Created: 08 January 2017
  */
 
-@Mod(modid = Reference.ID, name = Reference.NAME, version = Reference.VERSION, updateJSON = Reference.UPDATE_JSON_URL)
+@Mod(modid = Reference.ID, name = Reference.NAME, version = Reference.VERSION, updateJSON = Reference.UPDATE_JSON_URL, guiFactory = Reference.GUI_FACTORY_LOC)
 public class BlocksPlus {
 
     public static final TabBlocksPlus creativeTab = new TabBlocksPlus();
