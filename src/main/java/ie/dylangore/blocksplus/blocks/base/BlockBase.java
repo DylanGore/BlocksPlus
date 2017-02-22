@@ -22,6 +22,7 @@ public class BlockBase extends Block {
         setCreativeTab(BlocksPlus.creativeTab);
         setHardness(hardness);
         setResistance(resistance);
+        setHarvestLevel("pickaxe", 0);
 
         setUnlocalizedName(name);
         setRegistryName(name);
