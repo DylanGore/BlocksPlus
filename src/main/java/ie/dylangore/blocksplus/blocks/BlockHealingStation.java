@@ -23,8 +23,9 @@ import javax.annotation.Nullable;
  */
 
 public class BlockHealingStation extends BlockTileEntity<TileEntityHealingStation> {
-    public BlockHealingStation(Material material, String name) {
-        super(material, name);
+
+    public BlockHealingStation(Material material, String name, float hardness, float resistance) {
+        super(material, name, hardness, resistance);
     }
 
     @Override

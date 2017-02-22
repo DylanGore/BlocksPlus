@@ -15,11 +15,13 @@ import net.minecraft.item.ItemBlock;
 public class BlockBase extends Block {
     protected String name;
 
-    public BlockBase(Material material, String name) {
+    public BlockBase(Material material, String name, float hardness, float resistance) {
         super(material);
 
         this.name = name;
         setCreativeTab(BlocksPlus.creativeTab);
+        setHardness(hardness);
+        setResistance(resistance);
 
         setUnlocalizedName(name);
         setRegistryName(name);

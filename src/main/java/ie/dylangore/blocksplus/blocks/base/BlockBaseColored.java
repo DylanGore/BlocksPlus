@@ -35,10 +35,8 @@ public class BlockBaseColored extends BlockBase {
     public static final PropertyEnum<EnumColors> BLOCK_COLOR = PropertyEnum.<EnumColors>create("block_color", EnumColors.class);
 
     public BlockBaseColored(Material material, String name, float hardness, float resistance) {
-        super(material, name);
+        super(material, name, hardness, resistance);
         this.setDefaultState(this.blockState.getBaseState().withProperty(BLOCK_COLOR, EnumColors.WHITE));
-        this.setHardness(hardness);
-        this.setResistance(resistance);
         this.setSoundType(SoundType.STONE);
     }
 
