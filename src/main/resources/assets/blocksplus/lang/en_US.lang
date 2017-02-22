@@ -111,7 +111,22 @@ tile.colored_stone_bricks_moss.red.name=Mossy Red Stone Bricks
 tile.colored_stone_bricks_moss.black.name=Mossy Black Stone Bricks
 
 #Items
-#No Items yet :(
+item.bp_dye.white.name=White Dye
+item.bp_dye.orange.name=Orange Dye
+item.bp_dye.magenta.name=Magenta Dye
+item.bp_dye.lightBlue.name=Light Blue Dye
+item.bp_dye.yellow.name=Yellow Dye
+item.bp_dye.lime.name=Lime Dye
+item.bp_dye.pink.name=Pink Dye
+item.bp_dye.gray.name=Gray Dye
+item.bp_dye.silver.name=Light Gray Dye
+item.bp_dye.cyan.name=Cyan Dye
+item.bp_dye.purple.name=Purple Dye
+item.bp_dye.blue.name=Blue Dye
+item.bp_dye.brown.name=Brown Dye
+item.bp_dye.green.name=Green Dye
+item.bp_dye.red.name=Red Dye
+item.bp_dye.black.name=Black Dye
 
 #Creative Tab
 itemGroup.blocksplus=Blocks Plus

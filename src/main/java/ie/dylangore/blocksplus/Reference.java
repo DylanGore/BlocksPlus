@@ -41,20 +41,20 @@ public class Reference {
 
     }
 
-//    public static enum BlocksPlusItems{
-//
-//        //INSERT ITEMS HERE
-//
-//        private String itemName;
-//
-//        BlocksPlusItems(String name){
-//            this.itemName = name;
-//        }
-//
-//        public String getName(){
-//            return itemName;
-//        }
-//    }
+    public static enum BlocksPlusItems{
+
+        DYE("bp_dye");
+
+        private String itemName;
+
+        BlocksPlusItems(String name){
+            this.itemName = name;
+        }
+
+        public String getName(){
+            return itemName;
+        }
+    }
 
     public static enum PotionEffects {
         SPEED(1), SLOWNESS(2), HASTE(3), MINING_FATIGUE(4), STRENGTH(5), INSTANT_HEALTH(6), INSTANT_DAMAGE(7), JUMP_BOOST(8),
