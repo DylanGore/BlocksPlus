@@ -29,6 +29,8 @@ public class BlockHealingStation extends BlockTileEntity<TileEntityHealingStatio
 
     @Override
     public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing heldItem, float side, float hitX, float hitY) {
+        //TODO Add functionality
+
         String italicCyan = "\u00A73 \u00A7o";
 
         TileEntityHealingStation tile = getTileEntity(worldIn, pos);

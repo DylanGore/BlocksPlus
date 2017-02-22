@@ -73,6 +73,8 @@ public class Reference {
         }
     }
 
+    //TODO Re-write EnumColors
+
     public static enum EnumColors implements IStringSerializable{
         WHITE(0, 15, "white", "white", MapColor.SNOW, TextFormatting.WHITE),
         ORANGE(1, 14, "orange", "orange", MapColor.ADOBE, TextFormatting.GOLD),
