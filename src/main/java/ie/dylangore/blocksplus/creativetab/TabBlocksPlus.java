@@ -3,7 +3,6 @@ package ie.dylangore.blocksplus.creativetab;
 import ie.dylangore.blocksplus.Reference;
 import ie.dylangore.blocksplus.init.ModBlocks;
 import net.minecraft.creativetab.CreativeTabs;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 
 /**

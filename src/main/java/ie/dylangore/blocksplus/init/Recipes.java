@@ -5,6 +5,7 @@ import ie.dylangore.blocksplus.util.LogHelper;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.init.Items;
+import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
@@ -44,13 +45,13 @@ public class Recipes {
     }
 
      private static void addColorRecipes(Block colorBlock, Block baseBlock, String baseBlockOreDict){
-        for(int meta = 0; meta < Reference.EnumColors.values().length; meta++) {
+        for(int meta = 0; meta < EnumDyeColor.values().length; meta++) {
 
             String currColor;
             if(meta == 8){
                 currColor = "LightGray";
             }else{
-                currColor = Reference.EnumColors.byMetadata(meta).getCapitalName();
+                currColor = Reference.getColorNameCap(EnumDyeColor.byMetadata(meta).getUnlocalizedName());
             }
             String currDye = "dye" + currColor;
             LogHelper.debug("Current Dye:" + currDye);
@@ -78,7 +79,7 @@ public class Recipes {
     }
 
     private static void addColorBrickRecipes(Block colorBlockOutput, Block colorBlockInput){
-        for(int meta = 0; meta < Reference.EnumColors.values().length; meta++) {
+        for(int meta = 0; meta < EnumDyeColor.values().length; meta++) {
 
             ItemStack colorBaseStack = new ItemStack(colorBlockInput, 1, meta);
 
@@ -89,7 +90,7 @@ public class Recipes {
     }
 
     private static void addColorBrickChiseledRecipes(Block colorBlockOutput, Block colorBlockInput){
-        for(int meta = 0; meta < Reference.EnumColors.values().length; meta++) {
+        for(int meta = 0; meta < EnumDyeColor.values().length; meta++) {
 
             ItemStack colorBaseStack = new ItemStack(colorBlockInput, 1, meta);
 
@@ -100,13 +101,13 @@ public class Recipes {
     }
 
     private static void addColorStoneBrickCrackedRecipes(Block colorBlockInput, Block colorBlockOutput, float xp){
-        for(int meta = 0; meta < Reference.EnumColors.values().length; meta++) {
+        for(int meta = 0; meta < EnumDyeColor.values().length; meta++) {
             GameRegistry.addSmelting(new ItemStack(colorBlockInput, 1, meta), new ItemStack(colorBlockOutput,1,meta) ,xp);
         }
     }
 
     private static void addColorSmeltingRecipes(Block input, Block output, float xp){
-        for(int meta = 0; meta < Reference.EnumColors.values().length; meta++) {
+        for(int meta = 0; meta < EnumDyeColor.values().length; meta++) {
             GameRegistry.addSmelting(new ItemStack(input, 1, meta), new ItemStack(output,1,meta) ,xp);
         }
     }
