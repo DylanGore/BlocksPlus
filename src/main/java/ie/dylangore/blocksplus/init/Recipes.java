@@ -20,7 +20,7 @@ import net.minecraftforge.oredict.ShapelessOreRecipe;
 
 public class Recipes {
 
-    public static void init(){
+    public static void init() {
         Recipes.addColorRecipes(ModBlocks.blockColoredCobblestone, Blocks.COBBLESTONE, "cobblestone");
         Recipes.addColorRecipes(ModBlocks.blockColoredStone, Blocks.STONE, "stone");
         Recipes.addColorRecipes(ModBlocks.blockColoredStoneBricks, Blocks.STONEBRICK, "stonebrick");
@@ -35,7 +35,7 @@ public class Recipes {
         /* Healing Station crafting recipe */
         GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModBlocks.blockHealingStation, 1),
                 "sss", "ana", "sss",
-                's', "stone", 'a', new ItemStack(Items.GOLDEN_APPLE, 1, 1), 'n', "netherStar" ));
+                's', "stone", 'a', new ItemStack(Items.GOLDEN_APPLE, 1, 1), 'n', "netherStar"));
 
         /* Asphalt Road crafting recipe */
         GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModBlocks.blockAsphaltRoad, 9),
@@ -43,20 +43,20 @@ public class Recipes {
                 'g', "gravel", 's', "stone"));
     }
 
-     private static void addColorRecipes(Block colorBlock, Block baseBlock, String baseBlockOreDict){
-        for(int meta = 0; meta < Reference.EnumColors.values().length; meta++) {
+    private static void addColorRecipes(Block colorBlock, Block baseBlock, String baseBlockOreDict) {
+        for (int meta = 0; meta < Reference.EnumColors.values().length; meta++) {
 
             String currColor;
-            if(meta == 8){
+            if (meta == 8) {
                 currColor = "LightGray";
-            }else{
+            } else {
                 currColor = Reference.EnumColors.byMetadata(meta).getCapitalName();
             }
             String currDye = "dye" + currColor;
             LogHelper.debug("Current Dye:" + currDye);
             LogHelper.debug("Current Meta:" + meta);
 
-            if(OreDictionary.doesOreNameExist(baseBlockOreDict)){
+            if (OreDictionary.doesOreNameExist(baseBlockOreDict)) {
                 GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(baseBlock, 1), new ItemStack(colorBlock, 1, meta)));
 
                 GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(colorBlock, 8, meta),
@@ -64,7 +64,7 @@ public class Recipes {
                         baseBlockOreDict, currDye, baseBlockOreDict,
                         baseBlockOreDict, baseBlockOreDict, baseBlockOreDict
                 ));
-            }else{
+            } else {
                 GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(baseBlock, 1), new ItemStack(colorBlock, 1, meta)));
 
                 GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(colorBlock, 8, meta),
@@ -77,8 +77,8 @@ public class Recipes {
         }
     }
 
-    private static void addColorBrickRecipes(Block colorBlockOutput, Block colorBlockInput){
-        for(int meta = 0; meta < Reference.EnumColors.values().length; meta++) {
+    private static void addColorBrickRecipes(Block colorBlockOutput, Block colorBlockInput) {
+        for (int meta = 0; meta < Reference.EnumColors.values().length; meta++) {
 
             ItemStack colorBaseStack = new ItemStack(colorBlockInput, 1, meta);
 
@@ -88,8 +88,8 @@ public class Recipes {
         }
     }
 
-    private static void addColorBrickChiseledRecipes(Block colorBlockOutput, Block colorBlockInput){
-        for(int meta = 0; meta < Reference.EnumColors.values().length; meta++) {
+    private static void addColorBrickChiseledRecipes(Block colorBlockOutput, Block colorBlockInput) {
+        for (int meta = 0; meta < Reference.EnumColors.values().length; meta++) {
 
             ItemStack colorBaseStack = new ItemStack(colorBlockInput, 1, meta);
 
@@ -99,15 +99,15 @@ public class Recipes {
         }
     }
 
-    private static void addColorStoneBrickCrackedRecipes(Block colorBlockInput, Block colorBlockOutput, float xp){
-        for(int meta = 0; meta < Reference.EnumColors.values().length; meta++) {
-            GameRegistry.addSmelting(new ItemStack(colorBlockInput, 1, meta), new ItemStack(colorBlockOutput,1,meta) ,xp);
+    private static void addColorStoneBrickCrackedRecipes(Block colorBlockInput, Block colorBlockOutput, float xp) {
+        for (int meta = 0; meta < Reference.EnumColors.values().length; meta++) {
+            GameRegistry.addSmelting(new ItemStack(colorBlockInput, 1, meta), new ItemStack(colorBlockOutput, 1, meta), xp);
         }
     }
 
-    private static void addColorSmeltingRecipes(Block input, Block output, float xp){
-        for(int meta = 0; meta < Reference.EnumColors.values().length; meta++) {
-            GameRegistry.addSmelting(new ItemStack(input, 1, meta), new ItemStack(output,1,meta) ,xp);
+    private static void addColorSmeltingRecipes(Block input, Block output, float xp) {
+        for (int meta = 0; meta < Reference.EnumColors.values().length; meta++) {
+            GameRegistry.addSmelting(new ItemStack(input, 1, meta), new ItemStack(output, 1, meta), xp);
         }
     }
 

@@ -6,9 +6,6 @@ import net.minecraft.client.gui.GuiScreen;
 import net.minecraftforge.common.config.ConfigElement;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.client.config.GuiConfig;
-import net.minecraftforge.fml.client.config.IConfigElement;
-
-import java.util.List;
 
 /**
  * Project: BlocksPlus
@@ -18,8 +15,7 @@ import java.util.List;
  */
 
 public class BlocksPlusGuiConfig extends GuiConfig {
-    public BlocksPlusGuiConfig(GuiScreen guiScreen)
-    {
+    public BlocksPlusGuiConfig(GuiScreen guiScreen) {
         super(guiScreen,
                 new ConfigElement(ConfigurationHandler.configuration.getCategory(Configuration.CATEGORY_GENERAL)).getChildElements(),
                 Reference.ID,

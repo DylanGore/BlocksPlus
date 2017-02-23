@@ -11,7 +11,6 @@ import net.minecraft.client.renderer.block.statemap.StateMap;
 import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.fml.common.FMLLog;
 
 /**
  * Project: BlocksPlus
@@ -22,7 +21,7 @@ import net.minecraftforge.fml.common.FMLLog;
 
 public final class ModModelManager {
 
-    public static void init(){
+    public static void init() {
 
         registerColorBlockModel(ModBlocks.blockColoredCobblestone);
         registerColorBlockModel(ModBlocks.blockColoredStone);
@@ -38,20 +37,20 @@ public final class ModModelManager {
         LogHelper.info("Models Registered!");
     }
 
-    private static void registerBlockModel(Block block){
+    private static void registerBlockModel(Block block) {
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation(Reference.ID + ":" + block.getUnlocalizedName().substring(5), "inventory"));
     }
 
-    private static void registerColorBlockModel(Block block){
+    private static void registerColorBlockModel(Block block) {
         ModelLoader.setCustomStateMapper(block, new StateMap.Builder().ignore(BlockBaseColored.BLOCK_COLOR).build());
 
-        for(int i = 0; i < EnumDyeColor.values().length; i++){
+        for (int i = 0; i < EnumDyeColor.values().length; i++) {
             ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), i, new ModelResourceLocation(Reference.ID + ":" + block.getUnlocalizedName().substring(5), "normal"));
         }
     }
 
-    private static void registerColorItemModel(Item item){
-        for(int i = 0; i < EnumDyeColor.values().length; i++){
+    private static void registerColorItemModel(Item item) {
+        for (int i = 0; i < EnumDyeColor.values().length; i++) {
             ModelLoader.setCustomModelResourceLocation(item, i, new ModelResourceLocation(Reference.ID + ":" + item.getUnlocalizedName().substring(5), "inventory"));
         }
     }

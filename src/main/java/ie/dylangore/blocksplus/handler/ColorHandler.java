@@ -53,9 +53,9 @@ public class ColorHandler {
         blockColors.registerBlockColorHandler(colorBlocks, ModBlocks.blockColoredStoneBricksCracked);
     }
 
-    private static void registerItemColorsHandlers(ItemColors itemColors, BlockColors blockColors){
+    private static void registerItemColorsHandlers(ItemColors itemColors, BlockColors blockColors) {
 
-        final IItemColor dyeItemColorHandler = (state, i) ->{
+        final IItemColor dyeItemColorHandler = (state, i) -> {
             return EnumDyeColor.byMetadata(state.getItemDamage()).getMapColor().colorValue;
         };
 

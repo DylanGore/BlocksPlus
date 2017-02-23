@@ -35,10 +35,10 @@ public class BlockHealingStation extends BlockTileEntity<TileEntityHealingStatio
         String italicCyan = "\u00A73 \u00A7o";
 
         TileEntityHealingStation tile = getTileEntity(worldIn, pos);
-        if(tile.isBlockDisabled()){
+        if (tile.isBlockDisabled()) {
             playerIn.sendStatusMessage(new TextComponentString(String.format("Block Disabled!")), true);
-        }else{
-            if(worldIn.isRemote){
+        } else {
+            if (worldIn.isRemote) {
                 playerIn.sendStatusMessage(new TextComponentString(String.format(italicCyan + "You harness the regenerative power of the wither but your")), false);
                 playerIn.sendStatusMessage(new TextComponentString(String.format(italicCyan + "body is being overwhelmed by the sudden influx of energy.")), false);
 
@@ -55,7 +55,7 @@ public class BlockHealingStation extends BlockTileEntity<TileEntityHealingStatio
             playerIn.clearActivePotions();
         }
 
-        if(worldIn.isBlockPowered(pos)){
+        if (worldIn.isBlockPowered(pos)) {
             tile.enableBlock();
         }
 

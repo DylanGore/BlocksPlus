@@ -16,7 +16,7 @@ import net.minecraft.world.World;
  * Author: Dylan Gore (hello@dylangore.ie)
  * Date Created: 08 January 2017
  */
-public class BlockAsphaltRoad extends BlockBase{
+public class BlockAsphaltRoad extends BlockBase {
 
     public BlockAsphaltRoad(Material material, String name, float hardness, float resistance) {
         super(material, name, hardness, resistance);

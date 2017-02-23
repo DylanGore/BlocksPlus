@@ -24,7 +24,7 @@ public class ItemBaseColored extends ItemBase {
     @SideOnly(Side.CLIENT)
     @Override
     public void getSubItems(Item itemIn, CreativeTabs tab, NonNullList<ItemStack> subItems) {
-        for(int metadata = 0; metadata < Reference.EnumColors.values().length; metadata++){
+        for (int metadata = 0; metadata < Reference.EnumColors.values().length; metadata++) {
             subItems.add(new ItemStack(itemIn, 1, metadata));
         }
     }

@@ -39,9 +39,9 @@ public class BlockBaseColored extends BlockBase {
     public Item getItemDropped(IBlockState state, Random rand, int fortune) {
         Block block = state.getBlock();
         int metadata = state.getBlock().getMetaFromState(state);
-        if(block == ModBlocks.blockColoredStone){
+        if (block == ModBlocks.blockColoredStone) {
             return (new ItemStack(ModBlocks.blockColoredCobblestone, 1, metadata).getItem());
-        }else{
+        } else {
             return super.getItemDropped(state, rand, fortune);
         }
     }
@@ -52,31 +52,26 @@ public class BlockBaseColored extends BlockBase {
     }
 
     @Override
-    public int getMetaFromState(IBlockState state)
-    {
+    public int getMetaFromState(IBlockState state) {
         return state.getValue(BLOCK_COLOR).getMetadata();
     }
 
     @Nonnull
     @Override
-    public IBlockState getStateFromMeta(int meta)
-    {
+    public IBlockState getStateFromMeta(int meta) {
         return this.getDefaultState().withProperty(BLOCK_COLOR, EnumDyeColor.byMetadata(meta));
     }
 
     @Nonnull
     @Override
-    protected BlockStateContainer createBlockState()
-    {
+    protected BlockStateContainer createBlockState() {
         return new BlockStateContainer(this, BLOCK_COLOR);
     }
 
     @SideOnly(Side.CLIENT)
     @Override
-    public void getSubBlocks(Item itemIn, CreativeTabs tab, NonNullList<ItemStack> list)
-    {
-        for (int i = 0; i < EnumDyeColor.values().length; i++)
-        {
+    public void getSubBlocks(Item itemIn, CreativeTabs tab, NonNullList<ItemStack> list) {
+        for (int i = 0; i < EnumDyeColor.values().length; i++) {
             list.add(new ItemStack(itemIn, 1, i));
         }
     }

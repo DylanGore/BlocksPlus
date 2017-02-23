@@ -21,7 +21,7 @@ public class ConfigurationHandler {
 
     public static boolean testValue;
 
-    public static void init(File configFile){
+    public static void init(File configFile) {
 
         LogHelper.debug("Configuration handler initialized");
         configuration = new Configuration(configFile);
@@ -29,23 +29,21 @@ public class ConfigurationHandler {
 
     }
 
-    private static void loadConfiguration(){
+    private static void loadConfiguration() {
 
         LogHelper.debug("Loading configuration file");
 
         testValue = configuration.getBoolean("testing value", Configuration.CATEGORY_GENERAL, false, "This is an example configuration value");
 
-        if(configuration.hasChanged()){
+        if (configuration.hasChanged()) {
             configuration.save();
         }
 
     }
 
     @SubscribeEvent
-    public void onConfigurationChangedEvent(ConfigChangedEvent.OnConfigChangedEvent event)
-    {
-        if (event.getModID().equalsIgnoreCase(Reference.ID))
-        {
+    public void onConfigurationChangedEvent(ConfigChangedEvent.OnConfigChangedEvent event) {
+        if (event.getModID().equalsIgnoreCase(Reference.ID)) {
             LogHelper.debug("Configuration has changed, reloading");
             loadConfiguration();
         }

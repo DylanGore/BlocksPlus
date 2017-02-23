@@ -20,26 +20,26 @@ public class ModItems {
 
     public static ItemBPDye itemDye;
 
-    public static void init(){
+    public static void init() {
 
         itemDye = new ItemBPDye(Reference.BlocksPlusItems.DYE.getName());
         registerItems();
         registerColorOreDict(itemDye, "dye", true);
     }
 
-    private static void registerItems(){
+    private static void registerItems() {
         registerItem(itemDye);
         LogHelper.info("Items registered!");
     }
 
-    public static void registerItem(Item item){
+    public static void registerItem(Item item) {
         GameRegistry.register(item);
     }
 
-    private static void registerColorOreDict(Item item, String oreDictName, boolean isWildcard){
+    private static void registerColorOreDict(Item item, String oreDictName, boolean isWildcard) {
 
         OreDictionary.registerOre(oreDictName, new ItemStack(item, 1, OreDictionary.WILDCARD_VALUE));
-        for(int meta = 0; meta < EnumDyeColor.values().length; meta++){
+        for (int meta = 0; meta < EnumDyeColor.values().length; meta++) {
             String colorName = oreDictName + Reference.EnumColors.byMetadata(meta).getCapitalName();
             OreDictionary.registerOre(colorName, new ItemStack(item, 1, meta));
             LogHelper.debug("Adding " + item.getRegistryName() + " to ore dictionary under " + colorName);

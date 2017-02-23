@@ -33,7 +33,7 @@ public class BlocksPlus {
     public static CommonProxy proxy;
 
     @Mod.EventHandler
-    public void preInit(FMLPreInitializationEvent event){
+    public void preInit(FMLPreInitializationEvent event) {
         LogHelper.info("Blocks Plus is loading...");
 
         ConfigurationHandler.init(event.getSuggestedConfigurationFile());
@@ -46,14 +46,14 @@ public class BlocksPlus {
     }
 
     @Mod.EventHandler
-    public void init(FMLInitializationEvent event){
+    public void init(FMLInitializationEvent event) {
 
         proxy.init(event);
 
     }
 
     @Mod.EventHandler
-    public void postInit(FMLPostInitializationEvent event){
+    public void postInit(FMLPostInitializationEvent event) {
 
     }
 

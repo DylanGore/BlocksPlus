@@ -9,7 +9,6 @@ import net.minecraft.entity.passive.EntitySheep;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.init.Blocks;
 import net.minecraft.item.EnumDyeColor;
-import net.minecraft.item.ItemDye;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumFacing;
@@ -33,7 +32,7 @@ public class ItemBPDye extends ItemBaseColored {
         ItemStack stack = player.getActiveItemStack();
         Block block = worldIn.getBlockState(pos).getBlock();
         EnumDyeColor color = EnumDyeColor.byMetadata(stack.getItemDamage());
-        if(block == Blocks.WOOL && color != worldIn.getBlockState(pos).getValue(BlockColored.COLOR)
+        if (block == Blocks.WOOL && color != worldIn.getBlockState(pos).getValue(BlockColored.COLOR)
                 || block == Blocks.CARPET && color != worldIn.getBlockState(pos).getValue(BlockCarpet.COLOR)) {
             worldIn.setBlockState(pos, worldIn.getBlockState(pos).withProperty(block == Blocks.WOOL ? BlockColored.COLOR : BlockCarpet.COLOR, color), 1 | 2);
             stack.shrink(1);
@@ -45,11 +44,11 @@ public class ItemBPDye extends ItemBaseColored {
 
     @Override
     public boolean itemInteractionForEntity(ItemStack stack, EntityPlayer player, EntityLivingBase target, EnumHand hand) {
-        if(target instanceof EntitySheep) {
-            EntitySheep entitysheep = (EntitySheep)target;
+        if (target instanceof EntitySheep) {
+            EntitySheep entitysheep = (EntitySheep) target;
             EnumDyeColor i = EnumDyeColor.byMetadata(stack.getItemDamage());
 
-            if(!entitysheep.getSheared() && entitysheep.getFleeceColor() != i) {
+            if (!entitysheep.getSheared() && entitysheep.getFleeceColor() != i) {
                 entitysheep.setFleeceColor(i);
                 stack.shrink(1);
             }

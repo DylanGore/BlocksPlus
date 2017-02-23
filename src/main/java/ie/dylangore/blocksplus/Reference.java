@@ -23,7 +23,7 @@ public class Reference {
 
     public static final String GUI_FACTORY_LOC = "ie.dylangore.blocksplus.client.gui.GuiFactory";
 
-    public static enum BlocksPlusBlocks{
+    public static enum BlocksPlusBlocks {
 
         COLOURED_COBBLESTONE("colored_cobblestone"), COLORED_STONE("colored_stone"), COLORED_STONE_BRICKS("colored_stone_bricks"),
         COLORED_STONE_BRICKS_CHISELED("colored_stone_bricks_chiseled"), COLORED_STONE_BRICKS_CRACKED("colored_stone_bricks_cracked"),
@@ -31,27 +31,27 @@ public class Reference {
 
         private String blockName;
 
-        BlocksPlusBlocks(String name){
+        BlocksPlusBlocks(String name) {
             this.blockName = name;
         }
 
-        public String getName(){
+        public String getName() {
             return blockName;
         }
 
     }
 
-    public static enum BlocksPlusItems{
+    public static enum BlocksPlusItems {
 
         DYE("bp_dye");
 
         private String itemName;
 
-        BlocksPlusItems(String name){
+        BlocksPlusItems(String name) {
             this.itemName = name;
         }
 
-        public String getName(){
+        public String getName() {
             return itemName;
         }
     }
@@ -64,18 +64,18 @@ public class Reference {
 
         private int potion_id;
 
-        PotionEffects(int id){
+        PotionEffects(int id) {
             this.potion_id = id;
         }
 
-        public int getPotionId(){
+        public int getPotionId() {
             return potion_id;
         }
     }
 
     //TODO Re-write EnumColors
 
-    public static enum EnumColors implements IStringSerializable{
+    public static enum EnumColors implements IStringSerializable {
         WHITE(0, 15, "white", "white", MapColor.SNOW, TextFormatting.WHITE),
         ORANGE(1, 14, "orange", "orange", MapColor.ADOBE, TextFormatting.GOLD),
         MAGENTA(2, 13, "magenta", "magenta", MapColor.MAGENTA, TextFormatting.AQUA),
@@ -102,8 +102,7 @@ public class Reference {
         private final MapColor mapColor;
         private final TextFormatting chatColor;
 
-        private EnumColors(int meta, int dyeDamage, String name, String unlocalizedName, MapColor mapColorIn, TextFormatting chatColor)
-        {
+        private EnumColors(int meta, int dyeDamage, String name, String unlocalizedName, MapColor mapColorIn, TextFormatting chatColor) {
             this.meta = meta;
             this.dyeDamage = dyeDamage;
             this.name = name;
@@ -112,18 +111,15 @@ public class Reference {
             this.chatColor = chatColor;
         }
 
-        public int getMetadata()
-        {
+        public int getMetadata() {
             return this.meta;
         }
 
-        public int getDyeDamage()
-        {
+        public int getDyeDamage() {
             return this.dyeDamage;
         }
 
-        public String getUnlocalizedName()
-        {
+        public String getUnlocalizedName() {
             return this.unlocalizedName;
         }
 
@@ -134,45 +130,36 @@ public class Reference {
             return capName;
         }
 
-        public MapColor getMapColor()
-        {
+        public MapColor getMapColor() {
             return this.mapColor;
         }
 
-        public static EnumColors byDyeDamage(int damage)
-        {
-            if (damage < 0 || damage >= DYE_DMG_LOOKUP.length)
-            {
+        public static EnumColors byDyeDamage(int damage) {
+            if (damage < 0 || damage >= DYE_DMG_LOOKUP.length) {
                 damage = 0;
             }
 
             return DYE_DMG_LOOKUP[damage];
         }
 
-        public static EnumColors byMetadata(int meta)
-        {
-            if (meta < 0 || meta >= META_LOOKUP.length)
-            {
+        public static EnumColors byMetadata(int meta) {
+            if (meta < 0 || meta >= META_LOOKUP.length) {
                 meta = 0;
             }
 
             return META_LOOKUP[meta];
         }
 
-        public String toString()
-        {
+        public String toString() {
             return this.unlocalizedName;
         }
 
-        public String getName()
-        {
+        public String getName() {
             return this.name;
         }
 
-        static
-        {
-            for (EnumColors enumColors : values())
-            {
+        static {
+            for (EnumColors enumColors : values()) {
                 META_LOOKUP[enumColors.getMetadata()] = enumColors;
                 DYE_DMG_LOOKUP[enumColors.getDyeDamage()] = enumColors;
             }

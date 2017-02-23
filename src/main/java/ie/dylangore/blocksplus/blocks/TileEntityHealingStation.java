@@ -9,7 +9,7 @@ import net.minecraft.tileentity.TileEntity;
  * Author: Dylan Gore (hello@dylangore.ie)
  * Date Created: 11 January 2017
  */
-public class TileEntityHealingStation extends TileEntity{
+public class TileEntityHealingStation extends TileEntity {
 
     private boolean blockStatus = false;
 
@@ -25,16 +25,16 @@ public class TileEntityHealingStation extends TileEntity{
         super.readFromNBT(compound);
     }
 
-    public boolean isBlockDisabled(){
+    public boolean isBlockDisabled() {
         return blockStatus;
     }
 
-    public void disableBlock(){
+    public void disableBlock() {
         blockStatus = true;
         markDirty();
     }
 
-    public void enableBlock(){
+    public void enableBlock() {
         blockStatus = false;
         markDirty();
     }

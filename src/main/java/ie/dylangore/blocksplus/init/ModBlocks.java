@@ -23,15 +23,15 @@ import net.minecraftforge.oredict.OreDictionary;
 
 public class ModBlocks {
 
-     public static BlockAsphaltRoad blockAsphaltRoad;
-     public static BlockHealingStation blockHealingStation;
-     public static BlockBaseColored blockColoredCobblestone;
-     public static BlockBaseColored blockColoredStone;
-     public static BlockBaseColored blockColoredStoneBricks;
-     public static BlockBaseColored blockColoredStoneBricksChiseled;
-     public static BlockBaseColored blockColoredStoneBricksCracked;
+    public static BlockAsphaltRoad blockAsphaltRoad;
+    public static BlockHealingStation blockHealingStation;
+    public static BlockBaseColored blockColoredCobblestone;
+    public static BlockBaseColored blockColoredStone;
+    public static BlockBaseColored blockColoredStoneBricks;
+    public static BlockBaseColored blockColoredStoneBricksChiseled;
+    public static BlockBaseColored blockColoredStoneBricksCracked;
 
-    public static void init(){
+    public static void init() {
 
         blockAsphaltRoad = new BlockAsphaltRoad(Material.ROCK, Reference.BlocksPlusBlocks.ASPHALT_ROAD.getName(), 1.5F, 1.0F);
         blockHealingStation = new BlockHealingStation(Material.IRON, Reference.BlocksPlusBlocks.HEALING_STATION.getName(), 1.0F, 1.0F);
@@ -44,7 +44,7 @@ public class ModBlocks {
         registerBlocks();
     }
 
-    private static void registerBlocks(){
+    private static void registerBlocks() {
         registerSimpleItemBlock(blockAsphaltRoad, Reference.BlocksPlusBlocks.ASPHALT_ROAD.getName());
         //registerSimpleItemBlock(blockHealingStation, Reference.BlocksPlusBlocks.HEALING_STATION.getName());
 
@@ -60,33 +60,33 @@ public class ModBlocks {
         LogHelper.info("Blocks registered!");
     }
 
-    private static void registerSimpleItemBlock(Block block, String registryName){
+    private static void registerSimpleItemBlock(Block block, String registryName) {
         ItemBlock itemBlock = new ItemBlock(block);
         itemBlock.setRegistryName(registryName);
         GameRegistry.register(itemBlock);
         GameRegistry.register(block);
 
         if (block instanceof BlockTileEntity) {
-            GameRegistry.registerTileEntity(((BlockTileEntity<?>)block).getTileEntityClass(), block.getRegistryName().toString());
+            GameRegistry.registerTileEntity(((BlockTileEntity<?>) block).getTileEntityClass(), block.getRegistryName().toString());
         }
     }
 
-    private static void registerColorItemBlock(Block block, String registryName){
+    private static void registerColorItemBlock(Block block, String registryName) {
         ItemBlockColored itemBlock = new ItemBlockColored(block);
         itemBlock.setRegistryName(registryName);
         GameRegistry.register(itemBlock);
         GameRegistry.register(block);
 
         if (block instanceof BlockTileEntity) {
-            GameRegistry.registerTileEntity(((BlockTileEntity<?>)block).getTileEntityClass(), block.getRegistryName().toString());
+            GameRegistry.registerTileEntity(((BlockTileEntity<?>) block).getTileEntityClass(), block.getRegistryName().toString());
         }
 
     }
 
-    private static void registerOreDict(Block block, String oreDictName, boolean isWildcard){
-        if(isWildcard){
+    private static void registerOreDict(Block block, String oreDictName, boolean isWildcard) {
+        if (isWildcard) {
             OreDictionary.registerOre(oreDictName, new ItemStack(block, 1, OreDictionary.WILDCARD_VALUE));
-        }else{
+        } else {
             OreDictionary.registerOre(oreDictName, block);
         }
     }
