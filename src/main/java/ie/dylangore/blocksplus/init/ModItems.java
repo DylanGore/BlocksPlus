@@ -40,7 +40,7 @@ public class ModItems {
 
         OreDictionary.registerOre(oreDictName, new ItemStack(item, 1, OreDictionary.WILDCARD_VALUE));
         for(int meta = 0; meta < EnumDyeColor.values().length; meta++){
-            String colorName = oreDictName + Reference.getColorNameCap(EnumDyeColor.byMetadata(meta).getUnlocalizedName());
+            String colorName = oreDictName + Reference.EnumColors.byMetadata(meta).getCapitalName();
             OreDictionary.registerOre(colorName, new ItemStack(item, 1, meta));
             LogHelper.debug("Adding " + item.getRegistryName() + " to ore dictionary under " + colorName);
         }

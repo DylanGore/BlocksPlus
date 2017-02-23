@@ -3,6 +3,8 @@ package ie.dylangore.blocksplus.blocks.base;
 import ie.dylangore.blocksplus.BlocksPlus;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.ItemBlock;
 
 /**
  * Project: BlocksPlus
