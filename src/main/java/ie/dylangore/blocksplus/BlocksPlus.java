@@ -1,5 +1,6 @@
 package ie.dylangore.blocksplus;
 
+import ie.dylangore.blocksplus.client.model.ModModelManager;
 import ie.dylangore.blocksplus.creativetab.TabBlocksPlus;
 import ie.dylangore.blocksplus.handler.ConfigurationHandler;
 import ie.dylangore.blocksplus.init.ModBlocks;
@@ -38,6 +39,8 @@ public class BlocksPlus {
         ConfigurationHandler.init(event.getSuggestedConfigurationFile());
         ModItems.init();
         ModBlocks.init();
+
+        ModModelManager.init();
 
         Recipes.init();
     }

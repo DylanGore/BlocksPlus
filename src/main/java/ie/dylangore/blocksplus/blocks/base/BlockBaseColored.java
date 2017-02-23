@@ -1,15 +1,9 @@
 package ie.dylangore.blocksplus.blocks.base;
 
-import ie.dylangore.blocksplus.BlocksPlus;
-import ie.dylangore.blocksplus.Reference;
-import ie.dylangore.blocksplus.Reference.EnumColors;
 import ie.dylangore.blocksplus.init.ModBlocks;
 import net.minecraft.block.Block;
-import net.minecraft.block.BlockColored;
 import net.minecraft.block.SoundType;
-import net.minecraft.block.material.MapColor;
 import net.minecraft.block.material.Material;
-import net.minecraft.block.properties.IProperty;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
@@ -21,6 +15,7 @@ import net.minecraft.util.NonNullList;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import javax.annotation.Nonnull;
 import java.util.Random;
 
 /**
@@ -32,11 +27,11 @@ import java.util.Random;
 
 public class BlockBaseColored extends BlockBase {
 
-    public static final PropertyEnum<EnumColors> BLOCK_COLOR = PropertyEnum.<EnumColors>create("block_color", EnumColors.class);
+    public static final PropertyEnum<EnumDyeColor> BLOCK_COLOR = PropertyEnum.create("color", EnumDyeColor.class);
 
     public BlockBaseColored(Material material, String name, float hardness, float resistance) {
         super(material, name, hardness, resistance);
-        this.setDefaultState(this.blockState.getBaseState().withProperty(BLOCK_COLOR, EnumColors.WHITE));
+        this.setDefaultState(this.blockState.getBaseState().withProperty(BLOCK_COLOR, EnumDyeColor.WHITE));
         this.setSoundType(SoundType.STONE);
     }
 
@@ -53,35 +48,36 @@ public class BlockBaseColored extends BlockBase {
 
     @Override
     public int damageDropped(IBlockState state) {
-        return ((EnumColors)state.getValue(BLOCK_COLOR)).getMetadata();
+        return getMetaFromState(state);
     }
 
     @Override
     public int getMetaFromState(IBlockState state)
     {
-        return ((EnumColors)state.getValue(BLOCK_COLOR)).getMetadata();
+        return state.getValue(BLOCK_COLOR).getMetadata();
     }
 
+    @Nonnull
     @Override
     public IBlockState getStateFromMeta(int meta)
     {
-        return this.getDefaultState().withProperty(BLOCK_COLOR, EnumColors.byMetadata(meta));
+        return this.getDefaultState().withProperty(BLOCK_COLOR, EnumDyeColor.byMetadata(meta));
     }
 
+    @Nonnull
     @Override
     protected BlockStateContainer createBlockState()
     {
-        return new BlockStateContainer(this, new IProperty[] {BLOCK_COLOR});
+        return new BlockStateContainer(this, BLOCK_COLOR);
     }
 
     @SideOnly(Side.CLIENT)
     @Override
     public void getSubBlocks(Item itemIn, CreativeTabs tab, NonNullList<ItemStack> list)
     {
-        for (EnumColors enumColors : EnumColors.values())
+        for (int i = 0; i < EnumDyeColor.values().length; i++)
         {
-            list.add(new ItemStack(itemIn, 1, enumColors.getMetadata()));
+            list.add(new ItemStack(itemIn, 1, i));
         }
     }
-
 }

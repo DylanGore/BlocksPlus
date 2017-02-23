@@ -1,6 +1,5 @@
 package ie.dylangore.blocksplus.items.base;
 
-import com.sun.istack.internal.NotNull;
 import ie.dylangore.blocksplus.Reference;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.Item;

@@ -1,8 +1,6 @@
 package ie.dylangore.blocksplus.init;
 
-import ie.dylangore.blocksplus.BlocksPlus;
 import ie.dylangore.blocksplus.Reference;
-import ie.dylangore.blocksplus.Reference.EnumColors;
 import ie.dylangore.blocksplus.blocks.BlockAsphaltRoad;
 import ie.dylangore.blocksplus.blocks.BlockHealingStation;
 import ie.dylangore.blocksplus.blocks.base.BlockBaseColored;
@@ -26,12 +24,12 @@ import net.minecraftforge.oredict.OreDictionary;
 public class ModBlocks {
 
      public static BlockAsphaltRoad blockAsphaltRoad;
-     static BlockHealingStation blockHealingStation;
+     public static BlockHealingStation blockHealingStation;
      public static BlockBaseColored blockColoredCobblestone;
      public static BlockBaseColored blockColoredStone;
-     static BlockBaseColored blockColoredStoneBricks;
-     static BlockBaseColored blockColoredStoneBricksChiseled;
-     static BlockBaseColored blockColoredStoneBricksCracked;
+     public static BlockBaseColored blockColoredStoneBricks;
+     public static BlockBaseColored blockColoredStoneBricksChiseled;
+     public static BlockBaseColored blockColoredStoneBricksCracked;
 
     public static void init(){
 
@@ -71,8 +69,6 @@ public class ModBlocks {
         if (block instanceof BlockTileEntity) {
             GameRegistry.registerTileEntity(((BlockTileEntity<?>)block).getTileEntityClass(), block.getRegistryName().toString());
         }
-
-        BlocksPlus.proxy.registerItemRenderer(itemBlock, 0, registryName);
     }
 
     private static void registerColorItemBlock(Block block, String registryName){
@@ -83,10 +79,6 @@ public class ModBlocks {
 
         if (block instanceof BlockTileEntity) {
             GameRegistry.registerTileEntity(((BlockTileEntity<?>)block).getTileEntityClass(), block.getRegistryName().toString());
-        }
-
-        for(int meta = 0; meta < EnumColors.values().length; meta++){
-            BlocksPlus.proxy.registerColorItemRenderer(itemBlock, meta, registryName);
         }
 
     }

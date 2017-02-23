@@ -20,8 +20,4 @@ public class ItemBase extends Item {
         setCreativeTab(BlocksPlus.creativeTab);
     }
 
-    public void registerItemModel() {
-        BlocksPlus.proxy.registerItemRenderer(this, 0, name);
-    }
-
 }
