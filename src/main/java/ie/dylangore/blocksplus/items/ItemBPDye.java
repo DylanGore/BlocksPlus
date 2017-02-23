@@ -1,6 +1,7 @@
 package ie.dylangore.blocksplus.items;
 
 import ie.dylangore.blocksplus.items.base.ItemBaseColored;
+import ie.dylangore.blocksplus.util.FormattingHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockCarpet;
 import net.minecraft.block.BlockColored;
@@ -15,6 +16,10 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
+
+import java.util.List;
 
 /**
  * Project: BlocksPlus
@@ -22,6 +27,7 @@ import net.minecraft.world.World;
  * Author: Dylan Gore (hello@dylangore.ie)
  * Date Created: 22 February 2017
  */
+
 public class ItemBPDye extends ItemBaseColored {
     public ItemBPDye(String name) {
         super(name);
@@ -56,5 +62,11 @@ public class ItemBPDye extends ItemBaseColored {
             return true;
         }
         return false;
+    }
+
+    @Override
+    @SideOnly(Side.CLIENT)
+    public void addInformation(ItemStack stack, EntityPlayer playerIn, List<String> tooltip, boolean advanced) {
+        tooltip.add(FormattingHelper.RED.getFormattingCode() + "Work in Progress");
     }
 }

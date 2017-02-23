@@ -2,6 +2,7 @@ package ie.dylangore.blocksplus.blocks;
 
 import ie.dylangore.blocksplus.Reference;
 import ie.dylangore.blocksplus.blocks.base.BlockTileEntity;
+import ie.dylangore.blocksplus.util.FormattingHelper;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.player.EntityPlayer;
@@ -32,15 +33,13 @@ public class BlockHealingStation extends BlockTileEntity<TileEntityHealingStatio
     public boolean onBlockActivated(World worldIn, BlockPos pos, IBlockState state, EntityPlayer playerIn, EnumHand hand, EnumFacing heldItem, float side, float hitX, float hitY) {
         //TODO Add functionality
 
-        String italicCyan = "\u00A73 \u00A7o";
-
         TileEntityHealingStation tile = getTileEntity(worldIn, pos);
         if (tile.isBlockDisabled()) {
-            playerIn.sendStatusMessage(new TextComponentString(String.format("Block Disabled!")), true);
+            playerIn.sendStatusMessage(new TextComponentString(String.format(FormattingHelper.DARK_RED.getFormattingCode() + "Block Disabled!")), true);
         } else {
             if (worldIn.isRemote) {
-                playerIn.sendStatusMessage(new TextComponentString(String.format(italicCyan + "You harness the regenerative power of the wither but your")), false);
-                playerIn.sendStatusMessage(new TextComponentString(String.format(italicCyan + "body is being overwhelmed by the sudden influx of energy.")), false);
+                playerIn.sendStatusMessage(new TextComponentString(String.format(FormattingHelper.AQUA.getFormattingCode() + FormattingHelper.ITALIC.getFormattingCode() + "You harness the regenerative power of the wither but your")), false);
+                playerIn.sendStatusMessage(new TextComponentString(String.format(FormattingHelper.AQUA.getFormattingCode() + FormattingHelper.ITALIC.getFormattingCode() + "body is being overwhelmed by the sudden influx of energy.")), false);
 
                 playerIn.addPotionEffect(new PotionEffect(Potion.getPotionById(Reference.PotionEffects.REGENERATION.getPotionId()), 40, 1000, true, false));
                 playerIn.addPotionEffect(new PotionEffect(Potion.getPotionById(Reference.PotionEffects.BLINDNESS.getPotionId()), 40, 1000, true, false));
