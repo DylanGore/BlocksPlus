@@ -103,7 +103,7 @@ artifacts {
 }
 
 task makeChangelog(type: se.bjurr.gitchangelog.plugin.gradle.GitChangelogTask) {
-    filePath = "build/libs/changelog.html"
+    filePath = "changelog.html"
     untaggedName = "Current release ${version}"
     templateContent = "${changelog_html}"
 }
