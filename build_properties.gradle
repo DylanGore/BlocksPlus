@@ -8,4 +8,6 @@ ext{
     mc_version="1.11.2"
     forge_version="13.20.0.2228"
     mappings_version="snapshot_20161220"
+
+    chisel_version="0.0.9.10"
 }

@@ -11,7 +11,6 @@ buildscript {
 }
 apply plugin: 'net.minecraftforge.gradle.forge'
 apply plugin: 'se.bjurr.gitchangelog.git-changelog-gradle-plugin'
-//Only edit below this line, the above code adds and enables the nessasary things for Forge to be setup.
 
 apply from: 'build_properties.gradle'
 
@@ -38,6 +37,13 @@ minecraft {
     replace "mod_version", project.version
 }
 
+//repositories{
+//    maven{
+//        //Required for Chisel integration
+//        url = "http://maven.tterrag.com/"
+//    }
+//}
+
 dependencies {
     // you may put jars on which you depend on in ./libs
     // or you may define them like so..
@@ -60,6 +66,7 @@ dependencies {
     // http://www.gradle.org/docs/current/userguide/artifact_dependencies_tutorial.html
     // http://www.gradle.org/docs/current/userguide/dependency_management.html
 
+    //deobfCompile "team.chisel:Chisel:MC${mc_version}-${chisel_version}:api"
 }
 
 processResources
