@@ -8,6 +8,8 @@ A Minecraft mod developed and maintained by [Dylan Gore](https://dylangore.ie)
 
 **[Recommended Downloads _(via CurseForge)_](https://minecraft.curseforge.com/mc-mods/blocks-plus)** 
 
+[View Full Changelog](https://dylangore.ie/mods/blocksplus/changelog.html)
+
 _**Diisclaimer:** Beta & Alpha builds have not been fully tested and features included in beta/alpha versions may not make it to final release. There is also a chance that alpha/beta versions may corrupt or cause issues with your world so make sure you have created a full backup._
 
 _I will not be held liable for any damage caused to your worlds, game, computer, etc. as a result of this mod._
