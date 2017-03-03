@@ -105,23 +105,6 @@ artifacts {
 task makeChangelog(type: se.bjurr.gitchangelog.plugin.gradle.GitChangelogTask) {
     filePath = "build/libs/changelog.html"
     untaggedName = "Current release ${version}"
-    templateContent = """
-<div style="font-family: sans-serif;">
-<h1>Changelog for Blocks Plus</h1>
-<h2>Version ${version} for Minecraft ${project.minecraft.version}</h2>
-<ul>
-{{#tags}}
-<li>
-<h3>{{name}}</h3>
-<hr/>
-<ul>
-{{#commits}}
-<li>{{{message}}}</li>
-{{/commits}}
-</ul>
-{{/tags}}
-</ul>
-</div>
-    """
+    templateContent = "${changelog_html}"
 }
 
