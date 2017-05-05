@@ -1,0 +1,6 @@
+{
+  "parent": "blocksplus:block/base/cube_all_colored",
+  "textures": {
+    "all": "minecraft:blocks/glass"
+  }
+}

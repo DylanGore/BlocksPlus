@@ -2,7 +2,9 @@ package ie.dylangore.blocksplus.init;
 
 import ie.dylangore.blocksplus.Reference;
 import ie.dylangore.blocksplus.blocks.BlockAsphaltRoad;
+import ie.dylangore.blocksplus.blocks.BlockConnectedGlass;
 import ie.dylangore.blocksplus.blocks.BlockHealingStation;
+import ie.dylangore.blocksplus.blocks.BlockRimmedGlass;
 import ie.dylangore.blocksplus.blocks.base.BlockBaseColored;
 import ie.dylangore.blocksplus.blocks.base.BlockTileEntity;
 import ie.dylangore.blocksplus.blocks.itemblocks.ItemBlockColored;
@@ -30,6 +32,9 @@ public class ModBlocks {
     public static BlockBaseColored blockColoredStoneBricks;
     public static BlockBaseColored blockColoredStoneBricksChiseled;
     public static BlockBaseColored blockColoredStoneBricksCracked;
+    public static BlockRimmedGlass blockRimmedGlass;
+    public static BlockRimmedGlass blockRimmedGlowingGlass;
+    public static BlockConnectedGlass blockGlowingGlass;
 
     public static void init() {
 
@@ -40,6 +45,9 @@ public class ModBlocks {
         blockColoredStoneBricks = new BlockBaseColored(Material.ROCK, Reference.BlocksPlusBlocks.COLORED_STONE_BRICKS.getName(), 1.5F, 1.0F);
         blockColoredStoneBricksChiseled = new BlockBaseColored(Material.ROCK, Reference.BlocksPlusBlocks.COLORED_STONE_BRICKS_CHISELED.getName(), 1.5F, 1.0F);
         blockColoredStoneBricksCracked = new BlockBaseColored(Material.ROCK, Reference.BlocksPlusBlocks.COLORED_STONE_BRICKS_CRACKED.getName(), 1.5F, 1.0F);
+        blockRimmedGlass = new BlockRimmedGlass(Material.GLASS, Reference.BlocksPlusBlocks.RIMMED_GLASS.getName(), 1.0F, 1.0F);
+        blockRimmedGlowingGlass = new BlockRimmedGlass(Material.GLASS, Reference.BlocksPlusBlocks.RIMMED_GLOWING_GLASS.getName(), 1.0F, 1.0F, 1.0F);
+        blockGlowingGlass = new BlockConnectedGlass(Material.GLASS, Reference.BlocksPlusBlocks.GLOWING_GLASS.getName(), 1.0F, 1.0F);
 
         registerBlocks();
     }
@@ -47,15 +55,22 @@ public class ModBlocks {
     private static void registerBlocks() {
         registerSimpleItemBlock(blockAsphaltRoad, Reference.BlocksPlusBlocks.ASPHALT_ROAD.getName());
         //registerSimpleItemBlock(blockHealingStation, Reference.BlocksPlusBlocks.HEALING_STATION.getName());
+        registerSimpleItemBlock(blockGlowingGlass, Reference.BlocksPlusBlocks.GLOWING_GLASS.getName());
 
         registerColorItemBlock(blockColoredCobblestone, Reference.BlocksPlusBlocks.COLOURED_COBBLESTONE.getName());
         registerColorItemBlock(blockColoredStone, Reference.BlocksPlusBlocks.COLORED_STONE.getName());
         registerColorItemBlock(blockColoredStoneBricks, Reference.BlocksPlusBlocks.COLORED_STONE_BRICKS.getName());
         registerColorItemBlock(blockColoredStoneBricksChiseled, Reference.BlocksPlusBlocks.COLORED_STONE_BRICKS_CHISELED.getName());
         registerColorItemBlock(blockColoredStoneBricksCracked, Reference.BlocksPlusBlocks.COLORED_STONE_BRICKS_CRACKED.getName());
+        registerColorItemBlock(blockRimmedGlass, Reference.BlocksPlusBlocks.RIMMED_GLASS.getName());
+        registerColorItemBlock(blockRimmedGlowingGlass, Reference.BlocksPlusBlocks.RIMMED_GLOWING_GLASS.getName());
 
         registerOreDict(blockColoredCobblestone, "cobblestone", true);
         registerOreDict(blockColoredStone, "stone", true);
+        registerOreDict(blockRimmedGlass, "blockGlass", true);
+        registerOreDict(blockRimmedGlowingGlass, "blockGlass", true);
+
+        registerOreDict(blockGlowingGlass, "blockGlass", false);
 
         LogHelper.info("Blocks registered!");
     }

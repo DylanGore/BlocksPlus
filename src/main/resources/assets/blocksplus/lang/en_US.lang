@@ -1,6 +1,7 @@
 #Blocks - General
 tile.asphalt_road.name=Asphalt Road
 tile.healing_station.name=Healing Station (WIP)
+tile.glowing_glass.name=Glowing Glass
 
 #Blocks - Colored Cobblestone
 tile.colored_cobblestone.white.name=White Cobblestone
@@ -109,6 +110,42 @@ tile.colored_stone_bricks_moss.brown.name=Mossy Brown Stone Bricks
 tile.colored_stone_bricks_moss.green.name=Mossy Green Stone Bricks
 tile.colored_stone_bricks_moss.red.name=Mossy Red Stone Bricks
 tile.colored_stone_bricks_moss.black.name=Mossy Black Stone Bricks
+
+#Blocks - Rimmed Glass
+tile.rimmed_glass.white.name=White Rimmed Glass
+tile.rimmed_glass.orange.name=Orange Rimmed Glass
+tile.rimmed_glass.magenta.name=Magenta Rimmed Glass
+tile.rimmed_glass.light_blue.name=Light Blue Rimmed Glass
+tile.rimmed_glass.yellow.name=Yellow Rimmed Glass
+tile.rimmed_glass.lime.name=Lime Rimmed Glass
+tile.rimmed_glass.pink.name=Pink Rimmed Glass
+tile.rimmed_glass.gray.name=Gray Rimmed Glass
+tile.rimmed_glass.silver.name=Light Gray Rimmed Glass
+tile.rimmed_glass.cyan.name=Cyan Rimmed Glass
+tile.rimmed_glass.purple.name=Purple Rimmed Glass
+tile.rimmed_glass.blue.name=Blue Rimmed Glass
+tile.rimmed_glass.brown.name=Brown Rimmed Glass
+tile.rimmed_glass.green.name=Green Rimmed Glass
+tile.rimmed_glass.red.name=Red Rimmed Glass
+tile.rimmed_glass.black.name=Black Rimmed Glass
+
+#Blocks - Rimmed Glowing Glass
+tile.rimmed_glowing_glass.white.name=White Rimmed Glowing Glass
+tile.rimmed_glowing_glass.orange.name=Orange Rimmed Glowing Glass
+tile.rimmed_glowing_glass.magenta.name=Magenta Rimmed Glowing Glass
+tile.rimmed_glowing_glass.light_blue.name=Light Blue Rimmed Glowing Glass
+tile.rimmed_glowing_glass.yellow.name=Yellow Rimmed Glowing Glass
+tile.rimmed_glowing_glass.lime.name=Lime Rimmed Glowing Glass
+tile.rimmed_glowing_glass.pink.name=Pink Rimmed Glowing Glass
+tile.rimmed_glowing_glass.gray.name=Gray Rimmed Glowing Glass
+tile.rimmed_glowing_glass.silver.name=Light Gray Rimmed Glowing Glass
+tile.rimmed_glowing_glass.cyan.name=Cyan Rimmed Glowing Glass
+tile.rimmed_glowing_glass.purple.name=Purple Rimmed Glowing Glass
+tile.rimmed_glowing_glass.blue.name=Blue Rimmed Glowing Glass
+tile.rimmed_glowing_glass.brown.name=Brown Rimmed Glowing Glass
+tile.rimmed_glowing_glass.green.name=Green Rimmed Glowing Glass
+tile.rimmed_glowing_glass.red.name=Red Rimmed Glowing Glass
+tile.rimmed_glowing_glass.black.name=Black Rimmed Glowing Glass
 
 #Items
 item.bp_dye.white.name=White Dye

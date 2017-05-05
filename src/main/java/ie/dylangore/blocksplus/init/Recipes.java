@@ -25,6 +25,8 @@ public class Recipes {
         Recipes.addColorRecipes(ModBlocks.blockColoredCobblestone, Blocks.COBBLESTONE, "cobblestone");
         Recipes.addColorRecipes(ModBlocks.blockColoredStone, Blocks.STONE, "stone");
         Recipes.addColorRecipes(ModBlocks.blockColoredStoneBricks, Blocks.STONEBRICK, "stonebrick");
+        Recipes.addColorRecipes(ModBlocks.blockRimmedGlass, Blocks.GLASS, "blockGlass");
+
 
         Recipes.addColorBrickRecipes(ModBlocks.blockColoredStoneBricks, ModBlocks.blockColoredStone);
         Recipes.addColorBrickChiseledRecipes(ModBlocks.blockColoredStoneBricksChiseled, ModBlocks.blockColoredStoneBricks);
@@ -42,18 +44,31 @@ public class Recipes {
         GameRegistry.addRecipe(new ShapedOreRecipe(new ItemStack(ModBlocks.blockAsphaltRoad, 9),
                 "gsg", "sgs", "gsg",
                 'g', "gravel", 's', "stone"));
+
+        /* Glowing Glass */
+        GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(ModBlocks.blockGlowingGlass, 8),
+                "blockGlass", "blockGlass", "blockGlass",
+                "blockGlass", "dustGlowstone", "blockGlass",
+                "blockGlass", "blockGlass", "blockGlass"
+        ));
+
+        /* Rimmed Glowing Glass */
+        for(int meta = 0; meta < EnumDyeColor.values().length; meta++){
+            Block glowingGlass = ModBlocks.blockGlowingGlass.getBlockState().getBlock();
+
+            GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(ModBlocks.blockRimmedGlowingGlass, 8, meta),
+                    glowingGlass, glowingGlass, glowingGlass,
+                    glowingGlass, getDyeFromMeta(meta), glowingGlass,
+                    glowingGlass, glowingGlass, glowingGlass
+            ));
+        }
     }
 
     private static void addColorRecipes(Block colorBlock, Block baseBlock, String baseBlockOreDict) {
         for (int meta = 0; meta < EnumDyeColor.values().length; meta++) {
 
-            String currColor;
-            if (meta == 8) {
-                currColor = "LightGray";
-            } else {
-                currColor = Reference.getColorNameFromMeta(meta, true);
-            }
-            String currDye = "dye" + currColor;
+            String currDye = getDyeFromMeta(meta);
+
             LogHelper.debug("Current Dye:" + currDye);
             LogHelper.debug("Current Meta:" + meta);
 
@@ -62,8 +77,8 @@ public class Recipes {
 
                 GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(colorBlock, 8, meta),
                         baseBlockOreDict, baseBlockOreDict, baseBlockOreDict,
-                        baseBlockOreDict, currDye, baseBlockOreDict,
-                        baseBlockOreDict, baseBlockOreDict, baseBlockOreDict
+                        baseBlockOreDict,baseBlockOreDict, baseBlockOreDict,
+                        baseBlockOreDict, currDye, baseBlockOreDict
                 ));
             } else {
                 GameRegistry.addRecipe(new ShapelessOreRecipe(new ItemStack(baseBlock, 1), new ItemStack(colorBlock, 1, meta)));
@@ -110,6 +125,16 @@ public class Recipes {
         for (int meta = 0; meta < EnumDyeColor.values().length; meta++) {
             GameRegistry.addSmelting(new ItemStack(input, 1, meta), new ItemStack(output, 1, meta), xp);
         }
+    }
+
+    private static String getDyeFromMeta(int meta){
+        String currColor;
+        if (meta == 8) {
+            currColor = "LightGray";
+        } else {
+            currColor = Reference.getColorNameFromMeta(meta, true);
+        }
+        return "dye" + currColor;
     }
 
 }

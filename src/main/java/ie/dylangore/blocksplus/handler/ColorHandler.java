@@ -31,11 +31,6 @@ public class ColorHandler {
         registerItemColorsHandlers(itemColors, blockColors);
     }
 
-    /**
-     * Register the {@link IBlockColor} handlers.
-     *
-     * @param blockColors The BlockColors instance
-     */
     private static void registerBlockColourHandlers(final BlockColors blockColors) {
         // Use the grass colour of the biome or the default grass colour
         final IBlockColor colorBlocks = (state, blockAccess, pos, tintIndex) -> {
@@ -51,6 +46,8 @@ public class ColorHandler {
         blockColors.registerBlockColorHandler(colorBlocks, ModBlocks.blockColoredStoneBricks);
         blockColors.registerBlockColorHandler(colorBlocks, ModBlocks.blockColoredStoneBricksChiseled);
         blockColors.registerBlockColorHandler(colorBlocks, ModBlocks.blockColoredStoneBricksCracked);
+        blockColors.registerBlockColorHandler(colorBlocks, ModBlocks.blockRimmedGlass);
+        blockColors.registerBlockColorHandler(colorBlocks, ModBlocks.blockRimmedGlowingGlass);
     }
 
     private static void registerItemColorsHandlers(ItemColors itemColors, BlockColors blockColors) {
@@ -71,6 +68,8 @@ public class ColorHandler {
         itemColors.registerItemColorHandler(itemBlockColourHandler, ModBlocks.blockColoredStoneBricks);
         itemColors.registerItemColorHandler(itemBlockColourHandler, ModBlocks.blockColoredStoneBricksChiseled);
         itemColors.registerItemColorHandler(itemBlockColourHandler, ModBlocks.blockColoredStoneBricksCracked);
+        itemColors.registerItemColorHandler(itemBlockColourHandler, ModBlocks.blockRimmedGlass);
+        itemColors.registerItemColorHandler(itemBlockColourHandler, ModBlocks.blockRimmedGlowingGlass);
 
         itemColors.registerItemColorHandler(dyeItemColorHandler, ModItems.itemDye);
 

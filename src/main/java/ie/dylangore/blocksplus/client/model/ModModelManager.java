@@ -11,6 +11,8 @@ import net.minecraft.client.renderer.block.statemap.StateMap;
 import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 /**
  * Project: BlocksPlus
@@ -21,6 +23,7 @@ import net.minecraftforge.client.model.ModelLoader;
 
 public final class ModModelManager {
 
+    @SideOnly(Side.CLIENT)
     public static void init() {
 
         registerColorBlockModel(ModBlocks.blockColoredCobblestone);
@@ -28,19 +31,24 @@ public final class ModModelManager {
         registerColorBlockModel(ModBlocks.blockColoredStoneBricks);
         registerColorBlockModel(ModBlocks.blockColoredStoneBricksChiseled);
         registerColorBlockModel(ModBlocks.blockColoredStoneBricksCracked);
+        registerColorBlockModel(ModBlocks.blockRimmedGlass);
+        registerColorBlockModel(ModBlocks.blockRimmedGlowingGlass);
 
         registerBlockModel(ModBlocks.blockAsphaltRoad);
         registerBlockModel(ModBlocks.blockHealingStation);
+        registerBlockModel(ModBlocks.blockGlowingGlass);
 
         registerColorItemModel(ModItems.itemDye);
 
         LogHelper.info("Models Registered!");
     }
 
+    @SideOnly(Side.CLIENT)
     private static void registerBlockModel(Block block) {
         ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation(Reference.ID + ":" + block.getUnlocalizedName().substring(5), "inventory"));
     }
 
+    @SideOnly(Side.CLIENT)
     private static void registerColorBlockModel(Block block) {
         ModelLoader.setCustomStateMapper(block, new StateMap.Builder().ignore(BlockBaseColored.BLOCK_COLOR).build());
 
@@ -49,6 +57,7 @@ public final class ModModelManager {
         }
     }
 
+    @SideOnly(Side.CLIENT)
     private static void registerColorItemModel(Item item) {
         for (int i = 0; i < EnumDyeColor.values().length; i++) {
             ModelLoader.setCustomModelResourceLocation(item, i, new ModelResourceLocation(Reference.ID + ":" + item.getUnlocalizedName().substring(5), "inventory"));
