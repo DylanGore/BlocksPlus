@@ -1,4 +1,4 @@
-![Logo](https://projects.dylangore.ie/DylanGore/BlocksPlus/raw/master/src/main/resources/assets/blocksplus/logo.png) 
+![Logo](https://github.com/DylanGore/BlocksPlus/raw/master/src/main/resources/assets/blocksplus/logo.png) 
 
 A Minecraft mod developed and maintained by [Dylan Gore](https://dylangore.ie)
 
