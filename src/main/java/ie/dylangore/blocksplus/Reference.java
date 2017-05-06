@@ -17,7 +17,7 @@ public class Reference {
     public static final String UPDATE_JSON_URL = "https://dylangore.ie/mods/blocksplus/updates.json"; //Temporary link
 
     public static final String CLIENT_PROXY_LOC = "ie.dylangore.blocksplus.proxy.ClientProxy";
-    public static final String COMMON_PROXY_LOC = "ie.dylangore.blocksplus.proxy.CommonProxy";
+    public static final String SERVER_PROXY_LOC = "ie.dylangore.blocksplus.proxy.ServerProxy";
 
     public static final String GUI_FACTORY_LOC = "ie.dylangore.blocksplus.client.gui.GuiFactory";
 

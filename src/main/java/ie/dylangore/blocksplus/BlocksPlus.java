@@ -1,12 +1,11 @@
 package ie.dylangore.blocksplus;
 
-import ie.dylangore.blocksplus.client.model.ModModelManager;
 import ie.dylangore.blocksplus.creativetab.TabBlocksPlus;
 import ie.dylangore.blocksplus.handler.ConfigurationHandler;
 import ie.dylangore.blocksplus.init.ModBlocks;
 import ie.dylangore.blocksplus.init.ModItems;
 import ie.dylangore.blocksplus.init.Recipes;
-import ie.dylangore.blocksplus.proxy.CommonProxy;
+import ie.dylangore.blocksplus.proxy.ServerProxy;
 import ie.dylangore.blocksplus.util.LogHelper;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -29,8 +28,8 @@ public class BlocksPlus {
     @Mod.Instance
     public static BlocksPlus instance;
 
-    @SidedProxy(clientSide = Reference.CLIENT_PROXY_LOC, serverSide = Reference.COMMON_PROXY_LOC)
-    public static CommonProxy proxy;
+    @SidedProxy(clientSide = Reference.CLIENT_PROXY_LOC, serverSide = Reference.SERVER_PROXY_LOC)
+    public static ServerProxy proxy;
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
@@ -40,7 +39,7 @@ public class BlocksPlus {
         ModItems.init();
         ModBlocks.init();
 
-        ModModelManager.init();
+        proxy.initModels();
 
         Recipes.init();
     }
@@ -48,7 +47,7 @@ public class BlocksPlus {
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
 
-        proxy.init(event);
+        proxy.init();
 
     }
 
