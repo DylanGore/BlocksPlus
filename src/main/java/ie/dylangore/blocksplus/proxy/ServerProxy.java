@@ -1,7 +1,5 @@
 package ie.dylangore.blocksplus.proxy;
 
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-
 /**
  * Project: BlocksPlus
  * File: ServerProxy

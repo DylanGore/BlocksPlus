@@ -1,7 +1,5 @@
 package ie.dylangore.blocksplus.util;
 
-import java.util.Objects;
-
 /**
  * Project: BlocksPlus
  * File: FormattingHelper

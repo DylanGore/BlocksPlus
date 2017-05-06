@@ -2,7 +2,6 @@ package ie.dylangore.blocksplus.proxy;
 
 import ie.dylangore.blocksplus.client.model.ModModelManager;
 import ie.dylangore.blocksplus.handler.ColorHandler;
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 
 /**
  * Project: BlocksPlus

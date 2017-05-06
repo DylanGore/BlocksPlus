@@ -22,16 +22,14 @@ public class BlockAsphaltRoad extends BlockBase {
         super(material, name, hardness, resistance);
     }
 
+    @SuppressWarnings("ConstantConditions")
     @Override
     public void onEntityWalk(World worldIn, BlockPos pos, Entity entityIn) {
 
-        if (entityIn instanceof Entity) {
+        if (entityIn != null) {
             if (((EntityLivingBase) entityIn).getActivePotionEffect(Potion.getPotionById(Reference.PotionEffects.SPEED.getPotionId())) == null) {
                 ((EntityLivingBase) entityIn).addPotionEffect(new PotionEffect(Potion.getPotionById(Reference.PotionEffects.SPEED.getPotionId()), 10, 2, false, false));
             }
-//            if (((EntityLivingBase) entityIn).getActivePotionEffect(Potion.getPotionById(Reference.PotionEffects.JUMP_BOOST.getPotionId())) == null) {
-//                ((EntityLivingBase) entityIn).addPotionEffect(new PotionEffect(Potion.getPotionById(Reference.PotionEffects.JUMP_BOOST.getPotionId()), 10, 1, false, false));
-//            }
         }
         super.onEntityWalk(worldIn, pos, entityIn);
     }
