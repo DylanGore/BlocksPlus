@@ -23,10 +23,10 @@ public class ConfigurationHandler {
 
     public static void init(File configFile) {
 
-        LogHelper.debug("Configuration handler initialized");
-        configuration = new Configuration(configFile);
-        loadConfiguration();
-
+        if (configuration == null) {
+            configuration = new Configuration(configFile, true);
+            loadConfiguration();
+        }
     }
 
     private static void loadConfiguration() {

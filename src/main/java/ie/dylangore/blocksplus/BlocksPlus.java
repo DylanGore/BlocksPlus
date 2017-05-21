@@ -1,12 +1,7 @@
 package ie.dylangore.blocksplus;
 
 import ie.dylangore.blocksplus.creativetab.TabBlocksPlus;
-import ie.dylangore.blocksplus.handler.ConfigurationHandler;
-import ie.dylangore.blocksplus.init.ModBlocks;
-import ie.dylangore.blocksplus.init.ModItems;
-import ie.dylangore.blocksplus.init.Recipes;
-import ie.dylangore.blocksplus.proxy.ServerProxy;
-import ie.dylangore.blocksplus.util.LogHelper;
+import ie.dylangore.blocksplus.proxy.IProxy;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.SidedProxy;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -29,31 +24,21 @@ public class BlocksPlus {
     public static BlocksPlus instance;
 
     @SidedProxy(clientSide = Reference.CLIENT_PROXY_LOC, serverSide = Reference.SERVER_PROXY_LOC)
-    public static ServerProxy proxy;
+    public static IProxy proxy;
 
     @Mod.EventHandler
     public void preInit(FMLPreInitializationEvent event) {
-        LogHelper.info("Blocks Plus is loading...");
-
-        ConfigurationHandler.init(event.getSuggestedConfigurationFile());
-        ModItems.init();
-        ModBlocks.init();
-
-        proxy.initModels();
-
-        Recipes.init();
+        proxy.onPreInit(event);
     }
 
     @Mod.EventHandler
     public void init(FMLInitializationEvent event) {
-
-        proxy.init();
-
+        proxy.onInit(event);
     }
 
     @Mod.EventHandler
     public void postInit(FMLPostInitializationEvent event) {
-
+        proxy.onPostInit(event);
     }
 
 }
