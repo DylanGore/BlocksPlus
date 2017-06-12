@@ -7,7 +7,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:2.2-SNAPSHOT'
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
         classpath "se.bjurr.gitchangelog:git-changelog-gradle-plugin:1.32"
     }
 }
@@ -42,7 +42,7 @@ repositories{
 }
 
 dependencies {
-    deobfCompile "team.chisel:Chisel:MC${mc_version}-${chisel_version}:api"
+    //deobfCompile "team.chisel:Chisel:MC${mc_version}-${chisel_version}:api"
 }
 
 processResources
