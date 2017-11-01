@@ -35,6 +35,12 @@ public class BlockBaseColored extends BlockBase {
         this.setSoundType(SoundType.STONE);
     }
 
+    @Nonnull
+    @Override
+    public BlockStateContainer createBlockState() {
+        return new BlockStateContainer(this, BLOCK_COLOR);
+    }
+
     @Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune) {
         Block block = state.getBlock();
@@ -59,20 +65,45 @@ public class BlockBaseColored extends BlockBase {
     @Nonnull
     @Override
     public IBlockState getStateFromMeta(int meta) {
-        return this.getDefaultState().withProperty(BLOCK_COLOR, EnumDyeColor.byMetadata(meta));
-    }
-
-    @Nonnull
-    @Override
-    protected BlockStateContainer createBlockState() {
-        return new BlockStateContainer(this, BLOCK_COLOR);
+        if (meta >= EnumDyeColor.values().length) {
+            meta = 0;
+        }
+        return getDefaultState().withProperty(BLOCK_COLOR, EnumDyeColor.byMetadata(meta));
     }
 
     @SideOnly(Side.CLIENT)
     @Override
-    public void getSubBlocks(Item itemIn, CreativeTabs tab, NonNullList<ItemStack> list) {
+    public void getSubBlocks(CreativeTabs tab, NonNullList<ItemStack> list) {
         for (int i = 0; i < EnumDyeColor.values().length; i++) {
-            list.add(new ItemStack(itemIn, 1, i));
+            list.add(new ItemStack(this, 1, i));
         }
     }
+
+//    @SideOnly(Side.CLIENT)
+//    public void registerModels() {
+//        ModelLoader.setCustomStateMapper(this, new StateMap.Builder().ignore(BLOCK_COLOR).build());
+//        registerBlockToState(this, EnumDyeColor.values().length, this.getDefaultState());
+//    }
+//
+//    @SideOnly(Side.CLIENT)
+//    private static final Map<IRegistryDelegate<Block>, IStateMapper> customStateMappers = ReflectionHelper.getPrivateValue(ModelLoader.class, null, "customStateMappers");
+//    @SideOnly(Side.CLIENT)
+//    private static final DefaultStateMapper fallbackMapper = new DefaultStateMapper();
+//
+//    @SideOnly(Side.CLIENT)
+//    private static ModelResourceLocation getMrlForState(IBlockState state) {
+//        return customStateMappers
+//                .getOrDefault(state.getBlock().delegate, fallbackMapper)
+//                .putStateModelLocations(state.getBlock())
+//                .get(state);
+//    }
+//
+//    @SideOnly(Side.CLIENT)
+//    public static void registerBlockToState(Block b, int meta, IBlockState state) {
+//        ModelLoader.setCustomModelResourceLocation(
+//                Item.getItemFromBlock(b),
+//                meta,
+//                getMrlForState(state)
+//        );
+//    }
 }

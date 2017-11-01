@@ -22,7 +22,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
  */
 
 @SideOnly(Side.CLIENT)
-public final class ModModelManager {
+public class ModModelManager {
 
 
     public static void init() {
