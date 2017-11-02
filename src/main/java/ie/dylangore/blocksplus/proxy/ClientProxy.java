@@ -33,7 +33,6 @@ public class ClientProxy extends CommonProxy {
 
     @SubscribeEvent
     public static void registerModels(ModelRegistryEvent event){
-        FMLLog.bigWarning("Models");
         ModModelManager.init();
     }
 }

@@ -36,7 +36,7 @@ public class ModModelManager {
         registerColorBlockModel(ModBlocks.blockRimmedGlowingGlass);
 
         registerBlockModel(ModBlocks.blockAsphaltRoad);
-        registerBlockModel(ModBlocks.blockHealingStation);
+//        registerBlockModel(ModBlocks.blockHealingStation);
         registerBlockModel(ModBlocks.blockGlowingGlass);
 
         registerColorItemModel(ModItems.itemDye);
