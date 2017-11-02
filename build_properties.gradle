@@ -2,7 +2,7 @@ ext{
     mod_name="Blocks Plus"
     mod_group="ie.dylangore.blocksplus"
     mod_archive_base_name="BlocksPlus"
-    mod_version="3.1.0-rc1"
+    mod_version="3.1"
     mod_ref_file_loc="src/main/java/ie/dylangore/blocksplus/Reference.java"
 
     mc_version="1.12.2"

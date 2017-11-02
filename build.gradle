@@ -16,7 +16,7 @@ apply plugin: 'se.bjurr.gitchangelog.git-changelog-gradle-plugin'
 
 apply from: 'build_properties.gradle'
 
-version = mc_version + "-" + mod_version
+version="${mc_version}-${mod_version}.${System.getenv("BUILD_NUMBER") ?: 0}"
 group= mod_group
 archivesBaseName = mod_archive_base_name
 
