@@ -3,6 +3,8 @@ package ie.dylangore.blocksplus.util;
 import ie.dylangore.blocksplus.Reference;
 import net.minecraftforge.fml.common.FMLLog;
 import org.apache.logging.log4j.Level;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 
 /**
  * Project: BlocksPlus
@@ -12,8 +14,12 @@ import org.apache.logging.log4j.Level;
  */
 public class LogHelper {
 
+    private static final Logger logger = LogManager.getLogger("BlocksPlus");
+
     public static void log(Level logLevel, Object object) {
-        FMLLog.log(Reference.NAME, logLevel, String.valueOf(object));
+//        FMLLog.log(Reference.NAME, logLevel, String.valueOf(object));
+        logger.log(logLevel, String.valueOf(object));
+
     }
 
     public static void all(Object object) {
@@ -46,6 +52,10 @@ public class LogHelper {
 
     public static void warn(Object object) {
         log(Level.WARN, object);
+    }
+
+    public static void bigWarning(Object object){
+        FMLLog.bigWarning(String.valueOf(object));
     }
 
 }
