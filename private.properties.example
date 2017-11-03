@@ -1,0 +1,7 @@
+# This is an example private.properties file, to buld, rename this file to private .properties.
+# The Gradle script requires these values to be set, even if not uploading to CurseForge
+
+#CurseForge API Key
+cf_key=xxxxx
+#CurseForge Project ID
+cf_id=12345
