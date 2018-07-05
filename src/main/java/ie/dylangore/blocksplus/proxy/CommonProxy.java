@@ -25,8 +25,6 @@ public abstract class CommonProxy implements IProxy {
 
         ModItems.init();
         ModBlocks.init();
-        //TODO Reimplement Recipes
-        //Recipes.init();
     }
 
     @Override

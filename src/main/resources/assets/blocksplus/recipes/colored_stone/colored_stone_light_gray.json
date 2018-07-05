@@ -1,0 +1,47 @@
+{
+  "type": "forge:ore_shapeless",
+  "group": "colored_stone",
+  "ingredients": [
+    {
+      "type": "forge:ore_dict",
+      "ore": "stone"
+    },
+    {
+      "type": "forge:ore_dict",
+      "ore": "stone"
+    },
+    {
+      "type": "forge:ore_dict",
+      "ore": "stone"
+    },
+    {
+      "type": "forge:ore_dict",
+      "ore": "stone"
+    },
+    {
+      "type": "forge:ore_dict",
+      "ore": "stone"
+    },
+    {
+      "type": "forge:ore_dict",
+      "ore": "stone"
+    },
+    {
+      "type": "forge:ore_dict",
+      "ore": "stone"
+    },
+    {
+      "type": "forge:ore_dict",
+      "ore": "stone"
+    },
+    {
+      "type": "forge:ore_dict",
+      "ore": "dyeLightGray"
+    }
+  ],
+  "result": {
+    "item": "blocksplus:colored_stone",
+    "data": 8,
+    "count": 8
+  }
+}

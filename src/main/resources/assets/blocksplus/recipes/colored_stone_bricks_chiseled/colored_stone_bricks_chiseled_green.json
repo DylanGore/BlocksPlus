@@ -1,0 +1,47 @@
+{
+  "type": "forge:ore_shapeless",
+  "group": "colored_stone_bricks_chiseled",
+  "ingredients": [
+    {
+      "item": "minecraft:stonebrick",
+      "data": 3
+    },
+    {
+      "item": "minecraft:stonebrick",
+      "data": 3
+    },
+    {
+      "item": "minecraft:stonebrick",
+      "data": 3
+    },
+    {
+      "item": "minecraft:stonebrick",
+      "data": 3
+    },
+    {
+      "item": "minecraft:stonebrick",
+      "data": 3
+    },
+    {
+      "item": "minecraft:stonebrick",
+      "data": 3
+    },
+    {
+      "item": "minecraft:stonebrick",
+      "data": 3
+    },
+    {
+      "item": "minecraft:stonebrick",
+      "data": 3
+    },
+    {
+      "type": "forge:ore_dict",
+      "ore": "dyeGreen"
+    }
+  ],
+  "result": {
+    "item": "blocksplus:colored_stone_bricks_chiseled",
+    "data": 13,
+    "count": 8
+  }
+}
