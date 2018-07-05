@@ -22,7 +22,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
  */
 
 @SideOnly(Side.CLIENT)
-public final class ModModelManager {
+public class ModModelManager {
 
 
     public static void init() {
@@ -36,7 +36,7 @@ public final class ModModelManager {
         registerColorBlockModel(ModBlocks.blockRimmedGlowingGlass);
 
         registerBlockModel(ModBlocks.blockAsphaltRoad);
-        registerBlockModel(ModBlocks.blockHealingStation);
+//        registerBlockModel(ModBlocks.blockHealingStation);
         registerBlockModel(ModBlocks.blockGlowingGlass);
 
         registerColorItemModel(ModItems.itemDye);

@@ -6,7 +6,6 @@ import ie.dylangore.blocksplus.util.LogHelper;
 import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 
 /**
@@ -24,7 +23,7 @@ public class ModItems {
 
         itemDye = new ItemBPDye(Reference.BlocksPlusItems.DYE.getName());
         registerItems();
-        registerColorOreDict(itemDye, "dye", true);
+//        registerColorOreDict(itemDye, "dye", true);
     }
 
     private static void registerItems() {
@@ -33,8 +32,8 @@ public class ModItems {
     }
 
     public static void registerItem(Item item) {
-        GameRegistry.register(item);
-    }
+        ModRegistry.addItem(item);
+   }
 
     private static void registerColorOreDict(Item item, String oreDictName, boolean isWildcard) {
 

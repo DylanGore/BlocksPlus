@@ -3,7 +3,6 @@ package ie.dylangore.blocksplus.proxy;
 import ie.dylangore.blocksplus.handler.ConfigurationHandler;
 import ie.dylangore.blocksplus.init.ModBlocks;
 import ie.dylangore.blocksplus.init.ModItems;
-import ie.dylangore.blocksplus.init.Recipes;
 import ie.dylangore.blocksplus.util.LogHelper;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
@@ -26,7 +25,6 @@ public abstract class CommonProxy implements IProxy {
 
         ModItems.init();
         ModBlocks.init();
-        Recipes.init();
     }
 
     @Override

@@ -3,34 +3,47 @@ import se.bjurr.gitchangelog.plugin.gradle.GitChangelogTask
 buildscript {
     repositories {
         jcenter()
-        maven { url = "http://files.minecraftforge.net/maven" }
         mavenCentral()
+        maven {
+            name = "forge"
+            url = "http://files.minecraftforge.net/maven"
+        }
+        maven {
+            // Required for the curseforge task
+            name = "gradle"
+            url "https://plugins.gradle.org/m2/"
+        }
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:2.2-SNAPSHOT'
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
+        classpath "gradle.plugin.com.matthewprenger:CurseGradle:1.0.9"
         classpath "se.bjurr.gitchangelog:git-changelog-gradle-plugin:1.32"
     }
 }
 apply plugin: 'net.minecraftforge.gradle.forge'
+apply plugin: 'com.matthewprenger.cursegradle'
 apply plugin: 'se.bjurr.gitchangelog.git-changelog-gradle-plugin'
 
-apply from: 'build_properties.gradle'
+ext.config = parseConfig(file('build.properties'))
+ext.privFile = file('private.properties')
+ext.priv = parseConfig(privFile)
 
-version = mc_version + "-" + mod_version
-group= mod_group
-archivesBaseName = mod_archive_base_name
+
+version="${config.mc_version}-${config.mod_version}.${System.getenv("BUILD_NUMBER") ?: 0}"
+group= config.mod_group
+archivesBaseName = config.mod_archive_base_name
 
 sourceCompatibility = "1.8"
 targetCompatibility = "1.8"
 
 minecraft {
-    version = mc_version + "-" + forge_version
+    version = "${config.mc_version}-${config.forge_version}"
     runDir = "run"
 
-    mappings = mappings_version
+    mappings = config.mappings_version
     makeObfSourceJar = false
 
-    replaceIn mod_ref_file_loc
+    replaceIn config.mod_ref_file_loc
     replace "mod_version", project.version
 }
 
@@ -42,7 +55,7 @@ repositories{
 }
 
 dependencies {
-    deobfCompile "team.chisel:Chisel:MC${mc_version}-${chisel_version}:api"
+    //deobfCompile "team.chisel:Chisel:MC${mc_version}-${chisel_version}:api"
 }
 
 processResources
@@ -78,9 +91,28 @@ artifacts {
     archives devJar
 }
 
+def parseConfig(File config) {
+    config.withReader {
+        def prop = new Properties()
+        prop.load(it)
+        return (new ConfigSlurper().parse(prop))
+    }
+}
+
+curseforge{
+    apiKey = priv.cf_key
+    project {
+        id = priv.cf_id
+        releaseType = config.mod_release_type
+        changelogType = 'text'
+        changelog = "Changelog available at https://mc.dylangore.ie/blocksplus/changelog"
+        addArtifact devJar
+    }
+}
+
 task makeChangelog(type: GitChangelogTask) {
-    filePath = "build/changelog.html"
-    untaggedName = "Current release ${version}"
-    templateContent = "${changelog_html}"
+    filePath = "build/libs/${project.archivesBaseName}-${project.version}-changelog.html"
+    untaggedName = "Current release ${project.version}"
+    templateContent = "${config.changelog_html}"
 }
 

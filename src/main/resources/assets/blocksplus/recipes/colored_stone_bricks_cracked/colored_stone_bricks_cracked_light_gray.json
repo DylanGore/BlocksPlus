@@ -1,0 +1,47 @@
+{
+  "type": "forge:ore_shapeless",
+  "group": "colored_stone_bricks_cracked",
+  "ingredients": [
+    {
+      "item": "minecraft:stonebrick",
+      "data": 2
+    },
+    {
+      "item": "minecraft:stonebrick",
+      "data": 2
+    },
+    {
+      "item": "minecraft:stonebrick",
+      "data": 2
+    },
+    {
+      "item": "minecraft:stonebrick",
+      "data": 2
+    },
+    {
+      "item": "minecraft:stonebrick",
+      "data": 2
+    },
+    {
+      "item": "minecraft:stonebrick",
+      "data": 2
+    },
+    {
+      "item": "minecraft:stonebrick",
+      "data": 2
+    },
+    {
+      "item": "minecraft:stonebrick",
+      "data": 2
+    },
+    {
+      "type": "forge:ore_dict",
+      "ore": "dyeLightGray"
+    }
+  ],
+  "result": {
+    "item": "blocksplus:colored_stone_bricks_cracked",
+    "data": 8,
+    "count": 8
+  }
+}

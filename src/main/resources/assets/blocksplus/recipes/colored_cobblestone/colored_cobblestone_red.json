@@ -1,0 +1,47 @@
+{
+  "type": "forge:ore_shapeless",
+  "group": "colored_cobblestone",
+  "ingredients": [
+    {
+      "type": "forge:ore_dict",
+      "ore": "cobblestone"
+    },
+    {
+      "type": "forge:ore_dict",
+      "ore": "cobblestone"
+    },
+    {
+      "type": "forge:ore_dict",
+      "ore": "cobblestone"
+    },
+    {
+      "type": "forge:ore_dict",
+      "ore": "cobblestone"
+    },
+    {
+      "type": "forge:ore_dict",
+      "ore": "cobblestone"
+    },
+    {
+      "type": "forge:ore_dict",
+      "ore": "cobblestone"
+    },
+    {
+      "type": "forge:ore_dict",
+      "ore": "cobblestone"
+    },
+    {
+      "type": "forge:ore_dict",
+      "ore": "cobblestone"
+    },
+    {
+      "type": "forge:ore_dict",
+      "ore": "dyeRed"
+    }
+  ],
+  "result": {
+    "item": "blocksplus:colored_cobblestone",
+    "data": 14,
+    "count": 8
+  }
+}

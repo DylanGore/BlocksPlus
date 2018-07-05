@@ -2,7 +2,6 @@ package ie.dylangore.blocksplus.items.base;
 
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.EnumDyeColor;
-import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.NonNullList;
 import net.minecraftforge.fml.relauncher.Side;
@@ -25,9 +24,9 @@ public class ItemBaseColored extends ItemBase {
 
     @SideOnly(Side.CLIENT)
     @Override
-    public void getSubItems(Item itemIn, CreativeTabs tab, NonNullList<ItemStack> subItems) {
+    public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> subItems) {
         for (int metadata = 0; metadata < EnumDyeColor.values().length; metadata++) {
-            subItems.add(new ItemStack(itemIn, 1, metadata));
+            subItems.add(new ItemStack(this, 1, metadata));
         }
     }
 
