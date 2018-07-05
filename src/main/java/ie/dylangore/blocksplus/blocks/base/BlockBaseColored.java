@@ -35,6 +35,13 @@ public class BlockBaseColored extends BlockBase {
         this.setSoundType(SoundType.STONE);
     }
 
+    public BlockBaseColored(Material material, String name, float hardness, float resistance, SoundType sound, String tool, int toolLevel) {
+        super(material, name, hardness, resistance);
+        this.setDefaultState(this.blockState.getBaseState().withProperty(BLOCK_COLOR, EnumDyeColor.WHITE));
+        this.setSoundType(sound);
+        this.setHarvestLevel(tool, toolLevel);
+    }
+
     @Nonnull
     @Override
     public BlockStateContainer createBlockState() {
@@ -78,32 +85,4 @@ public class BlockBaseColored extends BlockBase {
             list.add(new ItemStack(this, 1, i));
         }
     }
-
-//    @SideOnly(Side.CLIENT)
-//    public void registerModels() {
-//        ModelLoader.setCustomStateMapper(this, new StateMap.Builder().ignore(BLOCK_COLOR).build());
-//        registerBlockToState(this, EnumDyeColor.values().length, this.getDefaultState());
-//    }
-//
-//    @SideOnly(Side.CLIENT)
-//    private static final Map<IRegistryDelegate<Block>, IStateMapper> customStateMappers = ReflectionHelper.getPrivateValue(ModelLoader.class, null, "customStateMappers");
-//    @SideOnly(Side.CLIENT)
-//    private static final DefaultStateMapper fallbackMapper = new DefaultStateMapper();
-//
-//    @SideOnly(Side.CLIENT)
-//    private static ModelResourceLocation getMrlForState(IBlockState state) {
-//        return customStateMappers
-//                .getOrDefault(state.getBlock().delegate, fallbackMapper)
-//                .putStateModelLocations(state.getBlock())
-//                .get(state);
-//    }
-//
-//    @SideOnly(Side.CLIENT)
-//    public static void registerBlockToState(Block b, int meta, IBlockState state) {
-//        ModelLoader.setCustomModelResourceLocation(
-//                Item.getItemFromBlock(b),
-//                meta,
-//                getMrlForState(state)
-//        );
-//    }
 }

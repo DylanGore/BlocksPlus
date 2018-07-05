@@ -51,6 +51,7 @@ public class ColorHandler {
         blockColors.registerBlockColorHandler(colorBlocks, ModBlocks.blockColoredStoneBricksCracked);
         blockColors.registerBlockColorHandler(colorBlocks, ModBlocks.blockRimmedGlass);
         blockColors.registerBlockColorHandler(colorBlocks, ModBlocks.blockRimmedGlowingGlass);
+        blockColors.registerBlockColorHandler(colorBlocks, ModBlocks.blockColoredSand);
     }
 
     private static void registerItemColorsHandlers(ItemColors itemColors, BlockColors blockColors) {
@@ -71,6 +72,8 @@ public class ColorHandler {
         itemColors.registerItemColorHandler(itemBlockColourHandler, ModBlocks.blockColoredStoneBricksCracked);
         itemColors.registerItemColorHandler(itemBlockColourHandler, ModBlocks.blockRimmedGlass);
         itemColors.registerItemColorHandler(itemBlockColourHandler, ModBlocks.blockRimmedGlowingGlass);
+        itemColors.registerItemColorHandler(itemBlockColourHandler, ModBlocks.blockColoredSand);
+
 
 
 

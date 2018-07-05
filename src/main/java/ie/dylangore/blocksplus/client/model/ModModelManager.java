@@ -34,6 +34,7 @@ public class ModModelManager {
         registerColorBlockModel(ModBlocks.blockColoredStoneBricksCracked);
         registerColorBlockModel(ModBlocks.blockRimmedGlass);
         registerColorBlockModel(ModBlocks.blockRimmedGlowingGlass);
+        registerColorBlockModel(ModBlocks.blockColoredSand);
 
         registerBlockModel(ModBlocks.blockAsphaltRoad);
 //        registerBlockModel(ModBlocks.blockHealingStation);

@@ -1,0 +1,47 @@
+{
+  "type": "forge:ore_shapeless",
+  "group": "colored_sand",
+  "ingredients": [
+    {
+      "type": "forge:ore_dict",
+      "ore": "sand"
+    },
+    {
+      "type": "forge:ore_dict",
+      "ore": "sand"
+    },
+    {
+      "type": "forge:ore_dict",
+      "ore": "sand"
+    },
+    {
+      "type": "forge:ore_dict",
+      "ore": "sand"
+    },
+    {
+      "type": "forge:ore_dict",
+      "ore": "sand"
+    },
+    {
+      "type": "forge:ore_dict",
+      "ore": "sand"
+    },
+    {
+      "type": "forge:ore_dict",
+      "ore": "sand"
+    },
+    {
+      "type": "forge:ore_dict",
+      "ore": "sand"
+    },
+    {
+      "type": "forge:ore_dict",
+      "ore": "dyeOrange"
+    }
+  ],
+  "result": {
+    "item": "blocksplus:colored_sand",
+    "data": 1,
+    "count": 8
+  }
+}

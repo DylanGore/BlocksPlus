@@ -25,7 +25,8 @@ public class Reference {
 
         COLOURED_COBBLESTONE("colored_cobblestone"), COLORED_STONE("colored_stone"), COLORED_STONE_BRICKS("colored_stone_bricks"),
         COLORED_STONE_BRICKS_CHISELED("colored_stone_bricks_chiseled"), COLORED_STONE_BRICKS_CRACKED("colored_stone_bricks_cracked"),
-        ASPHALT_ROAD("asphalt_road"), HEALING_STATION("healing_station"), RIMMED_GLASS("rimmed_glass"), RIMMED_GLOWING_GLASS("rimmed_glowing_glass"), GLOWING_GLASS("glowing_glass");
+        ASPHALT_ROAD("asphalt_road"), HEALING_STATION("healing_station"), RIMMED_GLASS("rimmed_glass"), RIMMED_GLOWING_GLASS("rimmed_glowing_glass"),
+        GLOWING_GLASS("glowing_glass"), COLORED_SAND("colored_sand");
 
         private String blockName;
 

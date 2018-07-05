@@ -9,7 +9,9 @@ import ie.dylangore.blocksplus.blocks.base.BlockTileEntity;
 import ie.dylangore.blocksplus.blocks.itemblocks.ItemBlockColored;
 import ie.dylangore.blocksplus.util.LogHelper;
 import net.minecraft.block.Block;
+import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
@@ -31,6 +33,7 @@ public class ModBlocks {
     public static BlockBaseColored blockColoredStoneBricks;
     public static BlockBaseColored blockColoredStoneBricksChiseled;
     public static BlockBaseColored blockColoredStoneBricksCracked;
+    public static BlockBaseColored blockColoredSand;
     public static BlockRimmedGlass blockRimmedGlass;
     public static BlockRimmedGlass blockRimmedGlowingGlass;
 //    public static BlockConnectedGlass blockGlowingGlass;
@@ -47,6 +50,7 @@ public class ModBlocks {
         blockRimmedGlass = new BlockRimmedGlass(Material.GLASS, Reference.BlocksPlusBlocks.RIMMED_GLASS.getName(), 1.0F, 1.0F);
         blockRimmedGlowingGlass = new BlockRimmedGlass(Material.GLASS, Reference.BlocksPlusBlocks.RIMMED_GLOWING_GLASS.getName(), 1.0F, 1.0F, 1.0F);
 //        blockGlowingGlass = new BlockConnectedGlass(Material.GLASS, Reference.BlocksPlusBlocks.GLOWING_GLASS.getName(), 1.0F, 1.0F);
+        blockColoredSand = new BlockBaseColored(Material.SAND, Reference.BlocksPlusBlocks.COLORED_SAND.getName(), 0.5F, 1.0F, SoundType.SAND, "shovel", 0);
 
         registerBlocks();
     }
@@ -55,6 +59,9 @@ public class ModBlocks {
         registerOreDict(blockColoredCobblestone, "cobblestone", true);
         registerOreDict(blockColoredStone, "stone", true);
         registerOreDict(blockRimmedGlass, "blockGlass", true);
+        registerOreDict(blockColoredSand, "sand", true);
+        registerOreDict(blockColoredSand, "coloredSand", true);
+
 
         registerOreDict(blockRimmedGlass, "blockRimmedGlass", true);
         registerOreDict(blockRimmedGlowingGlass, "blockRimmedGlowingGlass", true);
@@ -74,6 +81,7 @@ public class ModBlocks {
         registerColorItemBlock(blockColoredStoneBricksCracked, Reference.BlocksPlusBlocks.COLORED_STONE_BRICKS_CRACKED.getName());
         registerColorItemBlock(blockRimmedGlass, Reference.BlocksPlusBlocks.RIMMED_GLASS.getName());
         registerColorItemBlock(blockRimmedGlowingGlass, Reference.BlocksPlusBlocks.RIMMED_GLOWING_GLASS.getName());
+        registerColorItemBlock(blockColoredSand, Reference.BlocksPlusBlocks.COLORED_SAND.getName());
 
         LogHelper.info("Blocks registered!");
     }
@@ -98,7 +106,6 @@ public class ModBlocks {
         if (block instanceof BlockTileEntity) {
             GameRegistry.registerTileEntity(((BlockTileEntity<?>) block).getTileEntityClass(), block.getRegistryName().toString());
         }
-
     }
 
     public static void registerOreDict(Block block, String oreDictName, boolean isWildcard) {

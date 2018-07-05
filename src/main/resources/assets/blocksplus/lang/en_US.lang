@@ -147,6 +147,24 @@ tile.rimmed_glowing_glass.green.name=Green Rimmed Glowing Glass
 tile.rimmed_glowing_glass.red.name=Red Rimmed Glowing Glass
 tile.rimmed_glowing_glass.black.name=Black Rimmed Glowing Glass
 
+#Blocks - Colored Sand
+tile.colored_sand.white.name=White Sand
+tile.colored_sand.orange.name=Orange Sand
+tile.colored_sand.magenta.name=Magenta Sand
+tile.colored_sand.light_blue.name=Light Blue Sand
+tile.colored_sand.yellow.name=Yellow Sand
+tile.colored_sand.lime.name=Lime Sand
+tile.colored_sand.pink.name=Pink Sand
+tile.colored_sand.gray.name=Gray Sand
+tile.colored_sand.silver.name=Light Gray Sand
+tile.colored_sand.cyan.name=Cyan Sand
+tile.colored_sand.purple.name=Purple Sand
+tile.colored_sand.blue.name=Blue Sand
+tile.colored_sand.brown.name=Brown Sand
+tile.colored_sand.green.name=Green Sand
+tile.colored_sand.red.name=Red Sand
+tile.colored_sand.black.name=Black Sand
+
 #Items
 item.bp_dye.white.name=White Dye
 item.bp_dye.orange.name=Orange Dye
