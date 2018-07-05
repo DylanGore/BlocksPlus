@@ -2,6 +2,7 @@ package ie.dylangore.blocksplus.init;
 
 import ie.dylangore.blocksplus.Reference;
 import ie.dylangore.blocksplus.blocks.BlockAsphaltRoad;
+import ie.dylangore.blocksplus.blocks.BlockColoredSand;
 import ie.dylangore.blocksplus.blocks.BlockConnectedGlass;
 import ie.dylangore.blocksplus.blocks.BlockRimmedGlass;
 import ie.dylangore.blocksplus.blocks.base.BlockBaseColored;
@@ -33,7 +34,7 @@ public class ModBlocks {
     public static BlockBaseColored blockColoredStoneBricks;
     public static BlockBaseColored blockColoredStoneBricksChiseled;
     public static BlockBaseColored blockColoredStoneBricksCracked;
-    public static BlockBaseColored blockColoredSand;
+    public static BlockColoredSand blockColoredSand;
     public static BlockRimmedGlass blockRimmedGlass;
     public static BlockRimmedGlass blockRimmedGlowingGlass;
 //    public static BlockConnectedGlass blockGlowingGlass;
@@ -50,7 +51,7 @@ public class ModBlocks {
         blockRimmedGlass = new BlockRimmedGlass(Material.GLASS, Reference.BlocksPlusBlocks.RIMMED_GLASS.getName(), 1.0F, 1.0F);
         blockRimmedGlowingGlass = new BlockRimmedGlass(Material.GLASS, Reference.BlocksPlusBlocks.RIMMED_GLOWING_GLASS.getName(), 1.0F, 1.0F, 1.0F);
 //        blockGlowingGlass = new BlockConnectedGlass(Material.GLASS, Reference.BlocksPlusBlocks.GLOWING_GLASS.getName(), 1.0F, 1.0F);
-        blockColoredSand = new BlockBaseColored(Material.SAND, Reference.BlocksPlusBlocks.COLORED_SAND.getName(), 0.5F, 1.0F, SoundType.SAND, "shovel", 0);
+        blockColoredSand = new BlockColoredSand(Reference.BlocksPlusBlocks.COLORED_SAND.getName(), 0.5F, 1.0F);
 
         registerBlocks();
     }
