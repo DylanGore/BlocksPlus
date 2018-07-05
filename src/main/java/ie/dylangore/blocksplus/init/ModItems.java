@@ -19,11 +19,14 @@ public class ModItems {
 
     public static ItemBPDye itemDye;
 
-    public static void init() {
+    public static void preInit() {
 
         itemDye = new ItemBPDye(Reference.BlocksPlusItems.DYE.getName());
         registerItems();
-//        registerColorOreDict(itemDye, "dye", true);
+    }
+
+    public static void init(){
+        registerColorOreDict(itemDye, "dye", true);
     }
 
     private static void registerItems() {

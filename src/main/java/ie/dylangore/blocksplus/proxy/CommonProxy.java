@@ -23,13 +23,14 @@ public abstract class CommonProxy implements IProxy {
 
         ConfigurationHandler.init(event.getSuggestedConfigurationFile());
 
-        ModItems.init();
-        ModBlocks.init();
+        ModItems.preInit();
+        ModBlocks.preInit();
     }
 
     @Override
     public void onInit(FMLInitializationEvent event) {
-
+        ModBlocks.init();
+        ModItems.init();
     }
 
     @Override

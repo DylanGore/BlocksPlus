@@ -33,9 +33,9 @@ public class ModBlocks {
     public static BlockBaseColored blockColoredStoneBricksCracked;
     public static BlockRimmedGlass blockRimmedGlass;
     public static BlockRimmedGlass blockRimmedGlowingGlass;
-    public static BlockConnectedGlass blockGlowingGlass;
+//    public static BlockConnectedGlass blockGlowingGlass;
 
-    public static void init(){
+    public static void preInit(){
 
         blockAsphaltRoad = new BlockAsphaltRoad(Material.ROCK, Reference.BlocksPlusBlocks.ASPHALT_ROAD.getName(), 1.5F, 1.0F);
 //        blockHealingStation = new BlockHealingStation(Material.IRON, Reference.BlocksPlusBlocks.HEALING_STATION.getName(), 1.0F, 1.0F);
@@ -46,15 +46,24 @@ public class ModBlocks {
         blockColoredStoneBricksCracked = new BlockBaseColored(Material.ROCK, Reference.BlocksPlusBlocks.COLORED_STONE_BRICKS_CRACKED.getName(), 1.5F, 1.0F);
         blockRimmedGlass = new BlockRimmedGlass(Material.GLASS, Reference.BlocksPlusBlocks.RIMMED_GLASS.getName(), 1.0F, 1.0F);
         blockRimmedGlowingGlass = new BlockRimmedGlass(Material.GLASS, Reference.BlocksPlusBlocks.RIMMED_GLOWING_GLASS.getName(), 1.0F, 1.0F, 1.0F);
-        blockGlowingGlass = new BlockConnectedGlass(Material.GLASS, Reference.BlocksPlusBlocks.GLOWING_GLASS.getName(), 1.0F, 1.0F);
+//        blockGlowingGlass = new BlockConnectedGlass(Material.GLASS, Reference.BlocksPlusBlocks.GLOWING_GLASS.getName(), 1.0F, 1.0F);
 
         registerBlocks();
+    }
+
+    public static void init(){
+        registerOreDict(blockColoredCobblestone, "cobblestone", true);
+        registerOreDict(blockColoredStone, "stone", true);
+        registerOreDict(blockRimmedGlass, "blockGlass", true);
+
+        registerOreDict(blockRimmedGlass, "blockRimmedGlass", true);
+        registerOreDict(blockRimmedGlowingGlass, "blockRimmedGlowingGlass", true);
     }
 
     private static void registerBlocks() {
         registerSimpleItemBlock(blockAsphaltRoad, Reference.BlocksPlusBlocks.ASPHALT_ROAD.getName());
 //        registerSimpleItemBlock(blockHealingStation, Reference.BlocksPlusBlocks.HEALING_STATION.getName());
-        registerSimpleItemBlock(blockGlowingGlass, Reference.BlocksPlusBlocks.GLOWING_GLASS.getName());
+//        registerSimpleItemBlock(blockGlowingGlass, Reference.BlocksPlusBlocks.GLOWING_GLASS.getName());
 
         registerColorItemBlock(blockColoredCobblestone, Reference.BlocksPlusBlocks.COLOURED_COBBLESTONE.getName());
         registerColorItemBlock(blockColoredStone, Reference.BlocksPlusBlocks.COLORED_STONE.getName());
