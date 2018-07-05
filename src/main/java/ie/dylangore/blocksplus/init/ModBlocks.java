@@ -58,6 +58,8 @@ public class ModBlocks {
 
         registerOreDict(blockRimmedGlass, "blockRimmedGlass", true);
         registerOreDict(blockRimmedGlowingGlass, "blockRimmedGlowingGlass", true);
+
+        Recipes.init();
     }
 
     private static void registerBlocks() {
