@@ -1,0 +1,24 @@
+{
+  "type": "forge:ore_shaped",
+  "group": "rimmed_glowing_glass",
+  "pattern": [
+    "GGG",
+    "GGG",
+    "GGD"
+  ],
+  "key": {
+    "G": {
+      "item": "blocksplus:rimmed_glass",
+      "data": 10
+    },
+    "D": {
+      "type": "forge:ore_dict",
+      "ore": "dustGlowstone"
+    }
+  },
+  "result": {
+    "item": "blocksplus:rimmed_glowing_glass",
+    "data": 10,
+    "count": 8
+  }
+}
