@@ -35,6 +35,7 @@ public class ItemBPDye extends ItemBaseColored {
         super(name);
     }
 
+    @SuppressWarnings("NullableProblems")
     @Override
     public EnumActionResult onItemUse(EntityPlayer player, World worldIn, BlockPos pos, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
         ItemStack stack = player.getActiveItemStack();

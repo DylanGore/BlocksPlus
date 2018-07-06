@@ -31,7 +31,7 @@ public class ColorHandler {
         ItemColors itemColors = Minecraft.getMinecraft().getItemColors();
         BlockColors blockColors = Minecraft.getMinecraft().getBlockColors();
 
-        Map<IRegistryDelegate<Block>, IBlockColor> map = ReflectionHelper.getPrivateValue(BlockColors.class, blockColors, "blockColorMap");
+        @SuppressWarnings("unused") Map<IRegistryDelegate<Block>, IBlockColor> map = ReflectionHelper.getPrivateValue(BlockColors.class, blockColors, "blockColorMap");
 
         registerBlockColourHandlers(blockColors);
         registerItemColorsHandlers(itemColors, blockColors);
@@ -54,16 +54,13 @@ public class ColorHandler {
         blockColors.registerBlockColorHandler(colorBlocks, ModBlocks.blockColoredSand);
     }
 
+    @SuppressWarnings("deprecation")
     private static void registerItemColorsHandlers(ItemColors itemColors, BlockColors blockColors) {
 
-        final IItemColor dyeItemColorHandler = (stack, i) -> {
-            return EnumDyeColor.byMetadata(stack.getItemDamage()).getColorValue();
-        };
+        final IItemColor dyeItemColorHandler = (stack, i) -> EnumDyeColor.byMetadata(stack.getItemDamage()).getColorValue();
 
         // Use the Block's colour handler for an ItemBlock
-        final IItemColor itemBlockColourHandler = (stack, tintIndex) -> {
-            return blockColors.colorMultiplier(((ItemBlock)stack.getItem()).getBlock().getStateFromMeta(stack.getMetadata()), null, null, tintIndex);
-        };
+        final IItemColor itemBlockColourHandler = (stack, tintIndex) -> blockColors.colorMultiplier(((ItemBlock)stack.getItem()).getBlock().getStateFromMeta(stack.getMetadata()), null, null, tintIndex);
 
         itemColors.registerItemColorHandler(itemBlockColourHandler, ModBlocks.blockColoredCobblestone);
         itemColors.registerItemColorHandler(itemBlockColourHandler, ModBlocks.blockColoredStone);

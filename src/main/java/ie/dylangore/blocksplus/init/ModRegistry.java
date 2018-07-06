@@ -19,26 +19,26 @@ public class ModRegistry {
     @SubscribeEvent
     public static void registerBlocks(RegistryEvent.Register<Block> event){
         IForgeRegistry<Block> r = event.getRegistry();
-        for(int i = 0; i < blockList.size(); i++){
-            r.register(blockList.get(i));
+        for (Block aBlockList : blockList) {
+            r.register(aBlockList);
         }
     }
 
     @SubscribeEvent
     public static void registerItems(RegistryEvent.Register<Item> event){
         IForgeRegistry<Item> r = event.getRegistry();
-        for(int i = 0; i < itemList.size(); i++) {
-            r.register(itemList.get(i));
+        for (Item anItemList : itemList) {
+            r.register(anItemList);
         }
     }
 
 
 
-    public static void addBlock(Block block){
+    static void addBlock(Block block){
         blockList.add(block);
     }
 
-    public static void addItem(Item item){
+    static void addItem(Item item){
         itemList.add(item);
     }
 

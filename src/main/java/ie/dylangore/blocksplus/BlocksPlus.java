@@ -15,6 +15,7 @@ import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
  * Date Created: 08 January 2017
  */
 
+@SuppressWarnings("unused")
 @Mod(modid = Reference.ID, name = Reference.NAME, version = Reference.VERSION, useMetadata = true, updateJSON = Reference.UPDATE_JSON_URL, guiFactory = Reference.GUI_FACTORY_LOC)
 public class BlocksPlus {
 
@@ -23,6 +24,7 @@ public class BlocksPlus {
     @Mod.Instance
     public static BlocksPlus instance;
 
+    @SuppressWarnings("WeakerAccess")
     @SidedProxy(clientSide = Reference.CLIENT_PROXY_LOC, serverSide = Reference.SERVER_PROXY_LOC)
     public static IProxy proxy;
 

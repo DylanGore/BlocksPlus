@@ -5,6 +5,7 @@ import ie.dylangore.blocksplus.init.ModBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.SoundType;
+import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyEnum;
 import net.minecraft.block.state.BlockStateContainer;
 import net.minecraft.block.state.IBlockState;
@@ -21,9 +22,10 @@ import java.util.Random;
 
 public class BlockColoredSand extends BlockFalling {
     protected String name;
-    public static final PropertyEnum<EnumDyeColor> BLOCK_COLOR = PropertyEnum.create("color", EnumDyeColor.class);
+    private static final PropertyEnum<EnumDyeColor> BLOCK_COLOR = PropertyEnum.create("color", EnumDyeColor.class);
 
     public BlockColoredSand(String name, float hardness, float resistance) {
+        super(Material.SAND);
         this.name = name;
         setCreativeTab(BlocksPlus.creativeTab);
         setHardness(hardness);
@@ -41,6 +43,7 @@ public class BlockColoredSand extends BlockFalling {
         return new BlockStateContainer(this, BLOCK_COLOR);
     }
 
+    @SuppressWarnings("NullableProblems")
     @Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune) {
         Block block = state.getBlock();
@@ -62,6 +65,7 @@ public class BlockColoredSand extends BlockFalling {
         return state.getValue(BLOCK_COLOR).getMetadata();
     }
 
+    @SuppressWarnings("deprecation")
     @Nonnull
     @Override
     public IBlockState getStateFromMeta(int meta) {
@@ -78,6 +82,4 @@ public class BlockColoredSand extends BlockFalling {
             list.add(new ItemStack(this, 1, i));
         }
     }
-
-
 }

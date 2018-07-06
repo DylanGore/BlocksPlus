@@ -14,8 +14,8 @@ import net.minecraftforge.fml.client.config.GuiConfig;
  * Date Created: 21 February 2017
  */
 
-public class BlocksPlusGuiConfig extends GuiConfig {
-    public BlocksPlusGuiConfig(GuiScreen guiScreen) {
+class BlocksPlusGuiConfig extends GuiConfig {
+    BlocksPlusGuiConfig(GuiScreen guiScreen) {
         super(guiScreen,
                 new ConfigElement(ConfigurationHandler.configuration.getCategory(Configuration.CATEGORY_GENERAL)).getChildElements(),
                 Reference.ID,

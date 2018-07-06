@@ -9,6 +9,7 @@ import net.minecraft.item.EnumDyeColor;
  * Date Created: 08 January 2017
  */
 
+@SuppressWarnings("WeakerAccess")
 public class Reference {
 
     public static final String ID = "blocksplus";
@@ -21,7 +22,8 @@ public class Reference {
 
     public static final String GUI_FACTORY_LOC = "ie.dylangore.blocksplus.client.gui.GuiFactory";
 
-    public static enum BlocksPlusBlocks {
+    @SuppressWarnings("unused")
+    public enum BlocksPlusBlocks {
 
         COLOURED_COBBLESTONE("colored_cobblestone"), COLORED_STONE("colored_stone"), COLORED_STONE_BRICKS("colored_stone_bricks"),
         COLORED_STONE_BRICKS_CHISELED("colored_stone_bricks_chiseled"), COLORED_STONE_BRICKS_CRACKED("colored_stone_bricks_cracked"),
@@ -40,7 +42,7 @@ public class Reference {
 
     }
 
-    public static enum BlocksPlusItems {
+    public enum BlocksPlusItems {
 
         DYE("bp_dye");
 
@@ -55,7 +57,8 @@ public class Reference {
         }
     }
 
-    public static enum PotionEffects {
+    @SuppressWarnings("unused")
+    public enum PotionEffects {
         SPEED(1), SLOWNESS(2), HASTE(3), MINING_FATIGUE(4), STRENGTH(5), INSTANT_HEALTH(6), INSTANT_DAMAGE(7), JUMP_BOOST(8),
         NAUSEA(9), REGENERATION(10), RESISTANCE(11), FIRE_RESISTANCE(12), WATER_BREATHING(13), INVISIBILITY(14), BLINDNESS(15),
         NIGHT_VISION(16), HUNGER(17), WEAKNESS(18), POISON(19), WITHER(20), HEALTH_BOOST(21), ABSORPTION(22), SATURATION(23),

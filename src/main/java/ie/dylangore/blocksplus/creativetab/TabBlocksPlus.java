@@ -18,6 +18,7 @@ public class TabBlocksPlus extends CreativeTabs {
         setBackgroundImageName("item_search.png");
     }
 
+    @SuppressWarnings("NullableProblems")
     @Override
     public ItemStack getTabIconItem() {
         return new ItemStack(ModBlocks.blockAsphaltRoad, 1, 0);

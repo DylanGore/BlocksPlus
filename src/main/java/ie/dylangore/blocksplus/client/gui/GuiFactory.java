@@ -13,6 +13,7 @@ import java.util.Set;
  * Date Created: 21 February 2017
  */
 
+@SuppressWarnings("unused")
 public class GuiFactory implements IModGuiFactory {
     @Override
     public void initialize(Minecraft minecraftInstance) {
@@ -21,12 +22,12 @@ public class GuiFactory implements IModGuiFactory {
 
     @Override
     public boolean hasConfigGui() {
-        return false;
+        return true;
     }
 
     @Override
     public GuiScreen createConfigGui(GuiScreen parentScreen) {
-        return null;
+        return new BlocksPlusGuiConfig(parentScreen);
     }
 
     @Override

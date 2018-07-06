@@ -15,5 +15,4 @@ public interface IProxy {
     void onPreInit(FMLPreInitializationEvent event);
     void onInit(FMLInitializationEvent event);
     void onPostInit(FMLPostInitializationEvent event);
-    void initModels();
 }

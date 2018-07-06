@@ -35,19 +35,13 @@ public class BlockBaseColored extends BlockBase {
         this.setSoundType(SoundType.STONE);
     }
 
-    public BlockBaseColored(Material material, String name, float hardness, float resistance, SoundType sound, String tool, int toolLevel) {
-        super(material, name, hardness, resistance);
-        this.setDefaultState(this.blockState.getBaseState().withProperty(BLOCK_COLOR, EnumDyeColor.WHITE));
-        this.setSoundType(sound);
-        this.setHarvestLevel(tool, toolLevel);
-    }
-
     @Nonnull
     @Override
     public BlockStateContainer createBlockState() {
         return new BlockStateContainer(this, BLOCK_COLOR);
     }
 
+    @SuppressWarnings("NullableProblems")
     @Override
     public Item getItemDropped(IBlockState state, Random rand, int fortune) {
         Block block = state.getBlock();
@@ -69,6 +63,7 @@ public class BlockBaseColored extends BlockBase {
         return state.getValue(BLOCK_COLOR).getMetadata();
     }
 
+    @SuppressWarnings("deprecation")
     @Nonnull
     @Override
     public IBlockState getStateFromMeta(int meta) {

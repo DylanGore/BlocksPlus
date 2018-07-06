@@ -1,6 +1,5 @@
 package ie.dylangore.blocksplus.util;
 
-import ie.dylangore.blocksplus.Reference;
 import net.minecraftforge.fml.common.FMLLog;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
@@ -12,12 +11,12 @@ import org.apache.logging.log4j.Logger;
  * Author: Dylan Gore (hello@dylangore.ie)
  * Date Created: 08 January 2017
  */
+@SuppressWarnings("unused")
 public class LogHelper {
 
     private static final Logger logger = LogManager.getLogger("BlocksPlus");
 
-    public static void log(Level logLevel, Object object) {
-//        FMLLog.log(Reference.NAME, logLevel, String.valueOf(object));
+    private static void log(Level logLevel, Object object) {
         logger.log(logLevel, String.valueOf(object));
 
     }

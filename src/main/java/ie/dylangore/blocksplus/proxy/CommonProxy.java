@@ -37,9 +37,4 @@ public abstract class CommonProxy implements IProxy {
     public void onPostInit(FMLPostInitializationEvent event) {
 
     }
-
-    @Override
-    public void initModels() {
-
-    }
 }

@@ -34,10 +34,11 @@ public class ModItems {
         LogHelper.info("Items registered!");
     }
 
-    public static void registerItem(Item item) {
+    private static void registerItem(Item item) {
         ModRegistry.addItem(item);
    }
 
+    @SuppressWarnings("SameParameterValue")
     private static void registerColorOreDict(Item item, String oreDictName, boolean isWildcard) {
 
         OreDictionary.registerOre(oreDictName, new ItemStack(item, 1, OreDictionary.WILDCARD_VALUE));

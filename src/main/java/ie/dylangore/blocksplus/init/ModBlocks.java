@@ -3,19 +3,14 @@ package ie.dylangore.blocksplus.init;
 import ie.dylangore.blocksplus.Reference;
 import ie.dylangore.blocksplus.blocks.BlockAsphaltRoad;
 import ie.dylangore.blocksplus.blocks.BlockColoredSand;
-import ie.dylangore.blocksplus.blocks.BlockConnectedGlass;
 import ie.dylangore.blocksplus.blocks.BlockRimmedGlass;
 import ie.dylangore.blocksplus.blocks.base.BlockBaseColored;
-import ie.dylangore.blocksplus.blocks.base.BlockTileEntity;
 import ie.dylangore.blocksplus.blocks.itemblocks.ItemBlockColored;
 import ie.dylangore.blocksplus.util.LogHelper;
 import net.minecraft.block.Block;
-import net.minecraft.block.SoundType;
 import net.minecraft.block.material.Material;
-import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.oredict.OreDictionary;
 
 /**
@@ -28,7 +23,6 @@ import net.minecraftforge.oredict.OreDictionary;
 public class ModBlocks {
 
     public static BlockAsphaltRoad blockAsphaltRoad;
-//    public static BlockHealingStation blockHealingStation;
     public static BlockBaseColored blockColoredCobblestone;
     public static BlockBaseColored blockColoredStone;
     public static BlockBaseColored blockColoredStoneBricks;
@@ -42,7 +36,6 @@ public class ModBlocks {
     public static void preInit(){
 
         blockAsphaltRoad = new BlockAsphaltRoad(Material.ROCK, Reference.BlocksPlusBlocks.ASPHALT_ROAD.getName(), 1.5F, 1.0F);
-//        blockHealingStation = new BlockHealingStation(Material.IRON, Reference.BlocksPlusBlocks.HEALING_STATION.getName(), 1.0F, 1.0F);
         blockColoredCobblestone = new BlockBaseColored(Material.ROCK, Reference.BlocksPlusBlocks.COLOURED_COBBLESTONE.getName(), 2.0F, 1.0F);
         blockColoredStone = new BlockBaseColored(Material.ROCK, Reference.BlocksPlusBlocks.COLORED_STONE.getName(), 1.5F, 1.0F);
         blockColoredStoneBricks = new BlockBaseColored(Material.ROCK, Reference.BlocksPlusBlocks.COLORED_STONE_BRICKS.getName(), 1.5F, 1.0F);
@@ -67,12 +60,11 @@ public class ModBlocks {
         registerOreDict(blockRimmedGlass, "blockRimmedGlass", true);
         registerOreDict(blockRimmedGlowingGlass, "blockRimmedGlowingGlass", true);
 
-        Recipes.init();
+        ModRecipes.init();
     }
 
     private static void registerBlocks() {
         registerSimpleItemBlock(blockAsphaltRoad, Reference.BlocksPlusBlocks.ASPHALT_ROAD.getName());
-//        registerSimpleItemBlock(blockHealingStation, Reference.BlocksPlusBlocks.HEALING_STATION.getName());
 //        registerSimpleItemBlock(blockGlowingGlass, Reference.BlocksPlusBlocks.GLOWING_GLASS.getName());
 
         registerColorItemBlock(blockColoredCobblestone, Reference.BlocksPlusBlocks.COLOURED_COBBLESTONE.getName());
@@ -92,10 +84,6 @@ public class ModBlocks {
         itemBlock.setRegistryName(registryName);
         ModRegistry.addItem(itemBlock);
         ModRegistry.addBlock(block);
-
-        if (block instanceof BlockTileEntity) {
-            GameRegistry.registerTileEntity(((BlockTileEntity<?>) block).getTileEntityClass(), block.getRegistryName().toString());
-        }
     }
 
     private static void registerColorItemBlock(Block block, String registryName) {
@@ -103,13 +91,10 @@ public class ModBlocks {
         itemBlock.setRegistryName(registryName);
         ModRegistry.addItem(itemBlock);
         ModRegistry.addBlock(block);
-
-        if (block instanceof BlockTileEntity) {
-            GameRegistry.registerTileEntity(((BlockTileEntity<?>) block).getTileEntityClass(), block.getRegistryName().toString());
-        }
     }
 
-    public static void registerOreDict(Block block, String oreDictName, boolean isWildcard) {
+    @SuppressWarnings("SameParameterValue")
+    private static void registerOreDict(Block block, String oreDictName, boolean isWildcard) {
         if (isWildcard) {
             OreDictionary.registerOre(oreDictName, new ItemStack(block, 1, OreDictionary.WILDCARD_VALUE));
         } else {

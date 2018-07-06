@@ -15,6 +15,7 @@ import java.io.File;
  * Date Created: 21 February 2017
  */
 
+@SuppressWarnings("WeakerAccess")
 public class ConfigurationHandler {
 
     public static Configuration configuration;

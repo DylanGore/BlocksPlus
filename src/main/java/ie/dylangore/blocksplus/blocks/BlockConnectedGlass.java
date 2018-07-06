@@ -23,6 +23,7 @@ import java.util.Random;
 
 //TODO Implement connected textures
 
+@SuppressWarnings("ALL")
 public class BlockConnectedGlass extends BlockBase {
     public BlockConnectedGlass(Material material, String name, float hardness, float resistance) {
         super(material, name, hardness, resistance);
@@ -38,11 +39,13 @@ public class BlockConnectedGlass extends BlockBase {
         return BlockRenderLayer.CUTOUT;
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public boolean isFullCube(IBlockState state) {
         return false;
     }
 
+    @SuppressWarnings("deprecation")
     @Override
     public boolean isOpaqueCube(IBlockState state) {
         return false;

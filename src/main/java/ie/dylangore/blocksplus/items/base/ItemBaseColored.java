@@ -22,6 +22,7 @@ public class ItemBaseColored extends ItemBase {
         setHasSubtypes(true);
     }
 
+    @SuppressWarnings("NullableProblems")
     @SideOnly(Side.CLIENT)
     @Override
     public void getSubItems(CreativeTabs tab, NonNullList<ItemStack> subItems) {
