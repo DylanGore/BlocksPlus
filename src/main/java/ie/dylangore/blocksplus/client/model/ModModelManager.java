@@ -39,7 +39,7 @@ public class ModModelManager {
         registerBlockModel(ModBlocks.blockAsphaltRoad);
 //        registerBlockModel(ModBlocks.blockGlowingGlass);
 
-        registerColorItemModel(ModItems.itemDye);
+//        registerColorItemModel(ModItems.itemDye);
 
         LogHelper.info("Models Registered!");
     }

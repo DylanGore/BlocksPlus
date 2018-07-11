@@ -17,20 +17,20 @@ import net.minecraftforge.oredict.OreDictionary;
 
 public class ModItems {
 
-    public static ItemBPDye itemDye;
+//    public static ItemBPDye itemDye;
 
     public static void preInit() {
 
-        itemDye = new ItemBPDye(Reference.BlocksPlusItems.DYE.getName());
-        registerItems();
+//        itemDye = new ItemBPDye(Reference.BlocksPlusItems.DYE.getName());
+//        registerItems();
     }
 
     public static void init(){
-        registerColorOreDict(itemDye, "dye", true);
+//        registerColorOreDict(itemDye, "dye", true);
     }
 
     private static void registerItems() {
-        registerItem(itemDye);
+//        registerItem(itemDye);
         LogHelper.info("Items registered!");
     }
 

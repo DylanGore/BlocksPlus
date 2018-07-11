@@ -74,7 +74,7 @@ public class ColorHandler {
 
 
 
-        itemColors.registerItemColorHandler(dyeItemColorHandler, ModItems.itemDye);
+//        itemColors.registerItemColorHandler(dyeItemColorHandler, ModItems.itemDye);
 
     }
 
