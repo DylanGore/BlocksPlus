@@ -2,6 +2,9 @@
 
 A Minecraft mod developed and maintained by [Dylan Gore](https://dylangore.ie)
 
+![CF Total Downloads](http://cf.way2muchnoise.eu/full_blocks-plus_downloads.svg)
+![CF Available For](http://cf.way2muchnoise.eu/versions/blocks-plus.svg)
+
 ***
 # Downloads
 ***
