@@ -47,17 +47,6 @@ minecraft {
     replace "mod_version", project.version
 }
 
-repositories{
-    maven{
-        //Required for Chisel integration
-        url = "http://maven.tterrag.com/"
-    }
-}
-
-dependencies {
-    //deobfCompile "team.chisel:Chisel:MC${mc_version}-${chisel_version}:api"
-}
-
 processResources
 {
     // this will ensure that this task is redone when the versions change.

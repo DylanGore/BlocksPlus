@@ -1,6 +1,7 @@
 package ie.dylangore.blocksplus.proxy;
 
 import ie.dylangore.blocksplus.handler.ConfigurationHandler;
+import ie.dylangore.blocksplus.handler.IMCHandler;
 import ie.dylangore.blocksplus.init.ModBlocks;
 import ie.dylangore.blocksplus.init.ModItems;
 import ie.dylangore.blocksplus.util.LogHelper;
@@ -31,6 +32,7 @@ public abstract class CommonProxy implements IProxy {
     public void onInit(FMLInitializationEvent event) {
         ModBlocks.init();
         ModItems.init();
+        IMCHandler.init();
     }
 
     @Override
