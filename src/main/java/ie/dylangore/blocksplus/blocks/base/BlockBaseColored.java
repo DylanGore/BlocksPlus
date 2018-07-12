@@ -1,3 +1,10 @@
+/*
+ * Project: BlocksPlus
+ * File: BlockBaseColored.java
+ * Author: Dylan Gore (hello@dylangore.ie)
+ * License: GNU Lesser General Public License v3.0
+ */
+
 package ie.dylangore.blocksplus.blocks.base;
 
 import ie.dylangore.blocksplus.init.ModBlocks;
@@ -17,13 +24,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nonnull;
 import java.util.Random;
-
-/**
- * Project: BlocksPlus
- * File: BlockBaseColoured
- * Author: Dylan Gore (hello@dylangore.ie)
- * Date Created: 18 January 2017
- */
 
 public class BlockBaseColored extends BlockBase {
 

@@ -1,16 +1,16 @@
+/*
+ * Project: BlocksPlus
+ * File: ModRecipes.java
+ * Author: Dylan Gore (hello@dylangore.ie)
+ * License: GNU Lesser General Public License v3.0
+ */
+
 package ie.dylangore.blocksplus.init;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.common.registry.GameRegistry;
-
-/**
- * Project: BlocksPlus
- * File: ModRecipes
- * Author: Dylan Gore (hello@dylangore.ie)
- * Date Created: 21 February 2017
- */
 
 public class ModRecipes {
 

@@ -1,3 +1,10 @@
+/*
+ * Project: BlocksPlus
+ * File: ItemBPDye.java
+ * Author: Dylan Gore (hello@dylangore.ie)
+ * License: GNU Lesser General Public License v3.0
+ */
+
 package ie.dylangore.blocksplus.items;
 
 import ie.dylangore.blocksplus.items.base.ItemBaseColored;
@@ -22,13 +29,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nullable;
 import java.util.List;
-
-/**
- * Project: BlocksPlus
- * File: ItemBPDye
- * Author: Dylan Gore (hello@dylangore.ie)
- * Date Created: 22 February 2017
- */
 
 public class ItemBPDye extends ItemBaseColored {
     public ItemBPDye(String name) {

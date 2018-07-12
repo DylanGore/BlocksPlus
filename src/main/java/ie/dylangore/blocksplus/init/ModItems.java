@@ -1,19 +1,18 @@
+/*
+ * Project: BlocksPlus
+ * File: ModItems.java
+ * Author: Dylan Gore (hello@dylangore.ie)
+ * License: GNU Lesser General Public License v3.0
+ */
+
 package ie.dylangore.blocksplus.init;
 
 import ie.dylangore.blocksplus.Reference;
-import ie.dylangore.blocksplus.items.ItemBPDye;
 import ie.dylangore.blocksplus.util.LogHelper;
 import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
-
-/**
- * Project: BlocksPlus
- * File: ModItems
- * Author: Dylan Gore (hello@dylangore.ie)
- * Date Created: 08 January 2017
- */
 
 public class ModItems {
 

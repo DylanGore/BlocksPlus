@@ -1,3 +1,10 @@
+/*
+ * Project: BlocksPlus
+ * File: ItemBlockColored.java
+ * Author: Dylan Gore (hello@dylangore.ie)
+ * License: GNU Lesser General Public License v3.0
+ */
+
 package ie.dylangore.blocksplus.blocks.itemblocks;
 
 import net.minecraft.block.Block;
@@ -6,13 +13,6 @@ import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 
 import javax.annotation.Nonnull;
-
-/**
- * Project: BlocksPlus
- * File: ItemBlockColored
- * Author: Dylan Gore (hello@dylangore.ie)
- * Date Created: 18 January 2017
- */
 
 public class ItemBlockColored extends ItemBlock {
     public ItemBlockColored(Block block) {

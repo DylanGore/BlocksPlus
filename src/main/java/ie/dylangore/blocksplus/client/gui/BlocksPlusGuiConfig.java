@@ -1,3 +1,10 @@
+/*
+ * Project: BlocksPlus
+ * File: BlocksPlusGuiConfig.java
+ * Author: Dylan Gore (hello@dylangore.ie)
+ * License: GNU Lesser General Public License v3.0
+ */
+
 package ie.dylangore.blocksplus.client.gui;
 
 import ie.dylangore.blocksplus.Reference;
@@ -6,13 +13,6 @@ import net.minecraft.client.gui.GuiScreen;
 import net.minecraftforge.common.config.ConfigElement;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.client.config.GuiConfig;
-
-/**
- * Project: BlocksPlus
- * File: BlocksPlusGuiConfig
- * Author: Dylan Gore (hello@dylangore.ie)
- * Date Created: 21 February 2017
- */
 
 class BlocksPlusGuiConfig extends GuiConfig {
     BlocksPlusGuiConfig(GuiScreen guiScreen) {

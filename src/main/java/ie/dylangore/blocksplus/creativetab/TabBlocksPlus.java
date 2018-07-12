@@ -1,16 +1,16 @@
+/*
+ * Project: BlocksPlus
+ * File: TabBlocksPlus.java
+ * Author: Dylan Gore (hello@dylangore.ie)
+ * License: GNU Lesser General Public License v3.0
+ */
+
 package ie.dylangore.blocksplus.creativetab;
 
 import ie.dylangore.blocksplus.Reference;
 import ie.dylangore.blocksplus.init.ModBlocks;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.item.ItemStack;
-
-/**
- * Project: BlocksPlus
- * File: TabBlocksPlus
- * Author: Dylan Gore (hello@dylangore.ie)
- * Date Created: 08 January 2017
- */
 
 public class TabBlocksPlus extends CreativeTabs {
     public TabBlocksPlus() {

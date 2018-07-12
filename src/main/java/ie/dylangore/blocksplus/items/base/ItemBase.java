@@ -1,14 +1,15 @@
+/*
+ * Project: BlocksPlus
+ * File: ItemBase.java
+ * Author: Dylan Gore (hello@dylangore.ie)
+ * License: GNU Lesser General Public License v3.0
+ */
+
 package ie.dylangore.blocksplus.items.base;
 
 import ie.dylangore.blocksplus.BlocksPlus;
 import net.minecraft.item.Item;
 
-/**
- * Project: BlocksPlus
- * File: ItemBase
- * Author: Dylan Gore (hello@dylangore.ie)
- * Date Created: 08 January 2017
- */
 public class ItemBase extends Item {
 
     protected String name;

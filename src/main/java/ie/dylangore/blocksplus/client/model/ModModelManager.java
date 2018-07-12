@@ -1,9 +1,15 @@
+/*
+ * Project: BlocksPlus
+ * File: ModModelManager.java
+ * Author: Dylan Gore (hello@dylangore.ie)
+ * License: GNU Lesser General Public License v3.0
+ */
+
 package ie.dylangore.blocksplus.client.model;
 
 import ie.dylangore.blocksplus.Reference;
 import ie.dylangore.blocksplus.blocks.base.BlockBaseColored;
 import ie.dylangore.blocksplus.init.ModBlocks;
-import ie.dylangore.blocksplus.init.ModItems;
 import ie.dylangore.blocksplus.util.LogHelper;
 import net.minecraft.block.Block;
 import net.minecraft.client.renderer.block.model.ModelResourceLocation;
@@ -13,13 +19,6 @@ import net.minecraft.item.Item;
 import net.minecraftforge.client.model.ModelLoader;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
-
-/**
- * Project: BlocksPlus
- * File: BPModelManager
- * Author: Dylan Gore (hello@dylangore.ie)
- * Date Created: 22 February 2017
- */
 
 @SideOnly(Side.CLIENT)
 public class ModModelManager {

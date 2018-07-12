@@ -1,3 +1,10 @@
+/*
+ * Project: BlocksPlus
+ * File: BlockColoredSand.java
+ * Author: Dylan Gore (hello@dylangore.ie)
+ * License: GNU Lesser General Public License v3.0
+ */
+
 package ie.dylangore.blocksplus.blocks;
 
 import ie.dylangore.blocksplus.BlocksPlus;

@@ -1,13 +1,13 @@
+/*
+ * Project: BlocksPlus
+ * File: Reference.java
+ * Author: Dylan Gore (hello@dylangore.ie)
+ * License: GNU Lesser General Public License v3.0
+ */
+
 package ie.dylangore.blocksplus;
 
 import net.minecraft.item.EnumDyeColor;
-
-/**
- * Project: BlocksPlus
- * File: Reference
- * Author: Dylan Gore (hello@dylangore.ie)
- * Date Created: 08 January 2017
- */
 
 @SuppressWarnings("WeakerAccess")
 public class Reference {

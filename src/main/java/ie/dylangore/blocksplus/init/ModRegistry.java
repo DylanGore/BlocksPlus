@@ -1,3 +1,10 @@
+/*
+ * Project: BlocksPlus
+ * File: ModRegistry.java
+ * Author: Dylan Gore (hello@dylangore.ie)
+ * License: GNU Lesser General Public License v3.0
+ */
+
 package ie.dylangore.blocksplus.init;
 
 import net.minecraft.block.Block;

@@ -1,3 +1,10 @@
+/*
+ * Project: BlocksPlus
+ * File: IMCChisel.java
+ * Author: Dylan Gore (hello@dylangore.ie)
+ * License: GNU Lesser General Public License v3.0
+ */
+
 package ie.dylangore.blocksplus.imc;
 
 import ie.dylangore.blocksplus.init.ModBlocks;

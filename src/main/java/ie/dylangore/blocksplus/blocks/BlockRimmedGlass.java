@@ -1,3 +1,10 @@
+/*
+ * Project: BlocksPlus
+ * File: BlockRimmedGlass.java
+ * Author: Dylan Gore (hello@dylangore.ie)
+ * License: GNU Lesser General Public License v3.0
+ */
+
 package ie.dylangore.blocksplus.blocks;
 
 import ie.dylangore.blocksplus.blocks.base.BlockBaseColored;
@@ -13,12 +20,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import javax.annotation.Nonnull;
 import java.util.Random;
 
-/**
- * Project: BlocksPlus
- * File: BlockRimmedGlass
- * Author: Dylan Gore (hello@dylangore.ie)
- * Date Created: 09 March 2017
- */
 public class BlockRimmedGlass extends BlockBaseColored {
     public BlockRimmedGlass(Material material, String name, float hardness, float resistance) {
         super(material, name, hardness, resistance);

@@ -1,7 +1,13 @@
+/*
+ * Project: BlocksPlus
+ * File: ColorHandler.java
+ * Author: Dylan Gore (hello@dylangore.ie)
+ * License: GNU Lesser General Public License v3.0
+ */
+
 package ie.dylangore.blocksplus.handler;
 
 import ie.dylangore.blocksplus.init.ModBlocks;
-import ie.dylangore.blocksplus.init.ModItems;
 import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.color.BlockColors;
@@ -16,13 +22,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import net.minecraftforge.registries.IRegistryDelegate;
 
 import java.util.Map;
-
-/**
- * Project: BlocksPlus
- * File: ColorHandler
- * Author: Dylan Gore (hello@dylangore.ie)
- * Date Created: 22 February 2017
- */
 
 @SideOnly(Side.CLIENT)
 public class ColorHandler {

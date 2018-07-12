@@ -1,15 +1,16 @@
+/*
+ * Project: BlocksPlus
+ * File: BlockBase.java
+ * Author: Dylan Gore (hello@dylangore.ie)
+ * License: GNU Lesser General Public License v3.0
+ */
+
 package ie.dylangore.blocksplus.blocks.base;
 
 import ie.dylangore.blocksplus.BlocksPlus;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
 
-/**
- * Project: BlocksPlus
- * File: BlockBase
- * Author: Dylan Gore (hello@dylangore.ie)
- * Date Created: 08 January 2017
- */
 public class BlockBase extends Block {
     protected String name;
 

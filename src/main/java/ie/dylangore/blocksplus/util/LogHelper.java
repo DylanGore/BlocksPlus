@@ -1,23 +1,26 @@
+/*
+ * Project: BlocksPlus
+ * File: LogHelper.java
+ * Author: Dylan Gore (hello@dylangore.ie)
+ * License: GNU Lesser General Public License v3.0
+ */
+
 package ie.dylangore.blocksplus.util;
 
+import ie.dylangore.blocksplus.Reference;
 import net.minecraftforge.fml.common.FMLLog;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-/**
- * Project: BlocksPlus
- * File: LogHelper
- * Author: Dylan Gore (hello@dylangore.ie)
- * Date Created: 08 January 2017
- */
 @SuppressWarnings("unused")
 public class LogHelper {
 
-    private static final Logger logger = LogManager.getLogger("BlocksPlus");
+    private static final Logger logger = LogManager.getLogger(Reference.ID);
+    private static final String prefix = "[BlocksPlus] ";
 
     private static void log(Level logLevel, Object object) {
-        logger.log(logLevel, String.valueOf(object));
+        logger.log(logLevel, prefix + String.valueOf(object));
 
     }
 

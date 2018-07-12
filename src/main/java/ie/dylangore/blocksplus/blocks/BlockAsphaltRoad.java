@@ -1,3 +1,10 @@
+/*
+ * Project: BlocksPlus
+ * File: BlockAsphaltRoad.java
+ * Author: Dylan Gore (hello@dylangore.ie)
+ * License: GNU Lesser General Public License v3.0
+ */
+
 package ie.dylangore.blocksplus.blocks;
 
 import ie.dylangore.blocksplus.Reference;
@@ -10,12 +17,6 @@ import net.minecraft.potion.PotionEffect;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 
-/**
- * Project: BlocksPlus
- * File: BlockAsphaltRoad
- * Author: Dylan Gore (hello@dylangore.ie)
- * Date Created: 08 January 2017
- */
 public class BlockAsphaltRoad extends BlockBase {
 
     public BlockAsphaltRoad(Material material, String name, float hardness, float resistance) {

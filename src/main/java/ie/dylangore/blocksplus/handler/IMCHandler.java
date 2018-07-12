@@ -1,3 +1,10 @@
+/*
+ * Project: BlocksPlus
+ * File: IMCHandler.java
+ * Author: Dylan Gore (hello@dylangore.ie)
+ * License: GNU Lesser General Public License v3.0
+ */
+
 package ie.dylangore.blocksplus.handler;
 
 import ie.dylangore.blocksplus.imc.IMCChisel;

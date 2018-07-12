@@ -1,3 +1,10 @@
+/*
+ * Project: BlocksPlus
+ * File: ModBlocks.java
+ * Author: Dylan Gore (hello@dylangore.ie)
+ * License: GNU Lesser General Public License v3.0
+ */
+
 package ie.dylangore.blocksplus.init;
 
 import ie.dylangore.blocksplus.Reference;
@@ -12,13 +19,6 @@ import net.minecraft.block.material.Material;
 import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.oredict.OreDictionary;
-
-/**
- * Project: BlocksPlus
- * File: ModBlocks
- * Author: Dylan Gore (hello@dylangore.ie)
- * Date Created: 08 January 2017
- */
 
 public class ModBlocks {
 

@@ -1,3 +1,10 @@
+/*
+ * Project: BlocksPlus
+ * File: GuiFactory.java
+ * Author: Dylan Gore (hello@dylangore.ie)
+ * License: GNU Lesser General Public License v3.0
+ */
+
 package ie.dylangore.blocksplus.client.gui;
 
 import net.minecraft.client.Minecraft;
@@ -5,13 +12,6 @@ import net.minecraft.client.gui.GuiScreen;
 import net.minecraftforge.fml.client.IModGuiFactory;
 
 import java.util.Set;
-
-/**
- * Project: BlocksPlus
- * File: GuiFactory
- * Author: Dylan Gore (hello@dylangore.ie)
- * Date Created: 21 February 2017
- */
 
 @SuppressWarnings("unused")
 public class GuiFactory implements IModGuiFactory {

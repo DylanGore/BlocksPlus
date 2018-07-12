@@ -1,3 +1,10 @@
+/*
+ * Project: BlocksPlus
+ * File: BlockConnectedGlass.java
+ * Author: Dylan Gore (hello@dylangore.ie)
+ * License: GNU Lesser General Public License v3.0
+ */
+
 package ie.dylangore.blocksplus.blocks;
 
 import ie.dylangore.blocksplus.blocks.base.BlockBase;
@@ -14,16 +21,6 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 import javax.annotation.Nonnull;
 import java.util.Random;
 
-/**
- * Project: BlocksPlus
- * File: BlockConnectedGlass
- * Author: Dylan Gore (hello@dylangore.ie)
- * Date Created: 08 March 2017
- */
-
-//TODO Implement connected textures
-
-@SuppressWarnings("ALL")
 public class BlockConnectedGlass extends BlockBase {
     public BlockConnectedGlass(Material material, String name, float hardness, float resistance) {
         super(material, name, hardness, resistance);

@@ -1,3 +1,10 @@
+/*
+ * Project: BlocksPlus
+ * File: ItemBaseColored.java
+ * Author: Dylan Gore (hello@dylangore.ie)
+ * License: GNU Lesser General Public License v3.0
+ */
+
 package ie.dylangore.blocksplus.items.base;
 
 import net.minecraft.creativetab.CreativeTabs;
@@ -8,13 +15,6 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import javax.annotation.Nonnull;
-
-/**
- * Project: BlocksPlus
- * File: ItemBaseColored
- * Author: Dylan Gore (hello@dylangore.ie)
- * Date Created: 22 February 2017
- */
 
 public class ItemBaseColored extends ItemBase {
     public ItemBaseColored(String name) {

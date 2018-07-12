@@ -1,3 +1,10 @@
+/*
+ * Project: BlocksPlus
+ * File: ConfigurationHandler.java
+ * Author: Dylan Gore (hello@dylangore.ie)
+ * License: GNU Lesser General Public License v3.0
+ */
+
 package ie.dylangore.blocksplus.handler;
 
 import ie.dylangore.blocksplus.Reference;
@@ -7,13 +14,6 @@ import net.minecraftforge.fml.client.event.ConfigChangedEvent;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 
 import java.io.File;
-
-/**
- * Project: BlocksPlus
- * File: Configuration
- * Author: Dylan Gore (hello@dylangore.ie)
- * Date Created: 21 February 2017
- */
 
 @SuppressWarnings("WeakerAccess")
 public class ConfigurationHandler {

@@ -1,12 +1,11 @@
-package ie.dylangore.blocksplus.util;
-
-/**
+/*
  * Project: BlocksPlus
- * File: FormattingHelper
+ * File: FormattingHelper.java
  * Author: Dylan Gore (hello@dylangore.ie)
- * Date Created: 23 February 2017
+ * License: GNU Lesser General Public License v3.0
  */
 
+package ie.dylangore.blocksplus.util;
 
 @SuppressWarnings("unused")
 public enum FormattingHelper {
