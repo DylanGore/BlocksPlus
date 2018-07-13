@@ -29,9 +29,13 @@ ext.privFile = file('private.properties')
 ext.priv = parseConfig(privFile)
 
 
-version="${config.mc_version}-${config.mod_version}.${System.getenv("BUILD_NUMBER") ?: 0}"
+version="${config.mc_version}-${config.mod_version}"
 group= config.mod_group
 archivesBaseName = config.mod_archive_base_name
+
+if (System.getenv().BUILD_NUMBER != null) {
+    version += ".${System.getenv().BUILD_NUMBER}"
+}
 
 sourceCompatibility = "1.8"
 targetCompatibility = "1.8"
@@ -68,6 +72,7 @@ processResources
 }
 
 task devJar(type: Jar, dependsOn: 'classes') {
+    logMsg("Generating $config.mod_name dev jar...", false)
     from(sourceSets.main.output) {
         include '**'
     }
@@ -81,27 +86,47 @@ artifacts {
 }
 
 static def parseConfig(File config) {
-    config.withReader {
-        def prop = new Properties()
-        prop.load(it)
-        return (new ConfigSlurper().parse(prop))
+    if(config.exists()){
+        config.withReader {
+            def prop = new Properties()
+            prop.load(it)
+            return (new ConfigSlurper().parse(prop))
+        }
+    }else{
+        return null;
     }
 }
 
 curseforge{
-    apiKey = priv.cf_key
-    project {
-        id = priv.cf_id
-        releaseType = config.mod_release_type
-        changelogType = 'text'
-        changelog = "Changelog available at https://mc.dylangore.ie/blocksplus/changelog"
-        addArtifact devJar
+    if(priv != null){
+        apiKey = priv.cf_key
+        project {
+            id = priv.cf_id
+            releaseType = config.mod_release_type
+            changelogType = 'text'
+            changelog = "Changelog available at https://mc.dylangore.ie/blocksplus/changelog"
+            addArtifact devJar
+        }
+        logMsg("Build artifact(s) uploading to CurseForge...", false)
+    }else{
+        logMsg("priavte.properties file not found!\nNothing will be uploaded to CurseForge.", true)
+        return
     }
 }
 
 task makeChangelog(type: GitChangelogTask) {
+    logMsg("Generating $config.mod_name changelog...", false)
     file = new File("build/libs/${project.archivesBaseName}-${project.version}-changelog.html")
     untaggedName = "Current release ${project.version}"
     templateContent = "${config.changelog_html}"
 }
 
+def logMsg(String msg, boolean bigMsg){
+    if(bigMsg){
+        project.logger.lifecycle("-------------------------------------------------")
+        project.logger.lifecycle(msg)
+        project.logger.lifecycle("-------------------------------------------------")
+    }else{
+        project.logger.lifecycle(msg)
+    }
+}
