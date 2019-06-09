@@ -8,7 +8,6 @@
 package ie.dylangore.blocksplus.util;
 
 import ie.dylangore.blocksplus.Reference;
-import net.minecraftforge.fml.common.FMLLog;
 import org.apache.logging.log4j.Level;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -55,9 +54,4 @@ public class LogHelper {
     public static void warn(Object object) {
         log(Level.WARN, object);
     }
-
-    public static void bigWarning(Object object){
-        FMLLog.bigWarning(String.valueOf(object));
-    }
-
 }

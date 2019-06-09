@@ -1,0 +1,26 @@
+modLoader="javafml" #mandatory
+loaderVersion="[${forge_version},)" #mandatory (25 is current forge version)
+updateJSONURL="${update_json}" #optional
+issueTrackerURL="https://github.com/DylanGore/BlocksPlus/issues" #optional
+logoFile="logo.png"
+credits="Mojang, Forge Dev Team and contributors" #optional
+authors="DylanGore"
+[[mods]] #mandatory
+    modId="${mod_id}" #mandatory
+    version="${version}" #mandatory
+    displayName="${mod_name}" #mandatory
+    description='''This mod adds a variety of decorative and functional blocks to the game.
+    '''
+
+## A dependency - use the . to indicate dependency for a specific modid. Dependencies are optional.
+[[dependencies.buildinggadgets]] #optional
+    # the modid of the dependency
+    modId="forge" #mandatory
+    # Does this dependency have to exist - if not, ordering below must be specified
+    mandatory=true #mandatory
+    # The version range of the dependency
+    versionRange="[${forge_version},)" #mandatory
+    # An ordering relationship for the dependency - BEFORE or AFTER required if the relationship is not mandatory
+    ordering="BEFORE"
+    # Side this dependency is applied on - BOTH, CLIENT or SERVER
+    side="BOTH"

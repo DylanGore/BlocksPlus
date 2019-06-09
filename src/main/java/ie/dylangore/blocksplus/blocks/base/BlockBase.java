@@ -14,16 +14,11 @@ import net.minecraft.block.material.Material;
 public class BlockBase extends Block {
     protected String name;
 
-    public BlockBase(Material material, String name, float hardness, float resistance) {
-        super(material);
+    public BlockBase(Block.Properties properties, String name, float hardness, float resistance) {
+        super(properties);
 
         this.name = name;
-        setCreativeTab(BlocksPlus.creativeTab);
-        setHardness(hardness);
-        setResistance(resistance);
-        setHarvestLevel("pickaxe", 0);
-
-        setUnlocalizedName(name);
+        properties.hardnessAndResistance(hardness, resistance);
         setRegistryName(name);
     }
 }

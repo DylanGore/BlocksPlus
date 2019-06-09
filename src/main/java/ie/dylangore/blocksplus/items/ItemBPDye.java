@@ -11,7 +11,6 @@ import ie.dylangore.blocksplus.items.base.ItemBaseColored;
 import ie.dylangore.blocksplus.util.FormattingHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.BlockCarpet;
-import net.minecraft.block.BlockColored;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.passive.EntitySheep;
@@ -24,9 +23,6 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
-
 import javax.annotation.Nullable;
 import java.util.List;
 

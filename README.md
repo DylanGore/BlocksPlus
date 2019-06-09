@@ -1,6 +1,8 @@
-[![Logo](https://github.com/DylanGore/BlocksPlus/raw/master/src/main/resources/assets/blocksplus/logo.png)]((https://minecraft.curseforge.com/projects/blocks-plus))
+[![Logo](https://github.com/DylanGore/BlocksPlus/raw/master/src/main/resources/logo.png)]((https://minecraft.curseforge.com/projects/blocks-plus))
 
 A Minecraft mod developed and maintained by [Dylan Gore](https://dylangore.ie)
+
+__1.13.x Development Branch__
 
 [![CF Total Downloads](http://cf.way2muchnoise.eu/full_blocks-plus_downloads.svg)](https://minecraft.curseforge.com/projects/blocks-plus)
 [![CF Available For](http://cf.way2muchnoise.eu/versions/blocks-plus.svg)](https://minecraft.curseforge.com/projects/blocks-plus)
