@@ -75,15 +75,15 @@ public class Reference {
         }
     }
 
-    public static String getColorNameFromMeta(int meta, boolean isCapital) {
-        String colorName;
-        String unlocalizedName = EnumDyeColor.byMetadata(meta).getUnlocalizedName();
-        if (isCapital) {
-            colorName = unlocalizedName.substring(0, 1).toUpperCase() + unlocalizedName.substring(1);
-        } else {
-            colorName = unlocalizedName;
-        }
-        return colorName;
-    }
+//    public static String getColorNameFromMeta(int meta, boolean isCapital) {
+//        String colorName;
+//        String unlocalizedName = EnumDyeColor.byMetadata(meta).getUnlocalizedName();
+//        if (isCapital) {
+//            colorName = unlocalizedName.substring(0, 1).toUpperCase() + unlocalizedName.substring(1);
+//        } else {
+//            colorName = unlocalizedName;
+//        }
+//        return colorName;
+//    }
 
 }

@@ -16,9 +16,8 @@ import ie.dylangore.blocksplus.blocks.itemblocks.ItemBlockColored;
 import ie.dylangore.blocksplus.util.LogHelper;
 import net.minecraft.block.Block;
 import net.minecraft.block.material.Material;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
-import net.minecraft.item.ItemStack;
-import net.minecraftforge.oredict.OreDictionary;
 
 public class ModBlocks {
 
@@ -35,14 +34,14 @@ public class ModBlocks {
 
     public static void preInit(){
 
-        blockAsphaltRoad = new BlockAsphaltRoad(Material.ROCK, Reference.BlocksPlusBlocks.ASPHALT_ROAD.getName(), 1.5F, 1.0F);
-        blockColoredCobblestone = new BlockBaseColored(Material.ROCK, Reference.BlocksPlusBlocks.COLOURED_COBBLESTONE.getName(), 2.0F, 1.0F);
-        blockColoredStone = new BlockBaseColored(Material.ROCK, Reference.BlocksPlusBlocks.COLORED_STONE.getName(), 1.5F, 1.0F);
-        blockColoredStoneBricks = new BlockBaseColored(Material.ROCK, Reference.BlocksPlusBlocks.COLORED_STONE_BRICKS.getName(), 1.5F, 1.0F);
-        blockColoredStoneBricksChiseled = new BlockBaseColored(Material.ROCK, Reference.BlocksPlusBlocks.COLORED_STONE_BRICKS_CHISELED.getName(), 1.5F, 1.0F);
-        blockColoredStoneBricksCracked = new BlockBaseColored(Material.ROCK, Reference.BlocksPlusBlocks.COLORED_STONE_BRICKS_CRACKED.getName(), 1.5F, 1.0F);
-        blockRimmedGlass = new BlockRimmedGlass(Material.GLASS, Reference.BlocksPlusBlocks.RIMMED_GLASS.getName(), 1.0F, 1.0F);
-        blockRimmedGlowingGlass = new BlockRimmedGlass(Material.GLASS, Reference.BlocksPlusBlocks.RIMMED_GLOWING_GLASS.getName(), 1.0F, 1.0F, 1.0F);
+        blockAsphaltRoad = new BlockAsphaltRoad(Block.Properties.create(Material.ROCK), Reference.BlocksPlusBlocks.ASPHALT_ROAD.getName(), 1.5F, 1.0F);
+        blockColoredCobblestone = new BlockBaseColored(Block.Properties.create(Material.ROCK), Reference.BlocksPlusBlocks.COLOURED_COBBLESTONE.getName(), 2.0F, 1.0F);
+        blockColoredStone = new BlockBaseColored(Block.Properties.create(Material.ROCK), Reference.BlocksPlusBlocks.COLORED_STONE.getName(), 1.5F, 1.0F);
+        blockColoredStoneBricks = new BlockBaseColored(Block.Properties.create(Material.ROCK), Reference.BlocksPlusBlocks.COLORED_STONE_BRICKS.getName(), 1.5F, 1.0F);
+        blockColoredStoneBricksChiseled = new BlockBaseColored(Block.Properties.create(Material.ROCK), Reference.BlocksPlusBlocks.COLORED_STONE_BRICKS_CHISELED.getName(), 1.5F, 1.0F);
+        blockColoredStoneBricksCracked = new BlockBaseColored(Block.Properties.create(Material.ROCK), Reference.BlocksPlusBlocks.COLORED_STONE_BRICKS_CRACKED.getName(), 1.5F, 1.0F);
+        blockRimmedGlass = new BlockRimmedGlass(Block.Properties.create(Material.GLASS), Reference.BlocksPlusBlocks.RIMMED_GLASS.getName(), 1.0F, 1.0F);
+        blockRimmedGlowingGlass = new BlockRimmedGlass(Block.Properties.create(Material.GLASS), Reference.BlocksPlusBlocks.RIMMED_GLOWING_GLASS.getName(), 1.0F, 1.0F, 1.0F);
 //        blockGlowingGlass = new BlockConnectedGlass(Material.GLASS, Reference.BlocksPlusBlocks.GLOWING_GLASS.getName(), 1.0F, 1.0F);
         blockColoredSand = new BlockColoredSand(Reference.BlocksPlusBlocks.COLORED_SAND.getName(), 0.5F, 1.0F);
 
@@ -50,6 +49,7 @@ public class ModBlocks {
     }
 
     public static void init(){
+        //TOOD 1.13
         registerOreDict(blockColoredCobblestone, "cobblestone", true);
         registerOreDict(blockColoredStone, "stone", true);
         registerOreDict(blockRimmedGlass, "blockGlass", true);
@@ -80,14 +80,14 @@ public class ModBlocks {
     }
 
     private static void registerSimpleItemBlock(Block block, String registryName) {
-        ItemBlock itemBlock = new ItemBlock(block);
+        ItemBlock itemBlock = new ItemBlock(block, new Item.Properties());
         itemBlock.setRegistryName(registryName);
         ModRegistry.addItem(itemBlock);
         ModRegistry.addBlock(block);
     }
 
     private static void registerColorItemBlock(Block block, String registryName) {
-        ItemBlockColored itemBlock = new ItemBlockColored(block);
+        ItemBlockColored itemBlock = new ItemBlockColored(block, new Item.Properties());
         itemBlock.setRegistryName(registryName);
         ModRegistry.addItem(itemBlock);
         ModRegistry.addBlock(block);
@@ -95,10 +95,10 @@ public class ModBlocks {
 
     @SuppressWarnings("SameParameterValue")
     private static void registerOreDict(Block block, String oreDictName, boolean isWildcard) {
-        if (isWildcard) {
-            OreDictionary.registerOre(oreDictName, new ItemStack(block, 1, OreDictionary.WILDCARD_VALUE));
-        } else {
-            OreDictionary.registerOre(oreDictName, block);
-        }
+//        if (isWildcard) {
+//            OreDictionary.registerOre(oreDictName, new ItemStack(block, 1, OreDictionary.WILDCARD_VALUE));
+//        } else {
+//            OreDictionary.registerOre(oreDictName, block);
+//        }
     }
 }

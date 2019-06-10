@@ -7,12 +7,8 @@
 
 package ie.dylangore.blocksplus.proxy;
 
-import net.minecraftforge.fml.common.event.FMLInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
-import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 
 public interface IProxy {
-    void onPreInit(FMLPreInitializationEvent event);
-    void onInit(FMLInitializationEvent event);
-    void onPostInit(FMLPostInitializationEvent event);
+    void setup(final FMLCommonSetupEvent event);
 }

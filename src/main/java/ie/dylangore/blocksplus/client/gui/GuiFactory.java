@@ -27,7 +27,8 @@ public class GuiFactory implements IModGuiFactory {
 
     @Override
     public GuiScreen createConfigGui(GuiScreen parentScreen) {
-        return new BlocksPlusGuiConfig(parentScreen);
+//        return new BlocksPlusGuiConfig(parentScreen);
+        return null;
     }
 
     @Override

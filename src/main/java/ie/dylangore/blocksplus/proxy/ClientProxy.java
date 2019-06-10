@@ -8,30 +8,23 @@
 package ie.dylangore.blocksplus.proxy;
 
 import ie.dylangore.blocksplus.client.model.ModModelManager;
-import ie.dylangore.blocksplus.handler.ColorHandler;
-import javafx.geometry.Side;
+import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.client.event.ModelRegistryEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.event.lifecycle.FMLCommonSetupEvent;
 
-@Mod.EventBusSubscriber(Side.CLIENT)
+@Mod.EventBusSubscriber(Dist.CLIENT)
 public class ClientProxy implements IProxy {
 
-    @Override
-    public void onPreInit(FMLPreInitializationEvent event) {
-    }
 
-    @Override
-    public void onInit(FMLInitializationEvent event) {
-        ColorHandler.init();
-    }
-
-    @Override
-    public void onPostInit(FMLPostInitializationEvent event) {
-
-    }
 
     @SubscribeEvent
     public static void registerModels(ModelRegistryEvent event){
         ModModelManager.init();
+    }
+
+    @Override
+    public void setup(FMLCommonSetupEvent event) {
     }
 }

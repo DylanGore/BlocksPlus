@@ -25,11 +25,11 @@ public class ModRecipes {
         addColorSmeltingRecipes(ModBlocks.blockColoredSand, ModBlocks.blockRimmedGlass, 0.1F);
     }
 
-    @SuppressWarnings("SameParameterValue")
+    //TODO 1.13
     private static void addColorSmeltingRecipes(Block input, Block output, float xp) {
-        for (int meta = 0; meta < EnumDyeColor.values().length; meta++) {
-            GameRegistry.addSmelting(new ItemStack(input, 1, meta), new ItemStack(output, 1, meta), xp);
-        }
+//        for (int meta = 0; meta < EnumDyeColor.values().length; meta++) {
+//            GameRegistry.addSmelting(new ItemStack(input, 1, meta), new ItemStack(output, 1, meta), xp);
+//        }
     }
 
 }

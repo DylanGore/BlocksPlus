@@ -9,10 +9,10 @@ package ie.dylangore.blocksplus.creativetab;
 
 import ie.dylangore.blocksplus.Reference;
 import ie.dylangore.blocksplus.init.ModBlocks;
-import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.ItemGroup;
 import net.minecraft.item.ItemStack;
 
-public class TabBlocksPlus extends CreativeTabs {
+public class TabBlocksPlus extends ItemGroup {
     public TabBlocksPlus() {
         super(Reference.ID);
         setBackgroundImageName("item_search.png");
@@ -20,8 +20,8 @@ public class TabBlocksPlus extends CreativeTabs {
 
     @SuppressWarnings("NullableProblems")
     @Override
-    public ItemStack getTabIconItem() {
-        return new ItemStack(ModBlocks.blockAsphaltRoad, 1, 0);
+    public ItemStack createIcon() {
+        return new ItemStack(ModBlocks.blockAsphaltRoad);
     }
 
     @Override

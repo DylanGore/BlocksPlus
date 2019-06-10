@@ -19,8 +19,8 @@ import net.minecraft.world.World;
 
 public class BlockAsphaltRoad extends BlockBase {
 
-    public BlockAsphaltRoad(Material material, String name, float hardness, float resistance) {
-        super(material, name, hardness, resistance);
+    public BlockAsphaltRoad(Properties props, String name, float hardness, float resistance) {
+        super(props, name, hardness, resistance);
     }
 
     @SuppressWarnings("ConstantConditions")

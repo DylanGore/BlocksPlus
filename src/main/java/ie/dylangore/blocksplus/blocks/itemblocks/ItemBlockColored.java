@@ -14,21 +14,25 @@ import net.minecraft.item.ItemStack;
 
 import javax.annotation.Nonnull;
 
-public class ItemBlockColored extends ItemBlock {
-    public ItemBlockColored(Block block) {
-        super(block);
-        this.setMaxDamage(0);
-        this.setHasSubtypes(true);
+//TODO 1.13
+public class ItemBlockColored extends ItemBlockBase {
+    public ItemBlockColored(Block blockIn, Properties builder) {
+        super(blockIn, builder);
     }
+//    public ItemBlockColored(Block block) {
+//        super(block);
+//        this.setMaxDamage(0);
+//        this.setHasSubtypes(true);
+//    }
 
-    @Override
-    public int getMetadata(int damage) {
-        return damage;
-    }
-
-    @Nonnull
-    @Override
-    public String getUnlocalizedName(ItemStack itemStackIn) {
-        return super.getUnlocalizedName() + "." + EnumDyeColor.byMetadata(itemStackIn.getMetadata()).getName();
-    }
+//    @Override
+//    public int getMetadata(int damage) {
+//        return damage;
+//    }
+//
+//    @Nonnull
+//    @Override
+//    public String getUnlocalizedName(ItemStack itemStackIn) {
+//        return super.getUnlocalizedName() + "." + EnumDyeColor.byMetadata(itemStackIn.getMetadata()).getName();
+//    }
 }

@@ -7,20 +7,15 @@
 
 package ie.dylangore.blocksplus.client.model;
 
-import ie.dylangore.blocksplus.Reference;
-import ie.dylangore.blocksplus.blocks.base.BlockBaseColored;
 import ie.dylangore.blocksplus.init.ModBlocks;
 import ie.dylangore.blocksplus.util.LogHelper;
 import net.minecraft.block.Block;
-import net.minecraft.client.renderer.block.model.ModelResourceLocation;
-import net.minecraft.client.renderer.block.statemap.StateMap;
 import net.minecraft.item.EnumDyeColor;
 import net.minecraft.item.Item;
-import net.minecraftforge.client.model.ModelLoader;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraftforge.api.distmarker.Dist;
+import net.minecraftforge.api.distmarker.OnlyIn;
 
-@SideOnly(Side.CLIENT)
+@OnlyIn(Dist.CLIENT)
 public class ModModelManager {
 
 
@@ -43,21 +38,22 @@ public class ModModelManager {
         LogHelper.info("Models Registered!");
     }
 
+    //TODO 1.13
     private static void registerBlockModel(Block block) {
-        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation(Reference.ID + ":" + block.getUnlocalizedName().substring(5), "inventory"));
+//        ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), 0, new ModelResourceLocation(Reference.ID + ":" + block.getUnlocalizedName().substring(5), "inventory"));
     }
 
     private static void registerColorBlockModel(Block block) {
-        ModelLoader.setCustomStateMapper(block, new StateMap.Builder().ignore(BlockBaseColored.BLOCK_COLOR).build());
+//        ModelLoader.setCustomStateMapper(block, new StateMap.Builder().ignore(BlockBaseColored.BLOCK_COLOR).build());
 
         for (int i = 0; i < EnumDyeColor.values().length; i++) {
-            ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), i, new ModelResourceLocation(Reference.ID + ":" + block.getUnlocalizedName().substring(5), "normal"));
+//            ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(block), i, new ModelResourceLocation(Reference.ID + ":" + block.getUnlocalizedName().substring(5), "normal"));
         }
     }
 
     private static void registerColorItemModel(Item item) {
         for (int i = 0; i < EnumDyeColor.values().length; i++) {
-            ModelLoader.setCustomModelResourceLocation(item, i, new ModelResourceLocation(Reference.ID + ":" + item.getUnlocalizedName().substring(5), "inventory"));
+//            ModelLoader.setCustomModelResourceLocation(item, i, new ModelResourceLocation(Reference.ID + ":" + item.getUnlocalizedName().substring(5), "inventory"));
         }
     }
 }

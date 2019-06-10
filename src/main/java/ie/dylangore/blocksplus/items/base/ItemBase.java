@@ -14,11 +14,11 @@ public class ItemBase extends Item {
 
     protected String name;
 
-    ItemBase(String name) {
+    public ItemBase(Properties properties, String name) {
+        super(properties);
         this.name = name;
-        setUnlocalizedName(name);
         setRegistryName(name);
-        setCreativeTab(BlocksPlus.creativeTab);
+        //TODO creative tab
     }
 
 }

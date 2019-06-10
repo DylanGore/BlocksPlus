@@ -11,8 +11,8 @@ import ie.dylangore.blocksplus.init.ModBlocks;
 import net.minecraft.block.Block;
 import net.minecraft.init.Blocks;
 import net.minecraft.nbt.NBTTagCompound;
-import net.minecraftforge.fml.common.event.FMLInterModComms;
 
+//TOOD 1.13
 public class IMCChisel {
 
     public static void init(){
@@ -44,8 +44,8 @@ public class IMCChisel {
         NBTTagCompound tag = new NBTTagCompound();
         tag.setString("group", chiselGroup);
         tag.setString("block", block.getRegistryName().toString());
-        tag.setInteger("meta", meta);
-        FMLInterModComms.sendMessage("chisel", "add_variation", tag);
+//        tag.setInteger("meta", meta);
+//        FMLInterModComms.sendMessage("chisel", "add_variation", tag);
     }
 
     private static void addChiselColorVariation(String chiselGroup, Block block, int maxMeta){
